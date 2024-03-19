@@ -1,0 +1,1 @@
+{"num_cnn_layers": 1, "num_lstm_layers": 3, "filters": 64, "kernel_size": 1, "lstm_units": 100, "dropout": 0.5, "activation": "Tanh", "lr": 0.009103872313685599, "optimizer": "Adam"}
