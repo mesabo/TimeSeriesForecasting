@@ -16,7 +16,7 @@ def train_model(model, X_train, y_train, X_val, y_val, trial, device):
     early_stopping_counter = 0
     best_val_loss = float('inf')
 
-    epochs = 2  # EPOCH
+    epochs = 1  # EPOCH
     batch_size = 64  # Choose an appropriate batch size
 
     for epoch in range(epochs):

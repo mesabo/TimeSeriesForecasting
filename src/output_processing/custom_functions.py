@@ -69,6 +69,7 @@ def plot_losses(history, model, save_path=None):
     plt.legend()
 
     if save_path:
+        os.makedirs(save_path, exist_ok=True)
         file_name = f'{model}_evaluation_metrics.png'
         file_path = os.path.join(save_path, file_name)
         plt.savefig(file_path)
@@ -85,6 +86,7 @@ def plot_evaluation_metrics(mse, mae, rmse, mape, model, save_path=None):
     plt.xlabel('Metric')
     plt.ylabel('Value')
     if save_path:
+        os.makedirs(save_path, exist_ok=True)
         file_name = f'{model}_evaluation_metrics.png'
         file_path = os.path.join(save_path, file_name)
         plt.savefig(file_path)
@@ -101,6 +103,7 @@ def plot_predictions(predicted, actual, model, save_path=None):
     plt.title(f'{model} - Actual vs Predicted')
     plt.legend()
     if save_path:
+        os.makedirs(save_path, exist_ok=True)
         file_name = f'{model}_prediction.png'
         file_path = os.path.join(save_path, file_name)
         plt.savefig(file_path)
@@ -109,6 +112,7 @@ def plot_predictions(predicted, actual, model, save_path=None):
 
 
 def save_evaluation_metrics(saving_path, model_type, mse, mae, rmse, mape):
+    os.makedirs(os.path.dirname(saving_path), exist_ok=True)
     if os.path.exists(saving_path):
         with open(saving_path, 'r') as file:
             evaluation_data = json.load(file)
@@ -128,6 +132,7 @@ def save_evaluation_metrics(saving_path, model_type, mse, mae, rmse, mape):
 
 
 def save_loss_to_txt(saving_path, model_type, history):
+    os.makedirs(os.path.dirname(saving_path), exist_ok=True)
     if os.path.exists(saving_path):
         with open(saving_path, 'r') as file:
             loss_data = json.load(file)
@@ -144,15 +149,18 @@ def save_loss_to_txt(saving_path, model_type, history):
 
 
 def save_best_params(saving_path, model_type, best_hps, total_time):
+    directory = os.path.dirname(saving_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
     if os.path.exists(saving_path):
         with open(saving_path, 'r') as file:
             evaluation_data = json.load(file)
-
     else:
         evaluation_data = {}
 
     # Update or add the hyperparameters for the model type
-    evaluation_data[model_type] = best_hps.values
+    evaluation_data[model_type] = best_hps
     evaluation_data[model_type]['processing_time'] = format_duration(total_time)
 
     # Save the updated data back to the file
