@@ -67,19 +67,6 @@ def time_warping(series, sigma=0.2):
     warped_series = interp1d(warped_time, series, bounds_error=False, fill_value="extrapolate")(new_time)
     return warped_series
 
-def split_dataset(data_normalized, look_back, forecast_period):
-    train_size = int(len(data_normalized) * 0.7)
-    test_size = len(data_normalized) - train_size
-
-    train = data_normalized[:train_size]
-    test = data_normalized[-test_size:]
-
-    trainX, trainY = create_dataset(train, look_back, forecast_period)
-    testX, testY = create_dataset(test, look_back, forecast_period)
-
-    return trainX, trainY, testX, testY
-
-
 def load_dataset(dataset_type='electricity', period='D'):
     if dataset_type == ELECTRICITY:
         dataset = pd.read_csv(ELECTRICITY_DATASET_PATH, sep=';', na_values=['?'])
@@ -96,31 +83,6 @@ def load_dataset(dataset_type='electricity', period='D'):
 
     return features, target
 
-
-def preprocess_and_split_dataset(url, period, look_back, forecast_period):
-    # Separate features and target variable
-    features, target = load_dataset(url, period)
-
-    # Normalize features
-    scaler_features = MinMaxScaler(feature_range=(0, 1))
-    scaled_features = scaler_features.fit_transform(features)
-
-    # Normalize target variable
-    scaler_target = MinMaxScaler(feature_range=(0, 1))
-    scaled_target = scaler_target.fit_transform(target)
-
-    # Combine scaled features and target variable
-    scaled_dataset = np.concatenate((scaled_features, scaled_target), axis=1)
-
-    # Apply time warping to the features (excluding the target variable)
-    warped_features = np.apply_along_axis(time_warping, axis=0, arr=scaled_dataset[:, :-1])
-
-    # Combine warped features with target variable
-    warped_dataset = np.concatenate((warped_features, scaled_dataset[:, -1].reshape(-1, 1)), axis=1)
-
-    trainX, trainY, testX, testY = split_dataset(warped_dataset, look_back, forecast_period)
-
-    return trainX, trainY, testX, testY, scaler_target
 
 def preprocess_augment_and_split_dataset(url, period, look_back, forecast_period):
     # Load dataset and fill missing values

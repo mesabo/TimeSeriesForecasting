@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 import optuna
 import json
-from src.input_processing.data_processing import preprocess_and_split_dataset, preprocess_augment_and_split_dataset
+from src.input_processing.data_processing import  preprocess_augment_and_split_dataset
 from src.utils.constants import ELECTRICITY
 
 class Attention(nn.Module):
@@ -70,7 +70,7 @@ def train_model(model, X_train, y_train, X_val, y_val, trial, device):
     early_stopping_counter = 0
     best_val_loss = float('inf')
 
-    epochs = 2  # Maximum number of epochs
+    epochs = 1  # Maximum number of epochs
     for epoch in range(epochs):
         model.train()
         optimizer.zero_grad()
@@ -99,12 +99,9 @@ def train_model(model, X_train, y_train, X_val, y_val, trial, device):
     return val_loss.item()
 
 
-def objective(trial):
-    look_back = 30
-    forecast_days = 7
+def objective(trial, X_train, y_train, X_val, y_val, output_dim):
 
     # Load and split dataset
-    X_train, X_val, y_train, y_val, _ = preprocess_augment_and_split_dataset(ELECTRICITY, 'D', look_back, forecast_days)
 
     # Create PyTorch model
     print(X_train.shape, y_train.shape)
@@ -116,7 +113,7 @@ def objective(trial):
     lstm_units = trial.suggest_int('lstm_units', 50, 200, step=50)
     dropout = trial.suggest_float('dropout', 0.1, 0.5, step=0.1)
     activation = trial.suggest_categorical('activation', ['ReLU', 'LeakyReLU', 'Tanh', 'ELU'])
-    output_dim = forecast_days
+
     model = PyTorchModel(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,
                          activation, output_dim)
 
@@ -133,9 +130,17 @@ def objective(trial):
 
     return val_loss
 
+
 def main():
+    # Load and split dataset
+    look_back = 10
+    forecast_days = 2
+    X_train, X_val, y_train, y_val, _ = preprocess_augment_and_split_dataset(ELECTRICITY, 'D', look_back, forecast_days)
+    input_dim = X_train.shape[2]
+
+    # Create Optuna study
     study = optuna.create_study(direction='minimize')
-    study.optimize(objective, n_trials=10)
+    study.optimize(lambda trial: objective(trial, X_train, y_train, X_val, y_val, forecast_days), n_trials=1)
 
     print("Best trial:")
     print(study.best_trial.params)
@@ -143,33 +148,27 @@ def main():
     # Extract best hyperparameters
     best_params = study.best_trial.params
 
-    # Load and split dataset
-    X_train, X_val, y_train, y_val, _ = preprocess_augment_and_split_dataset(ELECTRICITY, 'D', look_back=7, forecast_period=2)
-
     # Create PyTorch model with best hyperparameters
-    input_dim = X_train.shape[2]
     model = PyTorchModel(input_dim, best_params['num_cnn_layers'], best_params['num_lstm_layers'],
                          best_params['filters'], best_params['kernel_size'], best_params['lstm_units'],
-                         best_params['dropout'], best_params['activation'], output_dim=2)
+                         best_params['dropout'], best_params['activation'], output_dim=forecast_days)
+    print(model)
 
     # Move model to GPU if available
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model.to(device)
 
-    # Move data to GPU
-    X_val, y_val = torch.Tensor(X_val).to(device), torch.Tensor(y_val).to(device)
-
     # Train the best model on full training set
     val_loss = train_model(model, torch.Tensor(X_train).to(device), torch.Tensor(y_train).to(device),
-                           X_val, y_val,
+                           torch.Tensor(X_val).to(device), torch.Tensor(y_val).to(device),
                            optuna.trial.FixedTrial(best_params), device)
 
     # Calculate RMSE on test set
     criterion = nn.MSELoss()
     model.eval()
     with torch.no_grad():
-        test_output = model(X_val)
-        test_loss = criterion(test_output, y_val)
+        test_output = model(torch.Tensor(X_val).to(device))
+        test_loss = criterion(test_output, torch.Tensor(y_val).to(device))
         rmse = torch.sqrt(test_loss).item()
 
     print("RMSE of the best model:", rmse)
