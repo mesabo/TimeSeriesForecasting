@@ -1,16 +1,26 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 20 18:35:52 2024
+Created on 20/03/2024
+🚀 Welcome to the Awesome Python Script 🚀
 
-@author: mesabo
+User: mesabo
+Email: mesabo18@gmail.com / messouaboya17@gmail.com
+Github: https://github.com/mesabo
+Univ: Hosei University
+Dept: Science and Engineering
+Lab: Prof YU Keping's Lab
+
 """
-import os
+
 import logging
+import os
 
 # Define model names as variables
 EPOCH = 2
 N_TRIAL = 1
+PATIENCE = 10
+MIN_DELTA = 0.0001
 BATCH_SIZE = 64
 SEEDER = 2024
 LOOK_BACKS = [7]
@@ -97,8 +107,10 @@ def is_running_on_server():
 logger = logging.getLogger(__name__)
 if is_running_on_server():
     logger.info("The code is running on a server.")
-    EPOCH = 1000
+    EPOCH = 500
     N_TRIAL = 30
+    PATIENCE = 15
+    MIN_DELTA = 0.00001
     BATCH_SIZE = 64
     SEEDER = 2024
     LOOK_BACKS = [7, 10, 14, 30]

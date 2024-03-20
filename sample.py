@@ -1,11 +1,28 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on 20/03/2024
+🚀 Welcome to the Awesome Python Script 🚀
+
+User: mesabo
+Email: mesabo18@gmail.com / messouaboya17@gmail.com
+Github: https://github.com/mesabo
+Univ: Hosei University
+Dept: Science and Engineering
+Lab: Prof YU Keping's Lab
+
+"""
+
+import json
+import logging
+
+import optuna
 import torch
 import torch.nn as nn
 import torch.optim as optim
-import optuna
-import json
+
 from input_processing.data_processing import preprocess_augment_and_split_dataset
 from utils.constants import (ELECTRICITY, N_TRIAL)
-import logging
 
 logger = logging.getLogger(__name__)
 

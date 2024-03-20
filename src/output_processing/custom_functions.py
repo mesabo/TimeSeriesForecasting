@@ -1,21 +1,31 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 20 17:49:39 2024
+Created on 20/03/2024
+🚀 Welcome to the Awesome Python Script 🚀
 
-@author: mesabo
+User: mesabo
+Email: mesabo18@gmail.com / messouaboya17@gmail.com
+Github: https://github.com/mesabo
+Univ: Hosei University
+Dept: Science and Engineering
+Lab: Prof YU Keping's Lab
+
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.metrics import (mean_absolute_error, mean_squared_error,
-                             mean_absolute_percentage_error)
 import json
-import os
-import torch
 import logging
+import os
+
+import matplotlib.pyplot as plt
+import numpy as np
+import torch
+from sklearn.metrics import (mean_squared_error, mean_absolute_error,
+                             mean_absolute_percentage_error,
+                             root_mean_squared_error)
 
 logger = logging.getLogger(__name__)
+
 
 def format_duration(duration):
     if duration < 60:
@@ -30,13 +40,26 @@ def format_duration(duration):
         return f"{duration / 31536000:.2f} year"
 
 
+def make_predictions(model, testX, testY, scaler):
+    model.eval()
+    testX_tensor = torch.Tensor(testX)
+
+    with torch.no_grad():
+        testPredict = model(testX_tensor).cpu().numpy()
+
+    testPredict = scaler.inverse_transform(testPredict)
+    testOutput = scaler.inverse_transform(testY)
+
+    return testPredict, testOutput
+
+
 def evaluate_model(testY, testPredict):
     mse = round(mean_squared_error(testY, testPredict), 6)
     mae = round(mean_absolute_error(testY, testPredict), 6)
-    rmse = round(mean_squared_error(testY, testPredict, squared=False), 6)
+    rmse = round(root_mean_squared_error(testY, testPredict), 6)
     mape = mean_absolute_percentage_error(testY, testPredict) * 100
     mape = round(mape, 6)
-    logger.info(f"[-----MODEL METRICS-----]\n")
+    logger.info("[-----MODEL METRICS-----]\n")
     logger.info(f"[-----MSE: {mse}-----]\n")
     logger.info(f"[-----MAE: {mae}-----]\n")
     logger.info(f"[-----RMSE: {rmse}-----]\n")
@@ -62,61 +85,88 @@ def predict_next_x_days(model, X_new, days=7):
     return predictions
 
 
-def plot_losses(history, model, save_path=None):
-    plt.plot(history.history['loss'], label='Training Loss')
-    plt.plot(history.history['val_loss'], label='Validation Loss')
-    plt.title(f'{model} - Model Loss')
-    plt.xlabel('Epoch')
-    plt.ylabel('Loss')
-    plt.legend()
-
-    if save_path:
-        os.makedirs(save_path, exist_ok=True)
-        file_name = f'{model}_evaluation_metrics.png'
-        file_path = os.path.join(save_path, file_name)
-        plt.savefig(file_path)
-
-    plt.show()
-
-
-def plot_evaluation_metrics(mse, mae, rmse, mape, model, save_path=None):
-    metrics = ['MSE', 'MAE', 'RMSE']
-    values = [mse, mae, rmse]
-
-    plt.bar(metrics, values, color=['orange', 'limegreen', 'steelblue'])
-    plt.title(f'{model} - Evaluation Metrics')
-    plt.xlabel('Metric')
-    plt.ylabel('Value')
-    if save_path:
-        os.makedirs(save_path, exist_ok=True)
-        file_name = f'{model}_evaluation_metrics.png'
-        file_path = os.path.join(save_path, file_name)
-        plt.savefig(file_path)
-
-    plt.show()
-
-
-def plot_predictions(predicted, actual, model, save_path=None):
+def plot_predictions(predicted, actual, model_type, look_back, forecast_day, save_path=None):
     plt.figure(figsize=(10, 6))
     plt.plot(actual[:int(len(actual / 3)), 0], label='Actual')
     plt.plot(predicted[:int(len(predicted / 3)), 0], label='Predicted')
     plt.xlabel('Period')
     plt.ylabel('Global Active Power')
-    plt.title(f'{model} - Actual vs Predicted')
+    plt.title(f'{model_type} - Actual vs Predicted')
     plt.legend()
     if save_path:
-        os.makedirs(save_path, exist_ok=True)
-        file_name = f'{model}_prediction.png'
-        file_path = os.path.join(save_path, file_name)
+        file_name = f'{look_back}_{forecast_day}_prediction.png'
+        file_path = os.path.join(save_path, 'IMAGE', file_name)
+        plt.savefig(file_path)
+    plt.show()
+
+
+def plot_evaluation_metrics(mse, mae, rmse, mape, model_type, look_back, forecast_day, save_path=None):
+    metrics = ['MSE', 'MAE', 'RMSE',
+               # 'MAPE',
+               ]
+    values = [mse, mae, rmse,
+              # mape
+              ]
+
+    plt.bar(metrics, values, color=['limegreen', 'steelblue', 'purple',
+                                    # 'orange',
+                                    ])
+    plt.title(f'{model_type} - Evaluation Metrics')
+    plt.xlabel('Metric')
+    plt.ylabel('Value')
+
+    if save_path:
+        file_name = f'{look_back}_{forecast_day}_evaluation_metrics.png'
+        file_path = os.path.join(save_path, 'image', file_name)
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
         plt.savefig(file_path)
 
     plt.show()
 
 
-def save_evaluation_metrics(saving_path, model_type, mse, mae, rmse, mape):
-    os.makedirs(os.path.dirname(saving_path), exist_ok=True)
-    if os.path.exists(saving_path):
-        with open(saving_path, 'r') as file:
+def plot_losses(history, model_type, look_back, forecast_day, save_path=None):
+    plt.plot(history['train_loss'], label='Training Loss')
+    plt.plot(history['val_loss'], label='Validation Loss')
+    plt.title(f'{model_type} - Model Loss')
+    plt.xlabel('Epoch')
+    plt.ylabel('Loss')
+    plt.legend()
+
+    if save_path:
+        file_name = f'{look_back}_{forecast_day}_evaluation_metrics.png'
+        file_dir = os.path.join(save_path, 'image')
+        os.makedirs(file_dir, exist_ok=True)
+        file_path = os.path.join(file_dir, file_name)
+        plt.savefig(file_path)
+
+    plt.show()
+
+
+def plot_predictions(predicted, actual, model_type, look_back, forecast_day, save_path=None):
+    plt.figure(figsize=(10, 6))
+    plt.plot(actual[:int(len(actual / 3)), 0], label='Actual')
+    plt.plot(predicted[:int(len(predicted / 3)), 0], label='Predicted')
+    plt.xlabel('Period')
+    plt.ylabel('Global Active Power')
+    plt.title(f'{model_type} - Actual vs Predicted')
+    plt.legend()
+    if save_path:
+        file_name = f'{look_back}_{forecast_day}_prediction.png'
+        file_dir = os.path.join(save_path, 'image')
+        os.makedirs(file_dir, exist_ok=True)
+        file_path = os.path.join(file_dir, file_name)
+        plt.savefig(file_path)
+    plt.show()
+
+
+def save_evaluation_metrics(mse, mae, rmse, mape, model_type, look_back, forecast_day, save_path=None):
+    file_name = f'{look_back}_{forecast_day}_evaluation_metrics.json'
+    file_path = os.path.join(save_path, 'doc', file_name)
+
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
             evaluation_data = json.load(file)
     else:
         evaluation_data = {}
@@ -128,25 +178,28 @@ def save_evaluation_metrics(saving_path, model_type, mse, mae, rmse, mape):
         'MAPE': mape
     }
 
-    # Save the updated data back to the file
-    with open(saving_path, 'w') as file:
+    with open(file_path, 'w') as file:
         json.dump(evaluation_data, file, indent=2)
 
 
-def save_loss_to_txt(saving_path, model_type, history):
-    os.makedirs(os.path.dirname(saving_path), exist_ok=True)
-    if os.path.exists(saving_path):
-        with open(saving_path, 'r') as file:
+def save_loss_to_json(history, model_type, look_back, forecast_day, save_path=None):
+    file_name = f'{look_back}_{forecast_day}_evaluation_losses.json'
+    file_dir = os.path.join(save_path, 'doc')
+    os.makedirs(file_dir, exist_ok=True)
+    file_path = os.path.join(file_dir, file_name)
+
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
             loss_data = json.load(file)
     else:
         loss_data = {}
 
     loss_data[model_type] = {
-        'training_loss': history.history['loss'],
-        'validation_loss': history.history['val_loss']
+        'training_loss': history['train_loss'],
+        'validation_loss': history['val_loss']
     }
 
-    with open(saving_path, 'w') as file:
+    with open(file_path, 'w') as file:
         json.dump(loss_data, file, indent=2)
 
 

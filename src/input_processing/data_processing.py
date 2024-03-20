@@ -1,20 +1,28 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 20 17:50:00 2024
+Created on 20/03/2024
+🚀 Welcome to the Awesome Python Script 🚀
 
-@author: mesabo
+User: mesabo
+Email: mesabo18@gmail.com / messouaboya17@gmail.com
+Github: https://github.com/mesabo
+Univ: Hosei University
+Dept: Science and Engineering
+Lab: Prof YU Keping's Lab
+
 """
-
 # input_processing.py
 
-import pandas as pd
+import json
+
 import numpy as np
+import pandas as pd
 from scipy.interpolate import interp1d
 from sklearn.preprocessing import MinMaxScaler
-import json
+
 from utils.constants import (DATASET_FEATURES_PATH, ELECTRICITY_DATASET_PATH,
-                                 ELECTRICITY)
+                             ELECTRICITY)
 
 
 def fill_missing_data(data, meth=2):
@@ -57,6 +65,7 @@ def create_dataset(dataset, look_back, forecast_period):
             dataset[(i + look_back):(i + look_back + forecast_period), 0])
     return np.array(X), np.array(Y)
 
+
 def time_warping(series, sigma=0.2):
     n = len(series)
     time_stretching = np.cumsum(np.random.randn(n) * sigma)
@@ -66,6 +75,7 @@ def time_warping(series, sigma=0.2):
     warped_time = new_time + time_stretching * (n - 1)
     warped_series = interp1d(warped_time, series, bounds_error=False, fill_value="extrapolate")(new_time)
     return warped_series
+
 
 def load_dataset(dataset_type='electricity', period='D'):
     if dataset_type == ELECTRICITY:
@@ -106,6 +116,34 @@ def preprocess_augment_and_split_dataset(url, period, look_back, forecast_period
 
     # Split dataset into input sequences (X) and target sequences (y)
     X, y = create_dataset(warped_dataset, look_back, forecast_period)
+
+    # Split dataset into train and test sets
+    train_size = int(len(X) * 0.8)
+    test_size = len(X) - train_size
+
+    X_train, X_test = X[:train_size], X[-test_size:]
+    y_train, y_test = y[:train_size], y[-test_size:]
+
+    return X_train, X_test, y_train, y_test, scaler_target
+
+
+def preprocess_and_split_dataset(url, period, look_back, forecast_period):
+    # Load dataset and fill missing values
+    features, target = load_dataset(url, period)
+
+    # Normalize features
+    scaler_features = MinMaxScaler(feature_range=(0, 1))
+    scaled_features = scaler_features.fit_transform(features)
+
+    # Normalize target variable
+    scaler_target = MinMaxScaler(feature_range=(0, 1))
+    scaled_target = scaler_target.fit_transform(target)
+
+    # Combine scaled features and target variable
+    scaled_dataset = np.concatenate((scaled_features, scaled_target), axis=1)
+
+    # Split dataset into input sequences (X) and target sequences (y)
+    X, y = create_dataset(scaled_dataset, look_back, forecast_period)
 
     # Split dataset into train and test sets
     train_size = int(len(X) * 0.8)

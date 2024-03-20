@@ -1,10 +1,25 @@
 # model_tuner.py
+# !/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on 20/03/2024
+🚀 Welcome to the Awesome Python Script 🚀
+
+User: mesabo
+Email: mesabo18@gmail.com / messouaboya17@gmail.com
+Github: https://github.com/mesabo
+Univ: Hosei University
+Dept: Science and Engineering
+Lab: Prof YU Keping's Lab
+
+"""
 
 import torch
-from hyperparameter_tuning.model_training import train_model
+
+from hyperparameter_tuning.build_best_model import train_model
 from hyperparameter_tuning.hyper_models import BuildCNNLSTMAttentionModel
 from utils.constants import (
-    LSTM_MODEL, GRU_MODEL, CNN_MODEL, BiLSTM_MODEL, BiGRU_MODEL,
+    GRU_MODEL, CNN_MODEL, BiLSTM_MODEL, BiGRU_MODEL,
     LSTM_ATTENTION_MODEL, GRU_ATTENTION_MODEL, CNN_ATTENTION_MODEL,
     BiLSTM_ATTENTION_MODEL, BiGRU_ATTENTION_MODEL,
     CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_BiLSTM_MODEL, CNN_BiGRU_MODEL,
@@ -13,13 +28,8 @@ from utils.constants import (
     CNN_ATTENTION_LSTM_ATTENTION_MODEL, CNN_ATTENTION_GRU_ATTENTION_MODEL,
     CNN_ATTENTION_BiLSTM_ATTENTION_MODEL, CNN_ATTENTION_BiGRU_ATTENTION_MODEL,
     CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL,
-    CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL,
-    SAVING_MODEL_DIR, SAVING_METRIC_DIR, SAVING_LOSS_DIR, BASE_PATH,
-    SAVING_PREDICTION_DIR, SAVING_METRICS_PATH, SAVING_LOSSES_PATH, SEEDER,
-    HYPERBAND_PATH, DATASET_FEATURES_PATH, ELECTRICITY_DATASET_PATH,
-    ELECTRICITY
+    CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL
 )
-
 
 
 class ModelTuner:
@@ -43,7 +53,7 @@ class ModelTuner:
         X_val, y_val = torch.Tensor(self.X_val).to(device), torch.Tensor(self.y_val).to(device)
 
         # Train the model
-        val_loss = train_model(model, X_train, y_train, X_val, y_val, trial, device)
+        val_loss, _ = train_model(model, X_train, y_train, X_val, y_val, trial, device)
 
         return val_loss
 

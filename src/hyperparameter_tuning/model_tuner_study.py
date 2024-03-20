@@ -1,16 +1,27 @@
-import optuna
-import json
-import os
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on 20/03/2024
+🚀 Welcome to the Awesome Python Script 🚀
+
+User: mesabo
+Email: mesabo18@gmail.com / messouaboya17@gmail.com
+Github: https://github.com/mesabo
+Univ: Hosei University
+Dept: Science and Engineering
+Lab: Prof YU Keping's Lab
+
+"""
+
+import logging
 import time
+
+import optuna
 
 from hyperparameter_tuning.model_tuner import ModelTuner
 from input_processing.data_processing import preprocess_augment_and_split_dataset
-from output_processing.custom_functions import (evaluate_model, plot_losses, plot_evaluation_metrics,
-                                                save_evaluation_metrics, save_loss_to_txt,
-                                                predict_next_x_days, save_trained_model,
-                                                load_trained_model, plot_predictions, save_best_params)
-from utils.constants import (BASE_PATH, N_TRIAL, HYPERBAND_PATH, ELECTRICITY)
-import logging
+from output_processing.custom_functions import (save_best_params)
+from utils.constants import (BASE_PATH, N_TRIAL, HYPERBAND_PATH, ELECTRICITY, OUTPUT_PATH)
 
 logger = logging.getLogger(__name__)
 
@@ -26,7 +37,7 @@ def model_tuner_and_study(look_backs, forecast_periods, model_types, series_type
                                                                                          forecast_day)
 
                 for model in model_types:
-                    path = f"{BASE_PATH + _ser}/{HYPERBAND_PATH + model}/{look_back_day}_{forecast_day}_best_params.json"
+                    saving_path_best_params = f"{BASE_PATH + OUTPUT_PATH + _ser}/{HYPERBAND_PATH}/{model}/{look_back_day}_{forecast_day}_best_params.json"
                     start_time = time.time()
                     model_tuner = ModelTuner(X_train, y_train, X_val, y_val, forecast_day, model_types[0])
 
@@ -41,6 +52,6 @@ def model_tuner_and_study(look_backs, forecast_periods, model_types, series_type
                     best_params = study.best_trial.params
                     end_time = time.time()
                     total_time = end_time - start_time
-                    save_best_params(path, model, best_params, total_time)
+                    save_best_params(saving_path_best_params, model, best_params, total_time)
 
     return model_tuner, study, best_params

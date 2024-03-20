@@ -1,5 +1,18 @@
 # hyper_models.py
+# !/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on 20/03/2024
+🚀 Welcome to the Awesome Python Script 🚀
 
+User: mesabo
+Email: mesabo18@gmail.com / messouaboya17@gmail.com
+Github: https://github.com/mesabo
+Univ: Hosei University
+Dept: Science and Engineering
+Lab: Prof YU Keping's Lab
+
+"""
 import torch
 import torch.nn as nn
 
@@ -18,6 +31,7 @@ class Attention(nn.Module):
         attention_weights = torch.softmax(attention_scores, dim=1).unsqueeze(2)
         context_vector = torch.sum(encoder_outputs * attention_weights, dim=1)
         return context_vector
+
 
 class BuildCNNLSTMAttentionModel(nn.Module):
     def __init__(self, input_dim=None, num_cnn_layers=None, num_lstm_layers=None, filters=None, kernel_size=None,
@@ -45,7 +59,6 @@ class BuildCNNLSTMAttentionModel(nn.Module):
         activation = activation or default_activation
 
         # Rest of your initialization code...
-
 
         cnn_layers = []
         for _ in range(num_cnn_layers):
