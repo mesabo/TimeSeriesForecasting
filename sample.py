@@ -22,7 +22,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 from input_processing.data_processing import preprocess_augment_and_split_dataset
-from utils.constants import (ELECTRICITY, N_TRIAL)
+from utils.constants import (ELECTRICITY, N_TRIAL, MIN_DELTA, EPOCH)
 
 logger = logging.getLogger(__name__)
 
@@ -81,19 +81,19 @@ class PyTorchModel(nn.Module):
         return self.activation(out)
 
 
-def train_model(model, X_train, y_train, X_val, y_val, trial, device):
-    lr = trial.suggest_float('lr', 1e-5, 1e-1, log=True)
+def train_model(model, X_train, y_train, X_val, y_val, trial, device, PATIENT=15):
+    lr = trial.suggest_float('lr', 1e-6, 1e-1, log=True)
     optimizer = getattr(optim, trial.suggest_categorical('optimizer', ['Adam', 'SGD', 'RMSprop']))(model.parameters(),
                                                                                                    lr=lr)
     criterion = nn.MSELoss()
 
     # Early stopping parameters
-    patience = 5
-    min_delta = 0.001
+    patience = PATIENT
+    min_delta = MIN_DELTA
     early_stopping_counter = 0
     best_val_loss = float('inf')
 
-    epochs = 1  # Maximum number of epochs
+    epochs = EPOCH  # Maximum number of epochs
     for epoch in range(epochs):
         model.train()
         optimizer.zero_grad()

@@ -108,7 +108,7 @@ logger = logging.getLogger(__name__)
 if is_running_on_server():
     logger.info("The code is running on a server.")
     EPOCH = 500
-    N_TRIAL = 30
+    N_TRIAL = 15
     PATIENCE = 15
     MIN_DELTA = 0.00001
     BATCH_SIZE = 64
@@ -116,11 +116,11 @@ if is_running_on_server():
     LOOK_BACKS = [7, 10, 14, 30]
     FORECAST_PERIODS = [1, 2, 3, 6, 7]
 
-    BASE_PATH = '/home/23r9802_chen/messou/TimeSerieForecasting/'
-    DATASET_FEATURES_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/data_features.json"
-    ELECTRICITY_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/electricity/household_power_consumption.txt"
-    GOLD_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/gold/GoldPrice.csv"
-    AIR_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/air/AirQualityUCI.csv"
-    OUTPUT_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/output/"
+    BASE_PATH = ''
+    DATASET_FEATURES_PATH = "input/data_features.json"
+    ELECTRICITY_DATASET_PATH = "input/electricity/household_power_consumption.txt"
+    GOLD_DATASET_PATH = "input/gold/GoldPrice.csv"
+    AIR_DATASET_PATH = "input/air/AirQualityUCI.csv"
+    OUTPUT_PATH = "output/"
 else:
     logger.info("The code is running locally.")
