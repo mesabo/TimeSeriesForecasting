@@ -1,2 +1,3 @@
 input/household_power_consumption.txt
 input/electricity/household_power_consumption.txt
+*.log
