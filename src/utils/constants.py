@@ -5,14 +5,16 @@ Created on Tue Feb 20 18:35:52 2024
 
 @author: mesabo
 """
+import os
+import logging
 
 # Define model names as variables
-EPOCH = 100
+EPOCH = 2
+N_TRIAL = 1
 BATCH_SIZE = 64
 SEEDER = 2024
-PARAMS_GRID = {'batch_size': [16, 32, 64, 128, 256, 512]}
-LOOK_BACKS = [7, 10, 14, 30]
-FORECAST_PERIODS = [1, 2, 3, 6, 7]
+LOOK_BACKS = [7]
+FORECAST_PERIODS = [2]
 ELECTRICITY = 'electricity'
 WATER = 'water'
 WIND = 'wind'
@@ -71,14 +73,42 @@ SAVING_LOSS_DIR = "losses/"
 SAVING_METRICS_PATH = "metrics/evaluation_metrics.json"
 SAVING_LOSSES_PATH = "losses/models_losses.json"
 
-# Define dataset paths
-DATASET_FEATURES_PATH = "./input/data_features.json"
-ELECTRICITY_DATASET_PATH = "./input/electricity/household_power_consumption.txt"
-GOLD_DATASET_PATH = "../input/gold/GoldPrice.csv"
-AIR_DATASET_PATH = "../input/air/AirQualityUCI.csv"
+# Define dirs
+DATASET_FEATURES_PATH = f"input/data_features.json"
+ELECTRICITY_DATASET_PATH = f"input/electricity/household_power_consumption.txt"
+GOLD_DATASET_PATH = f"input/gold/GoldPrice.csv"
+AIR_DATASET_PATH = f"input/air/AirQualityUCI.csv"
+OUTPUT_PATH = f"output/"
+BASE_PATH = f'./'
 
-BASE_PATH = "./output/"
 CHECK_PATH = "checks/"
 CHECK_HYPERBAND = "hyperband/"
 HYPERBAND_PATH = "hyperband/"
+
+
 # CHECK_HYPERBAND_PATH = "hyperband/best_params.json"
+
+
+def is_running_on_server():
+    # We assume that the server is Linux
+    return os.uname().sysname == 'Linux'
+
+
+logger = logging.getLogger(__name__)
+if is_running_on_server():
+    logger.info("The code is running on a server.")
+    EPOCH = 1000
+    N_TRIAL = 30
+    BATCH_SIZE = 64
+    SEEDER = 2024
+    LOOK_BACKS = [7, 10, 14, 30]
+    FORECAST_PERIODS = [1, 2, 3, 6, 7]
+
+    BASE_PATH = '/home/23r9802_chen/messou/TimeSerieForecasting/'
+    DATASET_FEATURES_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/data_features.json"
+    ELECTRICITY_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/electricity/household_power_consumption.txt"
+    GOLD_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/gold/GoldPrice.csv"
+    AIR_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/air/AirQualityUCI.csv"
+    OUTPUT_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/output/"
+else:
+    logger.info("The code is running locally.")

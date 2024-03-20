@@ -3,8 +3,12 @@ import torch.nn as nn
 import torch.optim as optim
 import optuna
 import json
-from src.input_processing.data_processing import  preprocess_augment_and_split_dataset
-from src.utils.constants import ELECTRICITY
+from input_processing.data_processing import preprocess_augment_and_split_dataset
+from utils.constants import (ELECTRICITY, N_TRIAL)
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 class Attention(nn.Module):
     def __init__(self, hidden_dim):
@@ -20,6 +24,7 @@ class Attention(nn.Module):
         attention_weights = torch.softmax(attention_scores, dim=1).unsqueeze(2)
         context_vector = torch.sum(encoder_outputs * attention_weights, dim=1)
         return context_vector
+
 
 class PyTorchModel(nn.Module):
     def __init__(self, input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,
@@ -58,6 +63,7 @@ class PyTorchModel(nn.Module):
         out = self.fc(context_vector)  # Output shape: (batch_size, output_dim)
         return self.activation(out)
 
+
 def train_model(model, X_train, y_train, X_val, y_val, trial, device):
     lr = trial.suggest_float('lr', 1e-5, 1e-1, log=True)
     optimizer = getattr(optim, trial.suggest_categorical('optimizer', ['Adam', 'SGD', 'RMSprop']))(model.parameters(),
@@ -93,18 +99,17 @@ def train_model(model, X_train, y_train, X_val, y_val, trial, device):
             early_stopping_counter += 1
 
         if early_stopping_counter >= patience:
-            print(f'Early stopping at epoch {epoch + 1}')
+            logger.info(f'Early stopping at epoch {epoch + 1}')
             break
 
     return val_loss.item()
 
 
 def objective(trial, X_train, y_train, X_val, y_val, output_dim):
-
     # Load and split dataset
 
     # Create PyTorch model
-    print(X_train.shape, y_train.shape)
+    logger.info(X_train.shape, y_train.shape)
     input_dim = X_train.shape[2]
     num_cnn_layers = trial.suggest_int('num_cnn_layers', 1, 3)
     num_lstm_layers = trial.suggest_int('num_lstm_layers', 1, 3)
@@ -140,10 +145,10 @@ def main():
 
     # Create Optuna study
     study = optuna.create_study(direction='minimize')
-    study.optimize(lambda trial: objective(trial, X_train, y_train, X_val, y_val, forecast_days), n_trials=1)
+    study.optimize(lambda trial: objective(trial, X_train, y_train, X_val, y_val, forecast_days), n_trials=N_TRIAL)
 
-    print("Best trial:")
-    print(study.best_trial.params)
+    logger.info("Best trial:")
+    logger.info(study.best_trial.params)
 
     # Extract best hyperparameters
     best_params = study.best_trial.params
@@ -152,7 +157,7 @@ def main():
     model = PyTorchModel(input_dim, best_params['num_cnn_layers'], best_params['num_lstm_layers'],
                          best_params['filters'], best_params['kernel_size'], best_params['lstm_units'],
                          best_params['dropout'], best_params['activation'], output_dim=forecast_days)
-    print(model)
+    logger.info(model)
 
     # Move model to GPU if available
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -171,13 +176,13 @@ def main():
         test_loss = criterion(test_output, torch.Tensor(y_val).to(device))
         rmse = torch.sqrt(test_loss).item()
 
-    print("RMSE of the best model:", rmse)
+    logger.info(f"RMSE of the best model: {rmse}")
 
     output_file_path = f"./output/sample.json"
     with open(output_file_path, "w") as output_file:
         json.dump(study.best_trial.params, output_file)
 
-    print("Output saved to:", output_file_path)
+    logger.info("Output saved to: {output_file_path}")
 
 
 if __name__ == "__main__":

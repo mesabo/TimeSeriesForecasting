@@ -4,7 +4,7 @@
 source ~/.bashrc
 hostname
 echo USED GPUs=$CUDA_VISIBLE_DEVICES
-
-source activate messou_env
-cd /home/23r9802_chen/messou/TimeSerieForecasting/
+pwd
+source activate time_serie_torch
+cd /home/23r9802_chen/messou/TimeSerieForecasting/src/
 python main.py

@@ -13,7 +13,7 @@ import numpy as np
 from scipy.interpolate import interp1d
 from sklearn.preprocessing import MinMaxScaler
 import json
-from src.utils.constants import (DATASET_FEATURES_PATH, ELECTRICITY_DATASET_PATH,
+from utils.constants import (DATASET_FEATURES_PATH, ELECTRICITY_DATASET_PATH,
                                  ELECTRICITY)
 
 

@@ -3,21 +3,25 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from src.utils.constants import EPOCH
+from utils.constants import (EPOCH, BATCH_SIZE)
+import logging
+
+logger = logging.getLogger(__name__)
+
 def train_model(model, X_train, y_train, X_val, y_val, trial, device):
-    lr = trial.suggest_float('lr', 1e-5, 1e-1, log=True)
+    lr = trial.suggest_float('lr', 1e-6, 1e-1, log=True)
     optimizer = getattr(optim, trial.suggest_categorical('optimizer', ['Adam', 'SGD', 'RMSprop']))(model.parameters(),
                                                                                                    lr=lr)
     criterion = nn.MSELoss()
 
     # Early stopping parameters
-    patience = 5
-    min_delta = 0.001
+    patience = 10
+    min_delta = 0.0001
     early_stopping_counter = 0
     best_val_loss = float('inf')
 
-    epochs = 1  # EPOCH
-    batch_size = 64  # Choose an appropriate batch size
+    epochs = EPOCH
+    batch_size = BATCH_SIZE  # Choose an appropriate batch size
 
     for epoch in range(epochs):
         # Iterate over mini-batches
@@ -45,7 +49,7 @@ def train_model(model, X_train, y_train, X_val, y_val, trial, device):
         with torch.no_grad():
             val_output = model(X_val)
             val_loss = criterion(val_output, y_val)
-        print(f'Epoch [{epoch + 1}/{epochs}], Train Loss: {loss.item():.4f}, Validation Loss: {val_loss.item():.4f}')
+        logger.info(f'Epoch [{epoch + 1}/{epochs}], Train Loss: {loss.item():.4f}, Validation Loss: {val_loss.item():.4f}')
 
         # Early stopping logic
         if val_loss < best_val_loss - min_delta:
@@ -55,7 +59,7 @@ def train_model(model, X_train, y_train, X_val, y_val, trial, device):
             early_stopping_counter += 1
 
         if early_stopping_counter >= patience:
-            print(f'Early stopping at epoch {epoch + 1}')
+            logger.info(f'Early stopping at epoch {epoch + 1}')
             break
 
     return val_loss.item()

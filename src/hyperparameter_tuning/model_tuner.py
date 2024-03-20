@@ -1,9 +1,9 @@
 # model_tuner.py
 
 import torch
-from src.hyperparameter_tuning.model_training import train_model
-from src.hyperparameter_tuning.hyper_models import BuildCNNLSTMAttentionModel
-from src.utils.constants import (
+from hyperparameter_tuning.model_training import train_model
+from hyperparameter_tuning.hyper_models import BuildCNNLSTMAttentionModel
+from utils.constants import (
     LSTM_MODEL, GRU_MODEL, CNN_MODEL, BiLSTM_MODEL, BiGRU_MODEL,
     LSTM_ATTENTION_MODEL, GRU_ATTENTION_MODEL, CNN_ATTENTION_MODEL,
     BiLSTM_ATTENTION_MODEL, BiGRU_ATTENTION_MODEL,
@@ -19,6 +19,7 @@ from src.utils.constants import (
     HYPERBAND_PATH, DATASET_FEATURES_PATH, ELECTRICITY_DATASET_PATH,
     ELECTRICITY
 )
+
 
 
 class ModelTuner:

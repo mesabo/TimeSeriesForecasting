@@ -13,7 +13,9 @@ from sklearn.metrics import (mean_absolute_error, mean_squared_error,
 import json
 import os
 import torch
+import logging
 
+logger = logging.getLogger(__name__)
 
 def format_duration(duration):
     if duration < 60:
@@ -34,11 +36,11 @@ def evaluate_model(testY, testPredict):
     rmse = round(mean_squared_error(testY, testPredict, squared=False), 6)
     mape = mean_absolute_percentage_error(testY, testPredict) * 100
     mape = round(mape, 6)
-    print(f"[-----MODEL METRICS-----]\n")
-    print(f"[-----MSE: {mse}-----]\n")
-    print(f"[-----MAE: {mae}-----]\n")
-    print(f"[-----RMSE: {rmse}-----]\n")
-    print(f"[-----MAPE: {mape}-----]\n")
+    logger.info(f"[-----MODEL METRICS-----]\n")
+    logger.info(f"[-----MSE: {mse}-----]\n")
+    logger.info(f"[-----MAE: {mae}-----]\n")
+    logger.info(f"[-----RMSE: {rmse}-----]\n")
+    logger.info(f"[-----MAPE: {mape}-----]\n")
     return mse, mae, rmse, mape
 
 
