@@ -19,7 +19,7 @@ import torch
 from hyperparameter_tuning.build_best_model import train_model
 from hyperparameter_tuning.hyper_models import BuildCNNLSTMAttentionModel
 from utils.constants import (
-    GRU_MODEL, CNN_MODEL, BiLSTM_MODEL, BiGRU_MODEL,
+    LSTM_MODEL, GRU_MODEL, CNN_MODEL, BiLSTM_MODEL, BiGRU_MODEL,
     LSTM_ATTENTION_MODEL, GRU_ATTENTION_MODEL, CNN_ATTENTION_MODEL,
     BiLSTM_ATTENTION_MODEL, BiGRU_ATTENTION_MODEL,
     CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_BiLSTM_MODEL, CNN_BiGRU_MODEL,
@@ -58,8 +58,8 @@ class ModelTuner:
         return val_loss
 
     def build_model(self, trial):
-        if self.model_type == CNN_LSTM_ATTENTION_MODEL:
-            return BuildCNNLSTMAttentionModel(trial=trial, X_train=self.X_train, output_dim=self.output_dim)
+        if self.model_type == LSTM_MODEL:
+            pass
         elif self.model_type == GRU_MODEL:
             pass
             # return build_gru_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
@@ -107,7 +107,7 @@ class ModelTuner:
             # return build_cnn_bigru_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
         # -----------------------------Hybrid + Attention models-------------------------------
         elif self.model_type == CNN_LSTM_ATTENTION_MODEL:
-            pass
+            return BuildCNNLSTMAttentionModel(trial=trial, X_train=self.X_train, output_dim=self.output_dim)
             # return build_cnn_lstm_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
         elif self.model_type == CNN_GRU_ATTENTION_MODEL:
             pass

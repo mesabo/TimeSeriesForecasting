@@ -1,0 +1,14 @@
+{
+  "CNN-LSTM-Attention-based": {
+    "num_cnn_layers": 3,
+    "num_lstm_layers": 1,
+    "filters": 96,
+    "kernel_size": 2,
+    "lstm_units": 100,
+    "dropout": 0.30000000000000004,
+    "activation": "Tanh",
+    "lr": 0.0028754310194231882,
+    "optimizer": "Adam",
+    "processing_time": "2.47 min"
+  }
+}

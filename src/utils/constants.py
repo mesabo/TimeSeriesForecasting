@@ -16,19 +16,6 @@ Lab: Prof YU Keping's Lab
 import logging
 import os
 
-# Define model names as variables
-EPOCH = 2
-N_TRIAL = 1
-PATIENCE = 10
-MIN_DELTA = 0.0001
-BATCH_SIZE = 64
-SEEDER = 2024
-LOOK_BACKS = [7]
-FORECAST_PERIODS = [2]
-ELECTRICITY = 'electricity'
-WATER = 'water'
-WIND = 'wind'
-GOLD = 'gold'
 # Simple models
 LSTM_MODEL = "LSTM-based"
 GRU_MODEL = "GRU-based"
@@ -75,6 +62,22 @@ CNN_ATTENTION_GRU_ATTENTION_MODEL = "CNN-Attention-GRU-Attention-based"
 CNN_ATTENTION_BiLSTM_ATTENTION_MODEL = "CNN-Attention-BiLSTM-Attention-based"
 CNN_ATTENTION_BiGRU_ATTENTION_MODEL = "CNN-Attention-BiGRU-Attention-based"
 
+'''---------------------------------------------------------------------------'''
+
+# Define model names as variables
+EPOCH = 2
+N_TRIAL = 2
+PATIENCE = 2
+MIN_DELTA = 0.1
+BATCH_SIZE = 64
+SEEDER = 2024
+LOOK_BACKS = [7]
+FORECAST_PERIODS = [2]
+ELECTRICITY = 'electricity'
+WATER = 'water'
+WIND = 'wind'
+GOLD = 'gold'
+
 # Define saving paths
 SAVING_MODEL_DIR = "../models/"
 SAVING_METRIC_DIR = "metrics/"
@@ -88,12 +91,12 @@ DATASET_FEATURES_PATH = f"input/data_features.json"
 ELECTRICITY_DATASET_PATH = f"input/electricity/household_power_consumption.txt"
 GOLD_DATASET_PATH = f"input/gold/GoldPrice.csv"
 AIR_DATASET_PATH = f"input/air/AirQualityUCI.csv"
-OUTPUT_PATH = f"output/"
+OUTPUT_PATH = f"output-cpu/"
 BASE_PATH = f'./'
-
 CHECK_PATH = "checks/"
 CHECK_HYPERBAND = "hyperband/"
 HYPERBAND_PATH = "hyperband/"
+LOG_FILE = 'time_serie_cpu.log'
 
 
 # CHECK_HYPERBAND_PATH = "hyperband/best_params.json"
@@ -120,6 +123,7 @@ if is_running_on_server():
     ELECTRICITY_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/electricity/household_power_consumption.txt"
     GOLD_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/gold/GoldPrice.csv"
     AIR_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/air/AirQualityUCI.csv"
-    OUTPUT_PATH = "/output/"
+    OUTPUT_PATH = "/output-gpu/"
+    LOG_FILE = f"time_serie_gpu.log"
 else:
     logger.info("The code is running locally.")

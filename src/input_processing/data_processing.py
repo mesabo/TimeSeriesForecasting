@@ -14,8 +14,6 @@ Lab: Prof YU Keping's Lab
 """
 # input_processing.py
 
-import json
-
 import numpy as np
 import pandas as pd
 from scipy.interpolate import interp1d
@@ -23,6 +21,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 from utils.constants import (DATASET_FEATURES_PATH, ELECTRICITY_DATASET_PATH,
                              ELECTRICITY)
+from utils.file_loader import read_features
 
 
 def fill_missing_data(data, meth=2):
@@ -44,17 +43,6 @@ def fill_missing_data(data, meth=2):
         data = data.dropna()
 
     return data
-
-
-def read_features(features_path, key_name):
-    with open(features_path, "r") as file:
-        data_features = json.load(file)
-
-    if key_name in data_features:
-        features = data_features[key_name]
-        return features
-    else:
-        raise KeyError(f"Key '{key_name}' not found in the JSON file.")
 
 
 def create_dataset(dataset, look_back, forecast_period):

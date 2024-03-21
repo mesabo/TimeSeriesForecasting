@@ -16,6 +16,8 @@ Lab: Prof YU Keping's Lab
 import torch
 import torch.nn as nn
 
+'''-----------------------------ATTENTION Layers-------------------------------'''
+
 
 class Attention(nn.Module):
     def __init__(self, hidden_dim):
@@ -33,9 +35,20 @@ class Attention(nn.Module):
         return context_vector
 
 
+'''-----------------------------Simple models-------------------------------'''
+
+'''-----------------------------Simple Bi models-------------------------------'''
+
+'''-----------------------------Simple + Attention models-------------------------------'''
+
+'''-----------------------------Bi + Attention models-------------------------------'''
+
+'''-----------------------------Hybrid models-------------------------------'''
+
+
 class BuildCNNLSTMAttentionModel(nn.Module):
-    def __init__(self, input_dim=None, num_cnn_layers=None, num_lstm_layers=None, filters=None, kernel_size=None,
-                 lstm_units=None, dropout=None, activation=None, trial=None, X_train=None, output_dim=None):
+    def __init__(self, input_dim=None, best_params=None, trial=None,
+                 X_train=None, output_dim=None):
         super(BuildCNNLSTMAttentionModel, self).__init__()
 
         if trial is not None:
@@ -46,19 +59,21 @@ class BuildCNNLSTMAttentionModel(nn.Module):
             default_kernel_size = trial.suggest_categorical('kernel_size', [1, 2, 3])
             default_lstm_units = trial.suggest_int('lstm_units', 50, 200, step=50)
             default_dropout = trial.suggest_float('dropout', 0.1, 0.5, step=0.1)
-            default_activation = trial.suggest_categorical('activation', ['ReLU', 'LeakyReLU', 'Tanh', 'ELU'])
+            default_activation = trial.suggest_categorical('activation', ['ReLU', 'LeakyReLU', 'Tanh'])
+            default_l1_regularizer = trial.suggest_float('l1_regularizer', 1e-6, 1e-2, log=True)
+            default_l2_regularizer = trial.suggest_float('l2_regularizer', 1e-6, 1e-2, log=True)
 
         # Use default values if not provided
         input_dim = input_dim or default_input_dim
-        num_cnn_layers = num_cnn_layers or default_num_cnn_layers
-        num_lstm_layers = num_lstm_layers or default_num_lstm_layers
-        filters = filters or default_filters
-        kernel_size = kernel_size or default_kernel_size
-        lstm_units = lstm_units or default_lstm_units
-        dropout = dropout or default_dropout
-        activation = activation or default_activation
-
-        # Rest of your initialization code...
+        num_cnn_layers = best_params['num_cnn_layers'] or default_num_cnn_layers
+        num_lstm_layers = best_params['num_lstm_layers'] or default_num_lstm_layers
+        filters = best_params['filters'] or default_filters
+        kernel_size = best_params['kernel_size'] or default_kernel_size
+        lstm_units = best_params['lstm_units'] or default_lstm_units
+        dropout = best_params['dropout'] or default_dropout
+        activation = best_params['activation'] or default_activation
+        l1_regularizer = best_params['l1_regularizer'] or default_l1_regularizer
+        l2_regularizer = best_params['l2_regularizer'] or default_l2_regularizer
 
         cnn_layers = []
         for _ in range(num_cnn_layers):
@@ -74,6 +89,9 @@ class BuildCNNLSTMAttentionModel(nn.Module):
 
         self.attention = Attention(lstm_units)
         self.fc = nn.Linear(lstm_units, output_dim)
+        self.fc.weight_regularizer = l2_regularizer
+        self.fc.bias_regularizer = l1_regularizer
+
         self.dropout = nn.Dropout(dropout)
         self.activation = getattr(nn, activation)()
 
@@ -92,3 +110,8 @@ class BuildCNNLSTMAttentionModel(nn.Module):
 
         out = self.fc(context_vector)  # Output shape: (batch_size, output_dim)
         return self.activation(out)
+
+
+'''-----------------------------Deep Hybrid + Attention models-------------------------------'''
+
+'''-----------------------------Deep More Hybrid + Attention models-------------------------------'''

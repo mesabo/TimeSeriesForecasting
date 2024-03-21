@@ -32,7 +32,7 @@ def model_tuner_and_study(look_backs, forecast_periods, model_types, series_type
             for forecast_day in forecast_periods:
                 logger.info(
                     f"Tuning with series_type={_ser} | look_back={look_back_day} | forecast_period={forecast_day}")
-                X_train, X_val, y_train, y_val, _ = preprocess_augment_and_split_dataset(ELECTRICITY, 'D',
+                X_train, X_val, y_train, y_val, _ = preprocess_augment_and_split_dataset(_ser, 'D',
                                                                                          look_back_day,
                                                                                          forecast_day)
 
@@ -54,4 +54,4 @@ def model_tuner_and_study(look_backs, forecast_periods, model_types, series_type
                     total_time = end_time - start_time
                     save_best_params(saving_path_best_params, model, best_params, total_time)
 
-    return model_tuner, study, best_params
+    #return model_tuner, study, best_params

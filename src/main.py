@@ -25,10 +25,9 @@ import psutil
 import torch
 
 from hyperparameter_tuning.model_tuner_study import model_tuner_and_study
-from input_processing.data_processing import preprocess_augment_and_split_dataset
-from models.model_training import (build_best_model)
+from models.model_training import build_best_model
 from utils.constants import (
-    CNN_LSTM_ATTENTION_MODEL, ELECTRICITY, LOOK_BACKS, FORECAST_PERIODS, SEEDER
+    CNN_LSTM_ATTENTION_MODEL, ELECTRICITY, LOOK_BACKS, FORECAST_PERIODS, SEEDER, LOG_FILE
 )
 
 # Set seed for reproducibility
@@ -51,15 +50,10 @@ def main():
     forecast_periods = FORECAST_PERIODS  # [3]
 
     # Create ModelTuner instance and Optuna study
-    model_tuner, study, best_params = model_tuner_and_study(look_backs, forecast_periods, model_types, series)
+    #model_tuner_and_study(look_backs, forecast_periods, model_types, series)
 
     # Build best model
-    X_train, X_val, y_train, y_val, scaler = preprocess_augment_and_split_dataset(ELECTRICITY, 'D', look_backs[0],
-                                                                                  forecast_periods[0])
-    input_dim = X_train.shape[2]
-    build_best_model(study, X_train, y_train, X_val, y_val, scaler, input_dim,
-                     look_backs[0], forecast_periods[0], model_types[0],
-                     series[0])
+    build_best_model(look_backs, forecast_periods, model_types, series)
 
 
 '''----------------------------------------------------------------------------------------------'''
@@ -68,7 +62,7 @@ def main():
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='time_serie_gpu.log',
+    filename=LOG_FILE,
     filemode='w'
 )
 
@@ -96,8 +90,8 @@ def some_function():
         logger.info(f"GPU Memory Total: {gpu_info.total_memory} bytes")
     else:
         logger.info("Tuning on CPU server")
-        logger.info(f"CPU Name: {cpu_count}")
-        logger.info(f"CPU Cores: {cpu_model}")
+        logger.info(f"CPU Name: {cpu_model}")
+        logger.info(f"CPU Cores: {cpu_count}")
 
 
 '''----------------------------------------------------------------------------------------------'''
