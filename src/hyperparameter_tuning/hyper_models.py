@@ -52,34 +52,51 @@ class BuildCNNLSTMAttentionModel(nn.Module):
         super(BuildCNNLSTMAttentionModel, self).__init__()
 
         if trial is not None:
-            default_input_dim = X_train.shape[2]
-            default_num_cnn_layers = trial.suggest_int('num_cnn_layers', 1, 3)
-            default_num_lstm_layers = trial.suggest_int('num_lstm_layers', 1, 3)
-            default_filters = trial.suggest_categorical('filters', [32, 64, 96, 128])
-            default_kernel_size = trial.suggest_categorical('kernel_size', [1, 2, 3])
-            default_lstm_units = trial.suggest_int('lstm_units', 50, 200, step=50)
-            default_dropout = trial.suggest_float('dropout', 0.1, 0.5, step=0.1)
-            default_activation = trial.suggest_categorical('activation', ['ReLU', 'LeakyReLU', 'Tanh'])
-            default_l1_regularizer = trial.suggest_float('l1_regularizer', 1e-6, 1e-2, log=True)
-            default_l2_regularizer = trial.suggest_float('l2_regularizer', 1e-6, 1e-2, log=True)
+            input_dim = X_train.shape[2]
+            num_cnn_layers = trial.suggest_int('num_cnn_layers', 1, 3)
+            num_lstm_layers = trial.suggest_int('num_lstm_layers', 1, 3)
+            filters = trial.suggest_categorical('filters', [32, 64, 96, 128])
+            kernel_size = trial.suggest_categorical('kernel_size', [1, 2, 3])
+            pool_kernel_size = trial.suggest_categorical('pool_kernel_size', [1, 2, 3, 4])
+            stride = trial.suggest_categorical('stride', [1, 2, 3])
+            padding = trial.suggest_categorical('padding', ['same', 'valid'])
+            dilation = trial.suggest_categorical('dilation', [1, 2])
+            lstm_units = trial.suggest_int('lstm_units', 50, 200, step=50)
+            dropout = trial.suggest_float('dropout', 0.1, 0.5, step=0.1)
+            activation = trial.suggest_categorical('activation', ['ReLU', 'LeakyReLU', 'Tanh'])
+            l1_regularizer = trial.suggest_float('l1_regularizer', 1e-6, 1e-2, log=True)
+            l2_regularizer = trial.suggest_float('l2_regularizer', 1e-6, 1e-2, log=True)
 
-        # Use default values if not provided
-        input_dim = input_dim or default_input_dim
-        num_cnn_layers = best_params['num_cnn_layers'] or default_num_cnn_layers
-        num_lstm_layers = best_params['num_lstm_layers'] or default_num_lstm_layers
-        filters = best_params['filters'] or default_filters
-        kernel_size = best_params['kernel_size'] or default_kernel_size
-        lstm_units = best_params['lstm_units'] or default_lstm_units
-        dropout = best_params['dropout'] or default_dropout
-        activation = best_params['activation'] or default_activation
-        l1_regularizer = best_params['l1_regularizer'] or default_l1_regularizer
-        l2_regularizer = best_params['l2_regularizer'] or default_l2_regularizer
+        else:
+            # Use best_params if provided meaning trial is None
+            input_dim = input_dim or X_train.shape[2]
+            num_cnn_layers = best_params['num_cnn_layers']
+            num_lstm_layers = best_params['num_lstm_layers']
+            filters = best_params['filters']
+            kernel_size = best_params['kernel_size']
+            pool_kernel_size = best_params['pool_kernel_size']
+            stride = best_params['stride']
+            padding = best_params['padding']
+            dilation = best_params['dilation']
+            lstm_units = best_params['lstm_units']
+            dropout = best_params['dropout']
+            activation = best_params['activation']
+            l1_regularizer = best_params['l1_regularizer']
+            l2_regularizer = best_params['l2_regularizer']
 
         cnn_layers = []
         for _ in range(num_cnn_layers):
-            cnn_layers.append(nn.Conv1d(input_dim, filters, kernel_size))
-            cnn_layers.append(nn.ReLU())
+            if padding == 'same':
+                # Calculate padding to ensure output has the same length as input
+                padding_value = (pool_kernel_size - 1) // 2
+            else:
+                padding_value = 0
+            cnn_layers.append(nn.Conv1d(input_dim, filters, min(kernel_size, input_dim), padding=padding_value))
+            cnn_layers.append(nn.BatchNorm1d(filters))
+            cnn_layers.append(nn.MaxPool1d(kernel_size=pool_kernel_size or 2, stride=stride, padding=padding_value,
+                                           dilation=dilation))
             input_dim = filters
+
         self.cnn_layers = nn.Sequential(*cnn_layers)
 
         self.lstm_layers = nn.ModuleList()

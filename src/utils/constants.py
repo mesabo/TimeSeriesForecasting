@@ -65,14 +65,14 @@ CNN_ATTENTION_BiGRU_ATTENTION_MODEL = "CNN-Attention-BiGRU-Attention-based"
 '''---------------------------------------------------------------------------'''
 
 # Define model names as variables
-EPOCH = 2
-N_TRIAL = 2
-PATIENCE = 2
-MIN_DELTA = 0.1
+EPOCH = 50
+N_TRIAL = 10
+PATIENCE = 10
+MIN_DELTA = 0.00001
 BATCH_SIZE = 64
 SEEDER = 2024
-LOOK_BACKS = [7]
-FORECAST_PERIODS = [2]
+LOOK_BACKS = [14]
+FORECAST_PERIODS = [1]
 ELECTRICITY = 'electricity'
 WATER = 'water'
 WIND = 'wind'

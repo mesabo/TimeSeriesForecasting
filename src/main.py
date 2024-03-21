@@ -50,7 +50,7 @@ def main():
     forecast_periods = FORECAST_PERIODS  # [3]
 
     # Create ModelTuner instance and Optuna study
-    #model_tuner_and_study(look_backs, forecast_periods, model_types, series)
+    model_tuner_and_study(look_backs, forecast_periods, model_types, series)
 
     # Build best model
     build_best_model(look_backs, forecast_periods, model_types, series)
