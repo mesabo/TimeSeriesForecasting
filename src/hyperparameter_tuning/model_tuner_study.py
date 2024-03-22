@@ -37,7 +37,7 @@ def model_tuner_and_study(look_backs, forecast_periods, model_types, serie_type)
                                                                                           forecast_day)
                 saving_path_best_params = f"{BASE_PATH + OUTPUT_PATH + serie_type}/{HYPERBAND_PATH}/{model}/{look_back_day}_{forecast_day}_best_params.json"
                 start_time = time.time()
-                model_tuner = ModelTuner(X_train, y_train, X_test, y_test, forecast_day, model_types[0])
+                model_tuner = ModelTuner(X_train, y_train, X_test, y_test, forecast_day, model)
 
                 # Optuna study
                 study = optuna.create_study(direction='minimize')

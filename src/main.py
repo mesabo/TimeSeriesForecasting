@@ -14,6 +14,7 @@ Dept: Science and Engineering
 Lab: Prof YU Keping's Lab
 
 """
+import argparse
 import logging
 import os
 import platform
@@ -27,11 +28,15 @@ import torch
 from hyperparameter_tuning.model_tuner_study import model_tuner_and_study
 from models.model_training import ComprehensiveModelTrainer
 from utils.constants import (
-    ELECTRICITY, LOOK_BACKS, FORECAST_PERIODS, SEEDER, LOG_FILE, CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
-    CNN_BiLSTM_ATTENTION_MODEL,
-    CNN_BiGRU_ATTENTION_MODEL, CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL, CNN_ATTENTION_BiLSTM_MODEL,
-    CNN_ATTENTION_LSTM_ATTENTION_MODEL
-)
+    ELECTRICITY, LOOK_BACKS, FORECAST_PERIODS, SEEDER, LOG_FILE,
+    LSTM_MODEL, GRU_MODEL, CNN_MODEL, BiLSTM_MODEL, BiGRU_MODEL,
+    CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_BiLSTM_MODEL, CNN_BiGRU_MODEL,
+    LSTM_ATTENTION_MODEL, GRU_ATTENTION_MODEL, CNN_ATTENTION_MODEL,
+    BiLSTM_ATTENTION_MODEL, BiGRU_ATTENTION_MODEL,
+    CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
+    CNN_BiLSTM_ATTENTION_MODEL, CNN_BiGRU_ATTENTION_MODEL,
+    CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL,
+    CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL, )
 
 # Set seed for reproducibility
 os.environ['CUBLAS_WORKSPACE_CONFIG'] = ":4096:8"
@@ -46,15 +51,38 @@ np.random.seed(SEEDER)
 '''----------------------------------------------------------------------------------------------'''
 
 
-def main():
+def main(model_group):
     series = ELECTRICITY
-    model_types = [CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
-                   CNN_BiLSTM_ATTENTION_MODEL, CNN_BiGRU_ATTENTION_MODEL,
-                   CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL,
-                   CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_LSTM_ATTENTION_MODEL]
+    model_group1 = [LSTM_MODEL, GRU_MODEL, CNN_MODEL, BiLSTM_MODEL, BiGRU_MODEL, ]
+    model_group2 = [
+        CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_BiLSTM_MODEL, CNN_BiGRU_MODEL, ]
+    model_group3 = [LSTM_ATTENTION_MODEL, GRU_ATTENTION_MODEL, CNN_ATTENTION_MODEL,
+                    BiLSTM_ATTENTION_MODEL, BiGRU_ATTENTION_MODEL, ]
+    model_group4 = [CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
+                    CNN_BiLSTM_ATTENTION_MODEL, CNN_BiGRU_ATTENTION_MODEL, ]
+    model_group5 = [CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL,
+                    CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL, ]
+    model_group0 = [CNN_MODEL]
 
     look_backs = LOOK_BACKS  # [7]
     forecast_periods = FORECAST_PERIODS  # [3]
+
+    # Determine model types based on model_group
+    model_types = []
+    if model_group == 1:
+        model_types = model_group1
+    elif model_group == 2:
+        model_types = model_group2
+    elif model_group == 3:
+        model_types = model_group3
+    elif model_group == 4:
+        model_types = model_group4
+    elif model_group == 5:
+        model_types = model_group5
+    else:
+        model_types = model_group0
+
+    logger.info(f"model_group: {model_group} |||| model_types: {model_types}")
 
     # Create ModelTuner instance and Optuna study
     model_tuner_and_study(look_backs, forecast_periods, model_types, series)
@@ -110,4 +138,11 @@ if __name__ == "__main__":
     some_function()
     current_dir = os.path.abspath(os.path.dirname(__file__))
     logger.info(f"CURRENT PATH IS: {current_dir}")
-    main()
+
+    # Parse the command-line arguments
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model_group", type=int, help="Model group parameter: group of models to process")
+    args = parser.parse_args()
+
+    # Call the main function and pass the model_group parameter
+    main(args.model_group or 0)

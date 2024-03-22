@@ -84,8 +84,8 @@ HYPERBAND_PATH = "hyperband/"
 LOG_FILE = 'time_serie_cpu.log'
 
 # Define model names as variables
-EPOCHS = 1
-N_TRIAL = 1
+EPOCHS = 2
+N_TRIAL = 2
 SEEDER = 2024
 LOOK_BACKS = [14]
 FORECAST_PERIODS = [1]
