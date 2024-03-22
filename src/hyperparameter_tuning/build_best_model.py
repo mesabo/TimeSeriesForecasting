@@ -73,8 +73,7 @@ def train_model(model, X_train, y_train, X_val, y_val, device):
             avg_val_loss = total_val_loss / len(X_val)
             val_losses.append(avg_val_loss)
 
-        logger.info(
-            f'Epoch [{epoch + 1}/{EPOCHS}], Train Loss: {avg_train_loss:.4f}, Validation Loss: {avg_val_loss:.4f}')
+        logger.info(f'Epoch [{epoch + 1}/{EPOCHS}], Train Loss: {avg_train_loss:.4f}, Validation Loss: {avg_val_loss:.4f}')
 
         # Early stopping
         if avg_val_loss < best_val_loss - min_delta:
@@ -88,4 +87,5 @@ def train_model(model, X_train, y_train, X_val, y_val, device):
             break
 
     history = {'train_loss': train_losses, 'val_loss': val_losses}
+    logger.info(f'>> EarlyStopp {early_stopping_counter} >> train_loss: {train_losses} >> val_loss: {val_losses}')
     return best_val_loss, history

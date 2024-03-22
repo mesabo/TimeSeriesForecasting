@@ -81,7 +81,7 @@ BASE_PATH = f'./'
 CHECK_PATH = "checks/"
 CHECK_HYPERBAND = "hyperband/"
 HYPERBAND_PATH = "hyperband/"
-LOG_FILE = 'time_serie_cpu.log'
+LOG_FILE = './logs/cpu/time_serie_cpu.log'
 
 # Define model names as variables
 EPOCHS = 2
@@ -100,8 +100,8 @@ def is_running_on_server():
 logger = logging.getLogger(__name__)
 if is_running_on_server():
     logger.info("The code is running on a server.")
-    EPOCHS = 500
-    N_TRIAL = 15
+    EPOCHS = 100
+    N_TRIAL = 1000
     LOOK_BACKS = [7, 10, 14, 30]
     FORECAST_PERIODS = [1, 2, 3, 6, 7]
 
@@ -111,6 +111,6 @@ if is_running_on_server():
     GOLD_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/gold/GoldPrice.csv"
     AIR_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/air/AirQualityUCI.csv"
     OUTPUT_PATH = "/output-gpu/"
-    LOG_FILE = f"time_serie_gpu.log"
+    LOG_FILE = f"./logs/gpu/time_serie_gpu"
 else:
     logger.info("The code is running locally.")

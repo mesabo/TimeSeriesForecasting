@@ -95,14 +95,6 @@ def main(model_group):
 
 '''----------------------------------------------------------------------------------------------'''
 
-# Logging settings config
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    filename=LOG_FILE,
-    filemode='a'
-)
-
 logger = logging.getLogger(__name__)
 
 # Add hostname to log messages
@@ -134,15 +126,25 @@ def some_function():
 '''----------------------------------------------------------------------------------------------'''
 
 if __name__ == "__main__":
-    # Call the function to trigger logging
-    some_function()
-    current_dir = os.path.abspath(os.path.dirname(__file__))
-    logger.info(f"CURRENT PATH IS: {current_dir}")
 
     # Parse the command-line arguments
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_group", type=int, help="Model group parameter: group of models to process")
     args = parser.parse_args()
+    log_filename = LOG_FILE + str(args.model_group or 0) + '.log'
+
+    # Logging settings config
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        filename=log_filename,
+        filemode='a'
+    )
+
+    # Call the function to trigger logging
+    some_function()
+    current_dir = os.path.abspath(os.path.dirname(__file__))
+    logger.info(f"CURRENT PATH IS: {current_dir}")
 
     # Call the main function and pass the model_group parameter
     main(args.model_group or 0)
