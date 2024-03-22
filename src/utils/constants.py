@@ -63,21 +63,6 @@ CNN_ATTENTION_BiLSTM_ATTENTION_MODEL = "CNN-Attention-BiLSTM-Attention-based"
 CNN_ATTENTION_BiGRU_ATTENTION_MODEL = "CNN-Attention-BiGRU-Attention-based"
 
 '''---------------------------------------------------------------------------'''
-
-# Define model names as variables
-EPOCH = 50
-N_TRIAL = 10
-PATIENCE = 10
-MIN_DELTA = 0.00001
-BATCH_SIZE = 64
-SEEDER = 2024
-LOOK_BACKS = [14]
-FORECAST_PERIODS = [1]
-ELECTRICITY = 'electricity'
-WATER = 'water'
-WIND = 'wind'
-GOLD = 'gold'
-
 # Define saving paths
 SAVING_MODEL_DIR = "../models/"
 SAVING_METRIC_DIR = "metrics/"
@@ -98,8 +83,13 @@ CHECK_HYPERBAND = "hyperband/"
 HYPERBAND_PATH = "hyperband/"
 LOG_FILE = 'time_serie_cpu.log'
 
-
-# CHECK_HYPERBAND_PATH = "hyperband/best_params.json"
+# Define model names as variables
+EPOCHS = 1
+N_TRIAL = 1
+SEEDER = 2024
+LOOK_BACKS = [14]
+FORECAST_PERIODS = [1]
+ELECTRICITY = 'electricity'
 
 
 def is_running_on_server():
@@ -110,11 +100,8 @@ def is_running_on_server():
 logger = logging.getLogger(__name__)
 if is_running_on_server():
     logger.info("The code is running on a server.")
-    EPOCH = 500
+    EPOCHS = 500
     N_TRIAL = 15
-    PATIENCE = 15
-    MIN_DELTA = 0.00001
-    BATCH_SIZE = 64
     LOOK_BACKS = [7, 10, 14, 30]
     FORECAST_PERIODS = [1, 2, 3, 6, 7]
 

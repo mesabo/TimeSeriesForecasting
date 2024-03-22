@@ -25,12 +25,16 @@ import psutil
 import torch
 
 from hyperparameter_tuning.model_tuner_study import model_tuner_and_study
-from models.model_training import build_best_model
+from models.model_training import ComprehensiveModelTrainer
 from utils.constants import (
-    CNN_LSTM_ATTENTION_MODEL, ELECTRICITY, LOOK_BACKS, FORECAST_PERIODS, SEEDER, LOG_FILE
+    ELECTRICITY, LOOK_BACKS, FORECAST_PERIODS, SEEDER, LOG_FILE, CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
+    CNN_BiLSTM_ATTENTION_MODEL,
+    CNN_BiGRU_ATTENTION_MODEL, CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL, CNN_ATTENTION_BiLSTM_MODEL,
+    CNN_ATTENTION_LSTM_ATTENTION_MODEL
 )
 
 # Set seed for reproducibility
+os.environ['CUBLAS_WORKSPACE_CONFIG'] = ":4096:8"
 torch.manual_seed(SEEDER)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
@@ -43,8 +47,11 @@ np.random.seed(SEEDER)
 
 
 def main():
-    series = [ELECTRICITY]
-    model_types = [CNN_LSTM_ATTENTION_MODEL]
+    series = ELECTRICITY
+    model_types = [CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
+                   CNN_BiLSTM_ATTENTION_MODEL, CNN_BiGRU_ATTENTION_MODEL,
+                   CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL,
+                   CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_LSTM_ATTENTION_MODEL]
 
     look_backs = LOOK_BACKS  # [7]
     forecast_periods = FORECAST_PERIODS  # [3]
@@ -53,7 +60,9 @@ def main():
     model_tuner_and_study(look_backs, forecast_periods, model_types, series)
 
     # Build best model
-    build_best_model(look_backs, forecast_periods, model_types, series)
+    trainer = ComprehensiveModelTrainer(look_backs=look_backs, forecast_periods=forecast_periods,
+                                        model_types=model_types, series_types=series)
+    trainer.build_and_train_models()
 
 
 '''----------------------------------------------------------------------------------------------'''
@@ -63,7 +72,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     filename=LOG_FILE,
-    filemode='w'
+    filemode='a'
 )
 
 logger = logging.getLogger(__name__)

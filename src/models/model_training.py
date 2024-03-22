@@ -15,14 +15,13 @@ Lab: Prof YU Keping's Lab
 
 import logging
 
-import optuna
 import torch
 
 from hyperparameter_tuning.build_best_model import train_model
-from hyperparameter_tuning.hyper_models import BuildCNNLSTMAttentionModel
-from input_processing.data_processing import preprocess_and_split_dataset, preprocess_augment_and_split_dataset
+from input_processing.data_processing import default_preprocess_and_split_dataset
+from models.model_selection import ModelSelection
 from output_processing.custom_functions import (evaluate_model, plot_evaluation_metrics, save_evaluation_metrics,
-                                                plot_losses, save_loss_to_json, make_predictions, plot_predictions)
+                                                plot_losses, save_losses, make_predictions, plot_predictions)
 from utils.constants import (
     SAVING_METRIC_DIR, SAVING_LOSS_DIR, BASE_PATH,
     OUTPUT_PATH, SAVING_PREDICTION_DIR, HYPERBAND_PATH
@@ -32,69 +31,92 @@ from utils.file_loader import read_best_params
 logger = logging.getLogger(__name__)
 
 
-def train_best_model(model, x_train, y_train, x_val, y_val, best_params, device):
-    _, train_history = train_model(model, torch.Tensor(x_train).to(device), torch.Tensor(y_train).to(device),
-                                   torch.Tensor(x_val).to(device), torch.Tensor(y_val).to(device),
-                                   optuna.trial.FixedTrial(best_params), device)
-    return train_history
+class ComprehensiveModelTrainer:
+    def __init__(self, series_types, look_backs, forecast_periods, model_types):
+        self.series_types = series_types
+        self.look_backs = look_backs
+        self.forecast_periods = forecast_periods
+        self.model_types = model_types
 
+    def train_best_model(self, model, x_train, y_train, x_val, y_val, device):
+        _, train_history = train_model(model, torch.Tensor(x_train).to(device), torch.Tensor(y_train).to(device),
+                                       torch.Tensor(x_val).to(device), torch.Tensor(y_val).to(device), device)
+        return train_history
 
-def build_best_model(look_backs, forecast_periods, model_types, series_type):
-    for _ser in series_type:
-        for look_back_day in look_backs:
-            for forecast_day in forecast_periods:
-                logger.info(
-                    f"Training with series_type={_ser} | look_back={look_back_day} | forecast_period={forecast_day}")
-                x_train, x_val, y_train, y_val, _ = preprocess_augment_and_split_dataset(_ser, 'D',
-                                                                                         look_back_day,
-                                                                                         forecast_day)
-                for model_type in model_types:
-                    logger.info(f'**************************************************************\n'
-                                f'** {model_type}\n'
-                                f'**************************************************************')
+    def build_and_train_models(self):
+        serie_type = self.series_types
+        for model_type in self.model_types:
+            for look_back_day in self.look_backs:
+                for forecast_day in self.forecast_periods:
+                    logger.info(
+                        f"Training with series_type={serie_type} | look_back={look_back_day} | forecast_period={forecast_day}")
+                    x_train, x_test, y_train, y_test, scaler = default_preprocess_and_split_dataset(serie_type, 'D',
+                                                                                                    look_back_day,
+                                                                                                    forecast_day)
+                    self.process_model_type(model_type, serie_type, look_back_day, forecast_day, x_train, x_test,
+                                            y_train, y_test, scaler)
 
-                    saving_path_metric = f"{BASE_PATH + OUTPUT_PATH + _ser}/{SAVING_METRIC_DIR}/{model_type}/"
-                    saving_path_loss = f"{BASE_PATH + OUTPUT_PATH + _ser}/{SAVING_LOSS_DIR}/{model_type}/"
-                    saving_path_prediction = f"{BASE_PATH + OUTPUT_PATH + _ser}/{SAVING_PREDICTION_DIR}/{model_type}/"
-                    loading_path_best_params = f"{BASE_PATH + OUTPUT_PATH + _ser}/{HYPERBAND_PATH}{model_type}/{look_back_day}_{forecast_day}_best_params.json"
-                    logger.info(f"LOADING  PATH 📌📌📌  {loading_path_best_params}  📌📌📌")
+    def process_model_type(self, model_type, series_type, look_back_day, forecast_day, x_train, x_test, y_train, y_test,
+                           scaler):
+        logger.info(f'\n**************************************************************\n'
+                    f'** {model_type}\n'
+                    f'**************************************************************')
 
-                    # LOAD PYTORCH MODEL WITH BEST HYPERPARAMETERS
-                    best_params = read_best_params(loading_path_best_params, model_type)
-                    logger.info("Best params loaded: %s", best_params)
-                    input_dim = x_train.shape[2]
+        loading_path_best_params = f"{BASE_PATH + OUTPUT_PATH + series_type}/{HYPERBAND_PATH}{model_type}/{look_back_day}_{forecast_day}_best_params.json"
+        logger.info(f"LOADING  PATH 📌📌📌  {loading_path_best_params}  📌📌📌")
 
-                    model = BuildCNNLSTMAttentionModel(input_dim=input_dim,
-                                                       best_params=best_params,
-                                                       output_dim=forecast_day,
-                                                       trial=None)
+        # LOAD PYTORCH MODEL WITH BEST HYPERPARAMETERS
+        best_params = read_best_params(loading_path_best_params, model_type)
+        logger.info("Best params loaded: %s", best_params)
 
-                    # Move model to GPU if available
-                    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-                    model.to(device)
+        model_selector = ModelSelection(X_train=x_train, output_dim=forecast_day, model_type=model_type)
+        model = model_selector.select_model(best_params=best_params, trial=None)
 
-                    # TRAIN THE BEST MODEL
-                    train_history = train_best_model(model, x_train, y_train, x_val, y_val, best_params, device)
-                    # Convert model predictions to numpy arrays
-                    with torch.no_grad():
-                        val_output = model(torch.Tensor(x_val).to(device))
-                        val_predictions = val_output.cpu().numpy()
+        # Move model to GPU if available
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        model.to(device)
 
-                    # EVALUATE MODEL
-                    X_train_pred, X_test_pred, y_train_pred, y_test_pred, scaler = preprocess_and_split_dataset(
-                        _ser, 'D',
-                        look_back_day, forecast_day)
+        train_history = self.train_best_model(model, x_train, y_train, x_test, y_test, device)
+        self.evaluate_and_save_results(model, x_test, y_test, scaler, train_history, model_type, series_type,
+                                       look_back_day,
+                                       forecast_day)
 
-                    mse, mae, rmse, mape = evaluate_model(y_val, val_predictions)
-                    plot_evaluation_metrics(mse, mae, rmse, mape, model_type, look_back_day, forecast_day,
-                                            saving_path_metric)
-                    save_evaluation_metrics(mse, mae, rmse, mape, model_type, look_back_day, forecast_day,
-                                            saving_path_metric)
+    def evaluate_and_save_results(self, model, x_test, y_test, scaler, train_history, model_type, series_type,
+                                  look_back_day,
+                                  forecast_day):
+        saving_path_metric = f"{BASE_PATH + OUTPUT_PATH + series_type}/{SAVING_METRIC_DIR}/{model_type}/"
+        saving_path_loss = f"{BASE_PATH + OUTPUT_PATH + series_type}/{SAVING_LOSS_DIR}/{model_type}/"
+        saving_path_prediction = f"{BASE_PATH + OUTPUT_PATH + series_type}/{SAVING_PREDICTION_DIR}/{model_type}/"
 
-                    # Plot losses
-                    plot_losses(train_history, model_type, look_back_day, forecast_day, saving_path_loss)
-                    save_loss_to_json(train_history, model_type, look_back_day, forecast_day, saving_path_loss)
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-                    testPredict, testOutput = make_predictions(model, X_test_pred, y_test_pred, scaler)
-                    plot_predictions(testPredict, testOutput, model_type, look_back_day, forecast_day,
-                                     saving_path_prediction)
+        # Making predictions
+        model.eval()
+        with torch.no_grad():
+            predictions = model(torch.Tensor(x_test).to(device))
+            predictions = predictions.cpu().numpy()
+
+        # Calculating evaluation metrics
+        mse, mae, rmse, mape = evaluate_model(y_test,
+                                              predictions)
+
+        # Logging the metrics for this model
+        logger.info(
+            f"Model: {model_type}, Look Back: {look_back_day}, Forecast Day: {forecast_day}, MSE: {mse}, MAE: {mae}, RMSE: {rmse}, MAPE: {mape}")
+
+        # Saving the evaluation metrics - ensure the saving path is defined and accessible
+        plot_evaluation_metrics(mse, mae, rmse, mape, model_type, look_back_day, forecast_day,
+                                saving_path_metric)
+        save_evaluation_metrics(mse, mae, rmse, mape, model_type, look_back_day, forecast_day,
+                                saving_path_metric)
+
+        # Plotting and saving loss curves
+        plot_losses(train_history, model_type, look_back_day, forecast_day,
+                    saving_path_loss)
+        save_losses(train_history, model_type, look_back_day, forecast_day,
+                    saving_path_loss)
+
+        # Plotting and saving predictions
+        testPredict, testOutput = make_predictions(model, x_test, y_test, scaler)
+        plot_predictions(testPredict, testOutput, model_type, look_back_day, forecast_day,
+                         saving_path_prediction)

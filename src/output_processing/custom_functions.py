@@ -144,8 +144,8 @@ def plot_losses(history, model_type, look_back, forecast_day, save_path=None):
 
 def plot_predictions(predicted, actual, model_type, look_back, forecast_day, save_path=None):
     plt.figure(figsize=(10, 6))
-    plt.plot(actual[:int(len(actual / 3)), 0], label='Actual')
-    plt.plot(predicted[:int(len(predicted / 3)), 0], label='Predicted')
+    plt.plot(actual[:, 0], label='Actual')
+    plt.plot(predicted[:, 0], label='Predicted')
     plt.xlabel('Period')
     plt.ylabel('Global Active Power')
     plt.title(f'{model_type} - Actual vs Predicted')
@@ -182,7 +182,7 @@ def save_evaluation_metrics(mse, mae, rmse, mape, model_type, look_back, forecas
         json.dump(evaluation_data, file, indent=2)
 
 
-def save_loss_to_json(history, model_type, look_back, forecast_day, save_path=None):
+def save_losses(history, model_type, look_back, forecast_day, save_path=None):
     file_name = f'{look_back}_{forecast_day}_evaluation_losses.json'
     file_dir = os.path.join(save_path, 'doc')
     os.makedirs(file_dir, exist_ok=True)

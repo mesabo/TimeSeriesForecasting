@@ -17,19 +17,7 @@ Lab: Prof YU Keping's Lab
 import torch
 
 from hyperparameter_tuning.build_best_model import train_model
-from hyperparameter_tuning.hyper_models import BuildCNNLSTMAttentionModel
-from utils.constants import (
-    LSTM_MODEL, GRU_MODEL, CNN_MODEL, BiLSTM_MODEL, BiGRU_MODEL,
-    LSTM_ATTENTION_MODEL, GRU_ATTENTION_MODEL, CNN_ATTENTION_MODEL,
-    BiLSTM_ATTENTION_MODEL, BiGRU_ATTENTION_MODEL,
-    CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_BiLSTM_MODEL, CNN_BiGRU_MODEL,
-    CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
-    CNN_BiLSTM_ATTENTION_MODEL, CNN_BiGRU_ATTENTION_MODEL,
-    CNN_ATTENTION_LSTM_ATTENTION_MODEL, CNN_ATTENTION_GRU_ATTENTION_MODEL,
-    CNN_ATTENTION_BiLSTM_ATTENTION_MODEL, CNN_ATTENTION_BiGRU_ATTENTION_MODEL,
-    CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL,
-    CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL
-)
+from models.model_selection import ModelSelection
 
 
 class ModelTuner:
@@ -40,110 +28,24 @@ class ModelTuner:
         self.y_val = y_val
         self.output_dim = output_dim
         self.model_type = model_type
+        self.model_selection = ModelSelection(X_train, output_dim, model_type)
 
     def objective(self, trial):
-        model = self.build_model(trial)
+        # Build the model with the current trial's suggestions or best known parameters
+        model = self.model_selection.select_model(trial, best_params=None)
 
-        # Move model to GPU
+        # Move model to the appropriate device (GPU if available)
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         model.to(device)
 
-        # Move data to GPU
-        X_train, y_train = torch.Tensor(self.X_train).to(device), torch.Tensor(self.y_train).to(device)
-        X_val, y_val = torch.Tensor(self.X_val).to(device), torch.Tensor(self.y_val).to(device)
+        # Convert data to tensors and move to the same device as the model
+        X_train_tensor = torch.Tensor(self.X_train).to(device)
+        y_train_tensor = torch.Tensor(self.y_train).to(device)
+        X_val_tensor = torch.Tensor(self.X_val).to(device)
+        y_val_tensor = torch.Tensor(self.y_val).to(device)
 
-        # Train the model
-        val_loss, _ = train_model(model, X_train, y_train, X_val, y_val, trial, device)
+        # Train the model and get the validation loss
+        val_loss, _ = train_model(model, X_train_tensor, y_train_tensor, X_val_tensor, y_val_tensor, device)
 
+        # The goal is to minimize the validation loss
         return val_loss
-
-    def build_model(self, trial):
-        if self.model_type == LSTM_MODEL:
-            pass
-        elif self.model_type == GRU_MODEL:
-            pass
-            # return build_gru_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_MODEL:
-            pass
-            # return build_cnn_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-
-        # -----------------------------Simple Bi models-------------------------------
-        elif self.model_type == BiLSTM_MODEL:
-            pass
-            # return build_bilstm_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == BiGRU_MODEL:
-            pass
-            # return build_bigru_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-
-        # -----------------------------Simple + Attention models-------------------------------
-        elif self.model_type == LSTM_ATTENTION_MODEL:
-            pass
-            # return build_lstm_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == GRU_ATTENTION_MODEL:
-            pass
-            # return build_gru_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_ATTENTION_MODEL:
-            pass
-            # return build_cnn_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        # -----------------------------Bi + Attention models-------------------------------
-        elif self.model_type == BiLSTM_ATTENTION_MODEL:
-            pass
-            # return build_bilstm_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == BiGRU_ATTENTION_MODEL:
-            pass
-            # return build_bigru_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        # -----------------------------Hybrid models-------------------------------
-        elif self.model_type == CNN_LSTM_MODEL:
-            pass
-            # return build_cnn_lstm_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_GRU_MODEL:
-            pass
-            # return build_cnn_gru_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_BiLSTM_MODEL:
-            pass
-            # return build_cnn_bilstm_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_BiGRU_MODEL:
-            pass
-            # return build_cnn_bigru_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        # -----------------------------Hybrid + Attention models-------------------------------
-        elif self.model_type == CNN_LSTM_ATTENTION_MODEL:
-            return BuildCNNLSTMAttentionModel(trial=trial, X_train=self.X_train, output_dim=self.output_dim)
-            # return build_cnn_lstm_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_GRU_ATTENTION_MODEL:
-            pass
-            # return build_cnn_gru_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_BiLSTM_ATTENTION_MODEL:
-            pass
-            # return build_cnn_bilstm_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_BiGRU_ATTENTION_MODEL:
-            pass
-            # return build_cnn_bigru_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        # -----------------------------Deep Hybrid + Attention models-------------------------------
-        elif self.model_type == CNN_ATTENTION_LSTM_MODEL:
-            pass
-            # return build_cnn_attention_lstm_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_ATTENTION_GRU_MODEL:
-            pass
-            # return build_cnn_attention_gru_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_ATTENTION_BiLSTM_MODEL:
-            pass
-            # return build_cnn_attention_bilstm_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_ATTENTION_BiGRU_MODEL:
-            pass
-            # return build_cnn_attention_bigru_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        # -----------------------------Deep More Hybrid + Attention models-------------------------------
-        elif self.model_type == CNN_ATTENTION_LSTM_ATTENTION_MODEL:
-            pass
-            # return build_cnn_attention_lstm_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_ATTENTION_GRU_ATTENTION_MODEL:
-            pass
-            # return build_cnn_attention_gru_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_ATTENTION_BiLSTM_ATTENTION_MODEL:
-            pass
-            # return build_cnn_attention_bilstm_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        elif self.model_type == CNN_ATTENTION_BiGRU_ATTENTION_MODEL:
-            pass
-            # return build_cnn_attention_bigru_attention_model(input_dim, num_cnn_layers, num_lstm_layers, filters, kernel_size, lstm_units, dropout,activation, self.output_dim)
-        else:
-            raise ValueError(
-                "Invalid model type. Please choose from the available models.")

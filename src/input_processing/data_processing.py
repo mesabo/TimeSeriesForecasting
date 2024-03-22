@@ -22,6 +22,7 @@ from sklearn.preprocessing import MinMaxScaler
 from utils.constants import (DATASET_FEATURES_PATH, ELECTRICITY_DATASET_PATH,
                              ELECTRICITY)
 from utils.file_loader import read_features
+from utils.noising_methods import robust_data_augmentation
 
 
 def fill_missing_data(data, meth=2):
@@ -65,16 +66,26 @@ def time_warping(series, sigma=0.2):
     return warped_series
 
 
-def load_dataset(dataset_type='electricity', period='D'):
+def tuning_load_dataset(dataset_type='electricity', period='D'):
     if dataset_type == ELECTRICITY:
         dataset = pd.read_csv(ELECTRICITY_DATASET_PATH, sep=';', na_values=['?'])
         dataset['datetime'] = pd.to_datetime(dataset['Date'] + ' ' + dataset['Time'], format='%d/%m/%Y %H:%M:%S')
         dataset.drop(['Date', 'Time'], axis=1, inplace=True)
 
-        df = fill_missing_data(dataset, meth=2)
+        df = fill_missing_data(dataset, meth=0)
         selected_features = read_features(DATASET_FEATURES_PATH, dataset_type)
 
+        # Extract time features
+        df['hour'] = df['datetime'].dt.hour
+        df['day_of_week'] = df['datetime'].dt.dayofweek
+        df['month'] = df['datetime'].dt.month
+
+        # Assuming 'selected_features' is obtained from elsewhere in your code
+        selected_features = selected_features + ['hour', 'day_of_week', 'month']
+
+        # Resample data and drop NA values that might be created during resampling
         data = df.set_index('datetime')[selected_features].resample(period).mean().dropna()
+
         # Separate features and target variable
         features = data.drop(columns=selected_features[0]).values
         target = data[selected_features[0]].values.reshape(-1, 1)
@@ -82,9 +93,28 @@ def load_dataset(dataset_type='electricity', period='D'):
     return features, target
 
 
-def preprocess_augment_and_split_dataset(url, period, look_back, forecast_period):
+def default_load_dataset(dataset_type='electricity', period='D'):
+    if dataset_type == ELECTRICITY:
+        dataset = pd.read_csv(ELECTRICITY_DATASET_PATH, sep=';', na_values=['?'])
+        dataset['datetime'] = pd.to_datetime(dataset['Date'] + ' ' + dataset['Time'], format='%d/%m/%Y %H:%M:%S')
+        dataset.drop(['Date', 'Time'], axis=1, inplace=True)
+
+        df = fill_missing_data(dataset, meth=0)
+        selected_features = read_features(DATASET_FEATURES_PATH, dataset_type)
+
+        # Resample data and drop NA values that might be created during resampling
+        data = df.set_index('datetime')[selected_features].resample(period).mean().dropna()
+
+        # Separate features and target variable
+        features = data.drop(columns=selected_features[0]).values
+        target = data[selected_features[0]].values.reshape(-1, 1)
+
+    return features, target
+
+
+def default_preprocess_dataset(url, period, look_back, forecast_period):
     # Load dataset and fill missing values
-    features, target = load_dataset(url, period)
+    features, target = default_load_dataset(url, period)
 
     # Normalize features
     scaler_features = MinMaxScaler(feature_range=(0, 1))
@@ -96,28 +126,16 @@ def preprocess_augment_and_split_dataset(url, period, look_back, forecast_period
 
     # Combine scaled features and target variable
     scaled_dataset = np.concatenate((scaled_features, scaled_target), axis=1)
-    # Apply time warping to the features (excluding the target variable)
-    warped_features = np.apply_along_axis(time_warping, axis=0, arr=scaled_dataset[:, :-1])
-
-    # Combine warped features with target variable
-    warped_dataset = np.concatenate((warped_features, scaled_dataset[:, -1].reshape(-1, 1)), axis=1)
 
     # Split dataset into input sequences (X) and target sequences (y)
-    X, y = create_dataset(warped_dataset, look_back, forecast_period)
+    X_test, y_test = create_dataset(scaled_dataset, look_back, forecast_period)
 
-    # Split dataset into train and test sets
-    train_size = int(len(X) * 0.8)
-    test_size = len(X) - train_size
-
-    X_train, X_test = X[:train_size], X[-test_size:]
-    y_train, y_test = y[:train_size], y[-test_size:]
-
-    return X_train, X_test, y_train, y_test, scaler_target
+    return X_test, y_test, scaler_target
 
 
-def preprocess_and_split_dataset(url, period, look_back, forecast_period):
+def default_preprocess_and_split_dataset(url, period, look_back, forecast_period):
     # Load dataset and fill missing values
-    features, target = load_dataset(url, period)
+    features, target = default_load_dataset(url, period)
 
     # Normalize features
     scaler_features = MinMaxScaler(feature_range=(0, 1))
@@ -134,10 +152,44 @@ def preprocess_and_split_dataset(url, period, look_back, forecast_period):
     X, y = create_dataset(scaled_dataset, look_back, forecast_period)
 
     # Split dataset into train and test sets
-    train_size = int(len(X) * 0.8)
+    train_size = int(len(X) * 0.75)
+
     test_size = len(X) - train_size
 
     X_train, X_test = X[:train_size], X[-test_size:]
     y_train, y_test = y[:train_size], y[-test_size:]
 
     return X_train, X_test, y_train, y_test, scaler_target
+
+
+def tuning_preprocess_and_split_dataset(url, period, look_back, forecast_period):
+    # Load dataset and fill missing values
+    features, target = tuning_load_dataset(url, period)
+
+    # Normalize features
+    scaler_features = MinMaxScaler(feature_range=(0, 1))
+    scaled_features = scaler_features.fit_transform(features)
+
+    # Normalize target variable
+    scaler_target = MinMaxScaler(feature_range=(0, 1))
+    scaled_target = scaler_target.fit_transform(target)
+
+    # Combine scaled features and target variable
+    scaled_dataset = np.concatenate((scaled_features, scaled_target), axis=1)
+
+    # Split dataset into input sequences (X) and target sequences (y)
+    X, y = create_dataset(scaled_dataset, look_back, forecast_period)
+
+
+    # Split dataset into train and test sets
+    train_size = int(len(X) * 0.75)
+
+    test_size = len(X) - train_size
+
+    X_train, X_test = X[:train_size], X[-test_size:]
+    y_train, y_test = y[:train_size], y[-test_size:]
+
+    # Apply data augmentation to the training data only
+    X_train_augmented = robust_data_augmentation(X_train)
+
+    return X_train_augmented, X_test, y_train, y_test, scaler_target
