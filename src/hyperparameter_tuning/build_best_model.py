@@ -87,5 +87,4 @@ def train_model(model, X_train, y_train, X_val, y_val, device):
             break
 
     history = {'train_loss': train_losses, 'val_loss': val_losses}
-    logger.info(f'>> EarlyStopp {early_stopping_counter} >> train_loss: {train_losses} >> val_loss: {val_losses}')
     return best_val_loss, history
