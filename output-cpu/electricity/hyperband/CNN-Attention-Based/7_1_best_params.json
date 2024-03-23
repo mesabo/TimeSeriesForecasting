@@ -1,0 +1,16 @@
+{
+  "CNN-Attention-Based": {
+    "lr": 0.0001,
+    "optimizer": "Adam",
+    "l1_regularizer": 0.0001,
+    "l2_regularizer": 1e-05,
+    "min_delta": 1e-08,
+    "patience": 35,
+    "batch_size": 48,
+    "filters": 96,
+    "num_cnn_layers": 2,
+    "dropout": 0.3,
+    "activation": "ReLU",
+    "processing_time": "13.77 s"
+  }
+}

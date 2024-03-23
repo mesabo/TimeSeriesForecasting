@@ -1,0 +1,16 @@
+{
+  "LSTM-based": {
+    "lr": 0.0001,
+    "optimizer": "RMSprop",
+    "l1_regularizer": 0.0001,
+    "l2_regularizer": 0.0001,
+    "min_delta": 1e-08,
+    "patience": 45,
+    "batch_size": 16,
+    "num_lstm_layers": 1,
+    "lstm_units": 50,
+    "dropout": 0.3,
+    "activation": "LeakyReLU",
+    "processing_time": "10.72 s"
+  }
+}

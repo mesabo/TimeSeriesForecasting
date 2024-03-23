@@ -84,12 +84,13 @@ HYPERBAND_PATH = "hyperband/"
 LOG_FILE = './logs/cpu/time_serie_cpu.log'
 
 # Define model names as variables
-EPOCHS = 2
-N_TRIAL = 2
+EPOCHS = 1
+N_TRIAL = 1
 SEEDER = 2024
-LOOK_BACKS = [14]
+LOOK_BACKS = [7]
 FORECAST_PERIODS = [1]
 ELECTRICITY = 'electricity'
+APARTMENT = 'apartment'
 
 
 def is_running_on_server():
@@ -101,8 +102,8 @@ logger = logging.getLogger(__name__)
 if is_running_on_server():
     logger.info("The code is running on a server.")
     EPOCHS = 100
-    N_TRIAL = 1000
-    LOOK_BACKS = [7, 10, 14, 30]
+    N_TRIAL = 500
+    LOOK_BACKS = [14, 30, 60]
     FORECAST_PERIODS = [1, 2, 3, 6, 7]
 
     BASE_PATH = '/home/23r9802_chen/messou/TimeSerieForecasting/'

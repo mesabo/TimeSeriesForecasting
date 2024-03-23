@@ -1,0 +1,18 @@
+{
+  "CNN-Attention-BiLSTM-based": {
+    "lr": 0.001,
+    "optimizer": "Adam",
+    "l1_regularizer": 1e-05,
+    "l2_regularizer": 1e-05,
+    "min_delta": 1e-08,
+    "patience": 50,
+    "batch_size": 48,
+    "filters": 32,
+    "num_cnn_layers": 2,
+    "num_bilstm_layers": 1,
+    "bilstm_units": 200,
+    "dropout": 0.3,
+    "activation": "Tanh",
+    "processing_time": "8.57 min"
+  }
+}

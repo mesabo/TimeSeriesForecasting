@@ -152,7 +152,7 @@ def default_preprocess_and_split_dataset(url, period, look_back, forecast_period
     X, y = create_dataset(scaled_dataset, look_back, forecast_period)
 
     # Split dataset into train and test sets
-    train_size = int(len(X) * 0.75)
+    train_size = int(len(X) * 0.80)
 
     test_size = len(X) - train_size
 
@@ -165,6 +165,7 @@ def default_preprocess_and_split_dataset(url, period, look_back, forecast_period
 def tuning_preprocess_and_split_dataset(url, period, look_back, forecast_period):
     # Load dataset and fill missing values
     features, target = tuning_load_dataset(url, period)
+    features, target = robust_data_augmentation(features, target)
 
     # Normalize features
     scaler_features = MinMaxScaler(feature_range=(0, 1))
@@ -180,16 +181,12 @@ def tuning_preprocess_and_split_dataset(url, period, look_back, forecast_period)
     # Split dataset into input sequences (X) and target sequences (y)
     X, y = create_dataset(scaled_dataset, look_back, forecast_period)
 
-
     # Split dataset into train and test sets
-    train_size = int(len(X) * 0.75)
+    train_size = int(len(X) * 0.8)
 
     test_size = len(X) - train_size
 
     X_train, X_test = X[:train_size], X[-test_size:]
     y_train, y_test = y[:train_size], y[-test_size:]
 
-    # Apply data augmentation to the training data only
-    X_train_augmented = robust_data_augmentation(X_train)
-
-    return X_train_augmented, X_test, y_train, y_test, scaler_target
+    return X_train, X_test, y_train, y_test, scaler_target

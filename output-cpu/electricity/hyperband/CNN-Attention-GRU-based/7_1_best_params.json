@@ -1,0 +1,18 @@
+{
+  "CNN-Attention-GRU-based": {
+    "lr": 0.001,
+    "optimizer": "Adam",
+    "l1_regularizer": 0.001,
+    "l2_regularizer": 0.001,
+    "min_delta": 1e-08,
+    "patience": 30,
+    "batch_size": 16,
+    "filters": 96,
+    "num_cnn_layers": 2,
+    "num_gru_layers": 2,
+    "gru_units": 50,
+    "dropout": 0.2,
+    "activation": "LeakyReLU",
+    "processing_time": "3.01 min"
+  }
+}

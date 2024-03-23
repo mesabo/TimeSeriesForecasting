@@ -29,14 +29,13 @@ from hyperparameter_tuning.model_tuner_study import model_tuner_and_study
 from models.model_training import ComprehensiveModelTrainer
 from utils.constants import (
     ELECTRICITY, LOOK_BACKS, FORECAST_PERIODS, SEEDER, LOG_FILE,
-    LSTM_MODEL, GRU_MODEL, CNN_MODEL, BiLSTM_MODEL, BiGRU_MODEL,
-    CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_BiLSTM_MODEL, CNN_BiGRU_MODEL,
+    LSTM_MODEL, GRU_MODEL, CNN_MODEL, CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_BiLSTM_MODEL, CNN_BiGRU_MODEL,
     LSTM_ATTENTION_MODEL, GRU_ATTENTION_MODEL, CNN_ATTENTION_MODEL,
     BiLSTM_ATTENTION_MODEL, BiGRU_ATTENTION_MODEL,
     CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
     CNN_BiLSTM_ATTENTION_MODEL, CNN_BiGRU_ATTENTION_MODEL,
     CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL,
-    CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL, )
+    CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL, APARTMENT, )
 
 # Set seed for reproducibility
 os.environ['CUBLAS_WORKSPACE_CONFIG'] = ":4096:8"
@@ -51,9 +50,16 @@ np.random.seed(SEEDER)
 '''----------------------------------------------------------------------------------------------'''
 
 
-def main(model_group):
-    series = ELECTRICITY
-    model_group1 = [LSTM_MODEL, GRU_MODEL, CNN_MODEL, BiLSTM_MODEL, BiGRU_MODEL, ]
+def main(model_group, dataset):
+
+    if dataset == 'electricity':
+        series = ELECTRICITY
+    elif dataset == 'apartment':
+        series = APARTMENT
+    else:
+        series = ELECTRICITY
+
+    model_group1 = [LSTM_MODEL, GRU_MODEL, CNN_MODEL]
     model_group2 = [
         CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_BiLSTM_MODEL, CNN_BiGRU_MODEL, ]
     model_group3 = [LSTM_ATTENTION_MODEL, GRU_ATTENTION_MODEL, CNN_ATTENTION_MODEL,
@@ -68,7 +74,6 @@ def main(model_group):
     forecast_periods = FORECAST_PERIODS  # [3]
 
     # Determine model types based on model_group
-    model_types = []
     if model_group == 1:
         model_types = model_group1
     elif model_group == 2:
@@ -88,9 +93,9 @@ def main(model_group):
     model_tuner_and_study(look_backs, forecast_periods, model_types, series)
 
     # Build best model
-    trainer = ComprehensiveModelTrainer(look_backs=look_backs, forecast_periods=forecast_periods,
-                                        model_types=model_types, series_types=series)
-    trainer.build_and_train_models()
+    # trainer = ComprehensiveModelTrainer(look_backs=look_backs, forecast_periods=forecast_periods,
+    #                                     model_types=model_types, series_types=series)
+    # trainer.build_and_train_models()
 
 
 '''----------------------------------------------------------------------------------------------'''
@@ -126,10 +131,10 @@ def some_function():
 '''----------------------------------------------------------------------------------------------'''
 
 if __name__ == "__main__":
-
     # Parse the command-line arguments
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_group", type=int, help="Model group parameter: group of models to process")
+    parser.add_argument("--dataset", type=str, default="default_dataset", help="Dataset parameter: dataset to use")
     args = parser.parse_args()
     log_filename = LOG_FILE + str(args.model_group or 0) + '.log'
 
@@ -147,4 +152,4 @@ if __name__ == "__main__":
     logger.info(f"CURRENT PATH IS: {current_dir}")
 
     # Call the main function and pass the model_group parameter
-    main(args.model_group or 0)
+    main(args.model_group or 0, args.dataset or ELECTRICITY)

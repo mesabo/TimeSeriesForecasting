@@ -1,0 +1,16 @@
+{
+  "LSTM-Attention-based": {
+    "lr": 1e-06,
+    "optimizer": "RMSprop",
+    "l1_regularizer": 1e-06,
+    "l2_regularizer": 0.0001,
+    "min_delta": 1e-08,
+    "patience": 30,
+    "batch_size": 64,
+    "num_lstm_layers": 1,
+    "lstm_units": 200,
+    "dropout": 0.2,
+    "activation": "ReLU",
+    "processing_time": "8.79 s"
+  }
+}
