@@ -1,0 +1,10 @@
+{
+  "CNN-GRU-Attention-based": {
+    "training_loss": [
+      0.0019928746386966875
+    ],
+    "validation_loss": [
+      0.00043365809171338804
+    ]
+  }
+}

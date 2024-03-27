@@ -1,0 +1,29 @@
+ai-gpgpu14
+USED GPUs=5
+/home/23r9802_chen/messou/TimeSerieForecasting
+Error: The script directory does not contain '/TimeSerieForecasting'. Using the default directory.
+/home/23r9802_chen/messou/TimeSerieForecasting/src/input_processing/data_processing.py:79: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['hour'] = df['datetime'].dt.hour
+/home/23r9802_chen/messou/TimeSerieForecasting/src/input_processing/data_processing.py:80: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['day_of_week'] = df['datetime'].dt.dayofweek
+/home/23r9802_chen/messou/TimeSerieForecasting/src/input_processing/data_processing.py:81: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['month'] = df['datetime'].dt.month
+[I 2024-03-23 18:22:00,464] A new study created in memory with name: no-name-689d0d43-c470-4994-98a0-e118e170afb4
+[I 2024-03-23 18:22:14,959] Trial 0 finished with value: 0.0 and parameters: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 64, 'num_cnn_layers': 3, 'num_lstm_layers': 3, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU'}. Best is trial 0 with value: 0.0.
+[I 2024-03-23 18:22:50,680] Trial 1 finished with value: 1.0376997990155821e-08 and parameters: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 1e-05, 'min_delta': 1e-07, 'patience': 35, 'batch_size': 16, 'filters': 64, 'num_cnn_layers': 3, 'num_lstm_layers': 3, 'lstm_units': 50, 'dropout': 0.1, 'activation': 'Tanh'}. Best is trial 0 with value: 0.0.
+[I 2024-03-23 18:23:00,079] Trial 2 finished with value: 0.0 and parameters: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 30, 'batch_size': 32, 'filters': 64, 'num_cnn_layers': 1, 'num_lstm_layers': 3, 'lstm_units': 50, 'dropout': 0.4, 'activation': 'ReLU'}. Best is trial 0 with value: 0.0.
+[I 2024-03-23 18:23:27,993] Trial 3 finished with value: 2.6691692612026075e-09 and parameters: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 45, 'batch_size': 16, 'filters': 96, 'num_cnn_layers': 1, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.4, 'activation': 'Tanh'}. Best is trial 0 with value: 0.0.
+[I 2024-03-23 18:23:38,241] Trial 4 finished with value: 8.671197644110781e-09 and parameters: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 48, 'filters': 64, 'num_cnn_layers': 3, 'num_lstm_layers': 1, 'lstm_units': 50, 'dropout': 0.3, 'activation': 'LeakyReLU'}. Best is trial 0 with value: 0.0.
+slurmstepd-ai-gpgpu14: error: *** JOB 516 ON ai-gpgpu14 CANCELLED AT 2024-03-23T18:23:49 ***

@@ -14,7 +14,7 @@ Lab: Prof YU Keping's Lab
 """
 
 import logging
-import os
+import platform
 
 # Simple models
 LSTM_MODEL = "LSTM-based"
@@ -81,7 +81,7 @@ BASE_PATH = f'./'
 CHECK_PATH = "checks/"
 CHECK_HYPERBAND = "hyperband/"
 HYPERBAND_PATH = "hyperband/"
-LOG_FILE = './logs/cpu/time_serie_cpu.log'
+LOG_FILE = './logs/cpu/time_serie_cpu'
 
 # Define model names as variables
 EPOCHS = 1
@@ -95,7 +95,7 @@ APARTMENT = 'apartment'
 
 def is_running_on_server():
     # We assume that the server is Linux
-    return os.uname().sysname == 'Linux'
+    return platform.system() == 'Linux'
 
 
 logger = logging.getLogger(__name__)

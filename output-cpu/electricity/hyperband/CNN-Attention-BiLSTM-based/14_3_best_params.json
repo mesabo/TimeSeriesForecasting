@@ -1,0 +1,20 @@
+{
+  "CNN-Attention-BiLSTM-based": {
+    "lr": 0.001,
+    "optimizer": "RMSprop",
+    "l1_regularizer": 1e-05,
+    "l2_regularizer": 0.001,
+    "min_delta": 1e-08,
+    "patience": 45,
+    "batch_size": 64,
+    "filters": 32,
+    "kernel_size": 3,
+    "pool_size": 1,
+    "num_cnn_layers": 2,
+    "num_bilstm_layers": 1,
+    "bilstm_units": 50,
+    "dropout": 0.3,
+    "activation": "ReLU",
+    "processing_time": "2.37 h"
+  }
+}

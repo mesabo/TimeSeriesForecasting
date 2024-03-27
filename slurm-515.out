@@ -1,0 +1,31 @@
+ai-gpgpu14
+USED GPUs=0
+/home/23r9802_chen/messou/TimeSerieForecasting
+Error: The script directory does not contain '/TimeSerieForecasting'. Using the default directory.
+/home/23r9802_chen/messou/TimeSerieForecasting/src/input_processing/data_processing.py:79: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['hour'] = df['datetime'].dt.hour
+/home/23r9802_chen/messou/TimeSerieForecasting/src/input_processing/data_processing.py:80: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['day_of_week'] = df['datetime'].dt.dayofweek
+/home/23r9802_chen/messou/TimeSerieForecasting/src/input_processing/data_processing.py:81: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame.
+Try using .loc[row_indexer,col_indexer] = value instead
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  df['month'] = df['datetime'].dt.month
+[I 2024-03-23 18:21:51,793] A new study created in memory with name: no-name-0cfaf9b5-f539-4918-b904-4361c28257e1
+[I 2024-03-23 18:22:03,547] Trial 0 finished with value: 7.410809738642674e-07 and parameters: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 45, 'batch_size': 64, 'filters': 96, 'num_cnn_layers': 2, 'dropout': 0.2, 'activation': 'LeakyReLU'}. Best is trial 0 with value: 7.410809738642674e-07.
+[I 2024-03-23 18:22:21,433] Trial 1 finished with value: 4.3109219990916426e-07 and parameters: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 35, 'batch_size': 32, 'filters': 64, 'num_cnn_layers': 3, 'dropout': 0.1, 'activation': 'Tanh'}. Best is trial 1 with value: 4.3109219990916426e-07.
+[I 2024-03-23 18:22:39,789] Trial 2 finished with value: 1.7868385675617334e-09 and parameters: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 35, 'batch_size': 16, 'filters': 32, 'num_cnn_layers': 1, 'dropout': 0.4, 'activation': 'Tanh'}. Best is trial 2 with value: 1.7868385675617334e-09.
+[I 2024-03-23 18:22:43,148] Trial 3 finished with value: 2.436293043117498e-05 and parameters: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 35, 'batch_size': 64, 'filters': 96, 'num_cnn_layers': 3, 'dropout': 0.4, 'activation': 'LeakyReLU'}. Best is trial 2 with value: 1.7868385675617334e-09.
+[I 2024-03-23 18:23:17,385] Trial 4 finished with value: 4.954027154073875e-09 and parameters: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 35, 'batch_size': 16, 'filters': 96, 'num_cnn_layers': 3, 'dropout': 0.3, 'activation': 'LeakyReLU'}. Best is trial 2 with value: 1.7868385675617334e-09.
+[I 2024-03-23 18:23:26,559] Trial 5 finished with value: 7.578703997764101e-07 and parameters: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 32, 'num_cnn_layers': 3, 'dropout': 0.1, 'activation': 'Tanh'}. Best is trial 2 with value: 1.7868385675617334e-09.
+[I 2024-03-23 18:23:36,015] Trial 6 finished with value: 1.3807426947890453e-06 and parameters: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 45, 'batch_size': 64, 'filters': 96, 'num_cnn_layers': 3, 'dropout': 0.2, 'activation': 'Tanh'}. Best is trial 2 with value: 1.7868385675617334e-09.
+slurmstepd-ai-gpgpu14: error: *** JOB 515 ON ai-gpgpu14 CANCELLED AT 2024-03-23T18:23:47 ***
