@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 20 18:35:52 2024
+Created on 20/03/2024
+🚀 Welcome to the Awesome Python Script 🚀
 
-@author: mesabo
+User: mesabo
+Email: mesabo18@gmail.com / messouaboya17@gmail.com
+Github: https://github.com/mesabo
+Univ: Hosei University
+Dept: Science and Engineering
+Lab: Prof YU Keping's Lab
+
 """
 
-# Define model names as variables
-EPOCH = 100
-BATCH_SIZE = 64
-SEEDER = 2024
-PARAMS_GRID = {'batch_size': [16, 32, 64, 128, 256, 512]}
-ELECTRICITY = 'electricity'
-WATER = 'water'
-WIND = 'wind'
-GOLD = 'gold'
+import logging
+import platform
+
 # Simple models
 LSTM_MODEL = "LSTM-based"
 GRU_MODEL = "GRU-based"
@@ -61,22 +62,62 @@ CNN_ATTENTION_GRU_ATTENTION_MODEL = "CNN-Attention-GRU-Attention-based"
 CNN_ATTENTION_BiLSTM_ATTENTION_MODEL = "CNN-Attention-BiLSTM-Attention-based"
 CNN_ATTENTION_BiGRU_ATTENTION_MODEL = "CNN-Attention-BiGRU-Attention-based"
 
+'''---------------------------------------------------------------------------'''
 # Define saving paths
 SAVING_MODEL_DIR = "../models/"
 SAVING_METRIC_DIR = "metrics/"
 SAVING_PREDICTION_DIR = "predictions/"
 SAVING_LOSS_DIR = "losses/"
+SAVING_EVALUATIONS_DIR = "evaluations/"
 SAVING_METRICS_PATH = "metrics/evaluation_metrics.json"
 SAVING_LOSSES_PATH = "losses/models_losses.json"
 
-# Define dataset paths
-DATASET_FEATURES_PATH = "./input/data_features.json"
-ELECTRICITY_DATASET_PATH = "./input/electricity/household_power_consumption.txt"
-GOLD_DATASET_PATH = "../input/gold/GoldPrice.csv"
-AIR_DATASET_PATH = "../input/air/AirQualityUCI.csv"
+# Define dirs
+DATASET_FEATURES_PATH = f"input/data_features.json"
+ELECTRICITY_DATASET_PATH = f"input/electricity/household_power_consumption.txt"
+HOUSE_DATASET_PATH = f"input/house/WHE.csv"
+APARTMENT_DATASET_PATH = f"input/apartment/MidriseApartment_SAN_FRANCISCO.csv"
 
-BASE_PATH = "./output/"
+OUTPUT_PATH = f"output-cpu/"
+BASE_PATH = f'./'
 CHECK_PATH = "checks/"
 CHECK_HYPERBAND = "hyperband/"
 HYPERBAND_PATH = "hyperband/"
-#CHECK_HYPERBAND_PATH = "hyperband/best_params.json"
+LOG_FILE = './logs/cpu/time_serie_cpu'
+UNI_OR_MULTI_VARIATE = 'multivariate'
+# Define model names as variables
+SEEDER = 2024
+
+EPOCHS = 100
+N_TRIAL = 5
+LOOK_BACKS = [14]
+FORECAST_PERIODS = [1, 3, 7]
+PERIOD = ['1D']
+ELECTRICITY = 'electricity'
+HOUSE = 'house'
+APARTMENT = 'apartment'
+
+
+def is_running_on_server():
+    # We assume that the server is Linux
+    return platform.system() == 'Linux'
+
+
+logger = logging.getLogger(__name__)
+if is_running_on_server():
+    logger.info("The code is running on a server.")
+    EPOCHS = 100
+    N_TRIAL = 500
+    LOOK_BACKS = [7, 14, 21]
+    FORECAST_PERIODS = [1, 3, 5, 7]
+
+    BASE_PATH = '/home/23r9802_chen/messou/TimeSerieForecasting/'
+    DATASET_FEATURES_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/data_features.json"
+    ELECTRICITY_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/electricity/household_power_consumption.txt"
+    HOUSE_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSerieForecasting/input/house/WHE.csv"
+    APARTMENT_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSerieForecasting/input/apartment/MidriseApartment_SAN_FRANCISCO.csv"
+
+    OUTPUT_PATH = "/output-gpu/"
+    LOG_FILE = f"./logs/gpu/time_serie_gpu"
+else:
+    logger.info("The code is running locally.")

@@ -7,5 +7,20 @@
     "Sub_metering_1",
     "Sub_metering_2",
     "Sub_metering_3"
+  ],
+  "house": [
+    "P",
+    "Pt",
+    "Q",
+    "Qt",
+    "S",
+    "St"
+  ],
+  "apartment": [
+    "Facility",
+    "Fans",
+    "Cooling",
+    "InteriorLights",
+    "InteriorEquipment"
   ]
 }

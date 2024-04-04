@@ -1,18 +1,30 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Feb 20 17:49:39 2024
+Created on 20/03/2024
+🚀 Welcome to the Awesome Python Script 🚀
 
-@author: mesabo
+User: mesabo
+Email: mesabo18@gmail.com / messouaboya17@gmail.com
+Github: https://github.com/mesabo
+Univ: Hosei University
+Dept: Science and Engineering
+Lab: Prof YU Keping's Lab
+
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.metrics import (mean_absolute_error, mean_squared_error,
-                             mean_absolute_percentage_error)
 import json
+import logging
 import os
+
+import matplotlib.pyplot as plt
+import numpy as np
 import torch
+from sklearn.metrics import (mean_squared_error, mean_absolute_error,
+                             mean_absolute_percentage_error,
+                             root_mean_squared_error)
+
+logger = logging.getLogger(__name__)
 
 
 def format_duration(duration):
@@ -28,89 +40,175 @@ def format_duration(duration):
         return f"{duration / 31536000:.2f} year"
 
 
+def make_predictions(model, testX, testY, scaler):
+    device = next(model.parameters()).device
+
+    model.eval()
+    with torch.no_grad():
+        testX_tensor = torch.tensor(testX, dtype=torch.float32).to(device)
+        tensorPredict = model(testX_tensor).cpu().numpy()
+
+    num_columns_to_pad = testX.shape[-1] - tensorPredict.shape[1]
+
+    # Pad or truncate tensorPredict to match the desired length
+    if num_columns_to_pad > 0:
+        tensorPredict_padded = np.pad(tensorPredict, ((0, 0), (0, num_columns_to_pad)), mode='constant')
+        actual_padded = np.pad(testY, ((0, 0), (0, num_columns_to_pad)), mode='constant')
+    elif num_columns_to_pad < 0:
+        tensorPredict_padded = tensorPredict[:, :testX.shape[-2]]
+        actual_padded = testY[:, :testX.shape[-2]]
+    else:
+        tensorPredict_padded = tensorPredict
+        actual_padded = testY
+
+    # Inverse transform the padded or truncated tensorPredict using the scaler
+    testPredict = scaler.inverse_transform(tensorPredict_padded)
+    actual_padded_y = scaler.inverse_transform(actual_padded)
+
+    # Separate the inverse transformed predictions and the true values from the padded values
+    testPredict_values = testPredict[:, :tensorPredict.shape[1]]
+    actualPaddedValues = actual_padded_y[:, :testY.shape[1]]
+
+    return tensorPredict, testY
+
+
 def evaluate_model(testY, testPredict):
     mse = round(mean_squared_error(testY, testPredict), 6)
     mae = round(mean_absolute_error(testY, testPredict), 6)
-    rmse = round(mean_squared_error(testY, testPredict, squared=False), 6)
-    mape = mean_absolute_percentage_error(testY, testPredict) * 100
+    rmse = round(root_mean_squared_error(testY, testPredict), 6)
+    mape = mean_absolute_percentage_error(testY, testPredict)
     mape = round(mape, 6)
-    print(f"[-----MODEL METRICS-----]\n")
-    print(f"[-----MSE: {mse}-----]\n")
-    print(f"[-----MAE: {mae}-----]\n")
-    print(f"[-----RMSE: {rmse}-----]\n")
-    print(f"[-----MAPE: {mape}-----]\n")
+    logger.info("[-----MODEL METRICS-----]\n")
+    logger.info(f"[-----MSE: {mse}-----]\n")
+    logger.info(f"[-----MAE: {mae}-----]\n")
+    logger.info(f"[-----RMSE: {rmse}-----]\n")
+    logger.info(f"[-----MAPE: {mape}-----]\n")
     return mse, mae, rmse, mape
 
 
-def predict_next_x_days(model, X_new, days=7):
-    predictions = []
+def plot_evaluation_metrics(uni_or_multi_variate,mse, mae, rmse, mape, model_type, look_back, forecast_day, period, save_path=None):
+    metrics = ['MSE', 'MAE', 'RMSE', 'MAPE']
+    values = [mse, mae, rmse, mape]
 
-    # Iterate over the next days
-    for i in range(days):
-        prediction = model.predict(X_new)
+    plt.bar(metrics, values, color=['limegreen', 'steelblue', 'purple', 'orange'])
+    plt.title(f'{model_type} - {uni_or_multi_variate} Metrics - ({look_back} x {period} lookback)')
+    plt.xlabel('Metric')
+    plt.ylabel('Value')
 
-        predictions.append(prediction)
-        # Update X_new for the next iteration
-        # Shift the values by one day and append the new prediction
-        X_new = np.roll(X_new, -1, axis=1)
-        X_new[-1] = prediction[0]
+    if save_path:
+        file_name = f'{look_back}_{forecast_day}_{period}_evaluation_metrics_{uni_or_multi_variate}.png'
+        file_path = os.path.join(save_path, 'image', file_name)
+        os.makedirs(os.path.dirname(file_path), exist_ok=True)
+        plt.savefig(file_path)
 
-    predictions = np.array(predictions)
-
-    return predictions
+    plt.show()
 
 
-def plot_losses(history, model, save_path=None):
-    plt.plot(history.history['loss'], label='Training Loss')
-    plt.plot(history.history['val_loss'], label='Validation Loss')
-    plt.title(f'{model} - Model Loss')
+def plot_losses(uni_or_multi_variate,history, model_type, look_back, forecast_day, period, save_path=None):
+    plt.plot(history['train_loss'], label='Training Loss')
+    plt.plot(history['val_loss'], label='Validation Loss')
+    plt.title(f'{model_type} - {uni_or_multi_variate} Loss - ({look_back} x {period} lookback)')
     plt.xlabel('Epoch')
     plt.ylabel('Loss')
     plt.legend()
 
     if save_path:
-        file_name = f'{model}_evaluation_metrics.png'
-        file_path = os.path.join(save_path, file_name)
+        file_name = f'{look_back}_{forecast_day}_{period}_evaluation_metrics_{uni_or_multi_variate}.png'
+        file_dir = os.path.join(save_path, 'image')
+        os.makedirs(file_dir, exist_ok=True)
+        file_path = os.path.join(file_dir, file_name)
         plt.savefig(file_path)
 
     plt.show()
 
 
-def plot_evaluation_metrics(mse, mae, rmse, mape, model, save_path=None):
-    metrics = ['MSE', 'MAE', 'RMSE']
-    values = [mse, mae, rmse]
-
-    plt.bar(metrics, values, color=['orange', 'limegreen', 'steelblue'])
-    plt.title(f'{model} - Evaluation Metrics')
-    plt.xlabel('Metric')
-    plt.ylabel('Value')
-    if save_path:
-        file_name = f'{model}_evaluation_metrics.png'
-        file_path = os.path.join(save_path, file_name)
-        plt.savefig(file_path)
-
-    plt.show()
-
-
-def plot_predictions(predicted, actual, model, save_path=None):
+def plot_single_prediction(uni_or_multi_variate,predicted, actual, model_type, look_back, forecast_day, period, save_path=None):
     plt.figure(figsize=(10, 6))
-    plt.plot(actual[:int(len(actual / 3)), 0], label='Actual')
-    plt.plot(predicted[:int(len(predicted / 3)), 0], label='Predicted')
-    plt.xlabel('Period')
-    plt.ylabel('Global Active Power')
-    plt.title(f'{model} - Actual vs Predicted')
+    plt.plot(actual[:, -1], label='Actual')
+    plt.plot(predicted[:, -1], label='Predicted')
+    plt.xlabel(f'Timestamp resolution ({period})')
+    plt.ylabel('Global Active Power (Kw)')
+    plt.title(f'{model_type} - {uni_or_multi_variate} - Actual vs Predicted - ({look_back} x {period} lookback) ')
     plt.legend()
     if save_path:
-        file_name = f'{model}_prediction.png'
-        file_path = os.path.join(save_path, file_name)
+        file_name = f'{look_back}_{forecast_day}_{period}_single_prediction_{uni_or_multi_variate}.png'
+        file_dir = os.path.join(save_path, 'image')
+        os.makedirs(file_dir, exist_ok=True)
+        file_path = os.path.join(file_dir, file_name)
+        plt.savefig(file_path)
+    plt.show()
+
+
+
+
+def plot_multi_step_predictions(uni_or_multi_variate, predicted, actual, model_type, look_back, forecast_days, period,
+                                save_path=None):
+    plt.figure(figsize=(10, 8))
+
+    # Plot actual values for all forecast days
+    plt.plot(actual[:, 0], label='Actual')
+
+    # Plot predicted values with different colors for each step ahead
+    for i in range(predicted.shape[1]):
+        if i == 0:
+            plt.plot(predicted[:, i], label=f'{i + 1} step ahead')
+        else:
+            plt.plot(predicted[:, i], label=f'{i + 1} steps ahead')
+
+    plt.xlabel(f'Timestamp resolution ({period})')
+    plt.ylabel('Global Active Power (Kw)')
+    plt.title(f'{model_type} - Actual vs Predicted - ({look_back} x {period} lookback) - {uni_or_multi_variate}')
+    plt.legend()
+
+    if save_path:
+        file_name = f'{look_back}_{forecast_days}_{period}_prediction_{uni_or_multi_variate}.png'
+        file_dir = os.path.join(save_path, 'image')
+        os.makedirs(file_dir, exist_ok=True)
+        file_path = os.path.join(file_dir, file_name)
         plt.savefig(file_path)
 
     plt.show()
 
 
-def save_evaluation_metrics(saving_path, model_type, mse, mae, rmse, mape):
-    if os.path.exists(saving_path):
-        with open(saving_path, 'r') as file:
+def save_predicted_values(uni_or_multi_variate, actual, predicted, model_type, look_back, forecast_day, period,
+                          save_path=None):
+    # Define the file name and directory
+    file_name = f'{look_back}_{forecast_day}_{period}_prediction_{uni_or_multi_variate}.json'
+    file_dir = os.path.join(save_path, 'doc') if save_path else 'doc'
+    os.makedirs(file_dir, exist_ok=True)
+    file_path = os.path.join(file_dir, file_name)
+
+    # Load existing data if file exists
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
+            loss_data = json.load(file)
+    else:
+        loss_data = {}
+
+    # Convert numpy arrays to lists for JSON serialization
+    actual_list = actual.tolist() if isinstance(actual, np.ndarray) else actual
+    predicted_list = predicted.tolist() if isinstance(predicted, np.ndarray) else predicted
+
+    # Update the loss_data dictionary
+    loss_data[model_type] = {
+        'actual': actual_list,
+        'predicted': predicted_list
+    }
+
+    # Save the updated dictionary to a JSON file
+    with open(file_path, 'w') as file:
+        json.dump(loss_data, file, indent=2)
+
+
+def save_evaluation_metrics(uni_or_multi_variate, mse, mae, rmse, mape, model_type, look_back, forecast_day, period,
+                            save_path=None):
+    file_name = f'{look_back}_{forecast_day}_{period}_evaluation_metrics_{uni_or_multi_variate}.json'
+    file_path = os.path.join(save_path, 'doc', file_name)
+
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
             evaluation_data = json.load(file)
     else:
         evaluation_data = {}
@@ -122,37 +220,44 @@ def save_evaluation_metrics(saving_path, model_type, mse, mae, rmse, mape):
         'MAPE': mape
     }
 
-    # Save the updated data back to the file
-    with open(saving_path, 'w') as file:
+    with open(file_path, 'w') as file:
         json.dump(evaluation_data, file, indent=2)
 
 
-def save_loss_to_txt(saving_path, model_type, history):
-    if os.path.exists(saving_path):
-        with open(saving_path, 'r') as file:
+def save_losses(uni_or_multi_variate, history, model_type, look_back, forecast_day, period, save_path=None):
+    file_name = f'{look_back}_{forecast_day}_{period}_evaluation_losses_{uni_or_multi_variate}.json'
+    file_dir = os.path.join(save_path, 'doc')
+    os.makedirs(file_dir, exist_ok=True)
+    file_path = os.path.join(file_dir, file_name)
+
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
             loss_data = json.load(file)
     else:
         loss_data = {}
 
     loss_data[model_type] = {
-        'training_loss': history.history['loss'],
-        'validation_loss': history.history['val_loss']
+        'training_loss': history['train_loss'],
+        'validation_loss': history['val_loss']
     }
 
-    with open(saving_path, 'w') as file:
+    with open(file_path, 'w') as file:
         json.dump(loss_data, file, indent=2)
 
 
 def save_best_params(saving_path, model_type, best_hps, total_time):
+    directory = os.path.dirname(saving_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
     if os.path.exists(saving_path):
         with open(saving_path, 'r') as file:
             evaluation_data = json.load(file)
-
     else:
         evaluation_data = {}
 
     # Update or add the hyperparameters for the model type
-    evaluation_data[model_type] = best_hps.values
+    evaluation_data[model_type] = best_hps
     evaluation_data[model_type]['processing_time'] = format_duration(total_time)
 
     # Save the updated data back to the file
