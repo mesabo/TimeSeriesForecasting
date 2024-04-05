@@ -1,0 +1,1291 @@
+2024-04-05 05:16:59,055 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-05 05:16:59,056 - INFO - Tuning on CPU server
+2024-04-05 05:16:59,056 - INFO - CPU Name: i386
+2024-04-05 05:16:59,056 - INFO - CPU Cores: 8
+2024-04-05 05:16:59,056 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-05 05:16:59,056 - INFO - model_group: 1 |||| model_types: ['CNN-Based', 'LSTM-based', 'GRU-based']
+2024-04-05 05:16:59,056 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 05:17:24,602 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-05 05:17:24,602 - INFO - Tuning on CPU server
+2024-04-05 05:17:24,602 - INFO - CPU Name: i386
+2024-04-05 05:17:24,602 - INFO - CPU Cores: 8
+2024-04-05 05:17:24,602 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-05 05:17:24,602 - INFO - model_group: 1 |||| model_types: ['CNN-Based', 'LSTM-based', 'GRU-based']
+2024-04-05 05:17:24,602 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 05:20:54,745 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-05 05:20:54,746 - INFO - Tuning on CPU server
+2024-04-05 05:20:54,746 - INFO - CPU Name: i386
+2024-04-05 05:20:54,746 - INFO - CPU Cores: 8
+2024-04-05 05:20:54,746 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-05 05:20:54,746 - INFO - model_group: 1 |||| model_types: ['CNN-Based', 'LSTM-based', 'GRU-based']
+2024-04-05 05:20:54,746 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 05:22:11,360 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-05 05:22:11,361 - INFO - Tuning on CPU server
+2024-04-05 05:22:11,361 - INFO - CPU Name: i386
+2024-04-05 05:22:11,361 - INFO - CPU Cores: 8
+2024-04-05 05:22:11,361 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-05 05:22:11,361 - INFO - model_group: 1 |||| model_types: ['CNN-Based', 'LSTM-based', 'GRU-based']
+2024-04-05 05:22:11,361 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 05:24:51,167 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-05 05:24:51,168 - INFO - Tuning on CPU server
+2024-04-05 05:24:51,168 - INFO - CPU Name: i386
+2024-04-05 05:24:51,168 - INFO - CPU Cores: 8
+2024-04-05 05:24:51,168 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-05 05:24:51,168 - INFO - model_group: 1 |||| model_types: ['CNN-Based', 'LSTM-based', 'GRU-based']
+2024-04-05 05:24:51,168 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 05:25:15,304 - INFO - Epoch [1/5], Train Loss: 0.0066, Validation Loss: 0.0022
+2024-04-05 05:25:15,505 - INFO - Epoch [2/5], Train Loss: 0.0037, Validation Loss: 0.0020
+2024-04-05 05:25:15,711 - INFO - Epoch [3/5], Train Loss: 0.0025, Validation Loss: 0.0015
+2024-04-05 05:25:15,913 - INFO - Epoch [4/5], Train Loss: 0.0019, Validation Loss: 0.0008
+2024-04-05 05:25:16,108 - INFO - Epoch [5/5], Train Loss: 0.0016, Validation Loss: 0.0005
+2024-04-05 05:25:16,507 - INFO - Epoch [1/5], Train Loss: 0.0019, Validation Loss: 0.0010
+2024-04-05 05:25:16,871 - INFO - Epoch [2/5], Train Loss: 0.0018, Validation Loss: 0.0005
+2024-04-05 05:25:17,234 - INFO - Epoch [3/5], Train Loss: 0.0018, Validation Loss: 0.0002
+2024-04-05 05:25:17,580 - INFO - Epoch [4/5], Train Loss: 0.0018, Validation Loss: 0.0003
+2024-04-05 05:25:17,937 - INFO - Epoch [5/5], Train Loss: 0.0017, Validation Loss: 0.0003
+2024-04-05 05:25:18,158 - INFO - Epoch [1/5], Train Loss: 0.0035, Validation Loss: 0.0021
+2024-04-05 05:25:18,363 - INFO - Epoch [2/5], Train Loss: 0.0024, Validation Loss: 0.0016
+2024-04-05 05:25:18,562 - INFO - Epoch [3/5], Train Loss: 0.0018, Validation Loss: 0.0009
+2024-04-05 05:25:18,759 - INFO - Epoch [4/5], Train Loss: 0.0015, Validation Loss: 0.0004
+2024-04-05 05:25:18,970 - INFO - Epoch [5/5], Train Loss: 0.0013, Validation Loss: 0.0003
+2024-04-05 05:25:19,167 - INFO - Epoch [1/5], Train Loss: 0.0015, Validation Loss: 0.0004
+2024-04-05 05:25:19,350 - INFO - Epoch [2/5], Train Loss: 0.0013, Validation Loss: 0.0002
+2024-04-05 05:25:19,535 - INFO - Epoch [3/5], Train Loss: 0.0013, Validation Loss: 0.0003
+2024-04-05 05:25:19,707 - INFO - Epoch [4/5], Train Loss: 0.0012, Validation Loss: 0.0007
+2024-04-05 05:25:19,892 - INFO - Epoch [5/5], Train Loss: 0.0011, Validation Loss: 0.0008
+2024-04-05 05:25:20,105 - INFO - Epoch [1/5], Train Loss: 0.0022, Validation Loss: 0.0018
+2024-04-05 05:25:20,283 - INFO - Epoch [2/5], Train Loss: 0.0012, Validation Loss: 0.0007
+2024-04-05 05:25:20,448 - INFO - Epoch [3/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 05:25:20,621 - INFO - Epoch [4/5], Train Loss: 0.0009, Validation Loss: 0.0004
+2024-04-05 05:25:20,800 - INFO - Epoch [5/5], Train Loss: 0.0009, Validation Loss: 0.0005
+2024-04-05 05:25:20,801 - INFO - Best trial:
+2024-04-05 05:25:20,802 - INFO - {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 96, 'num_cnn_layers': 1, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:25:20,803 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=3
+2024-04-05 05:25:44,318 - INFO - Epoch [1/5], Train Loss: 0.0043, Validation Loss: 0.0012
+2024-04-05 05:25:45,026 - INFO - Epoch [2/5], Train Loss: 0.0035, Validation Loss: 0.0005
+2024-04-05 05:25:45,721 - INFO - Epoch [3/5], Train Loss: 0.0033, Validation Loss: 0.0002
+2024-04-05 05:25:46,436 - INFO - Epoch [4/5], Train Loss: 0.0033, Validation Loss: 0.0002
+2024-04-05 05:25:47,111 - INFO - Epoch [5/5], Train Loss: 0.0032, Validation Loss: 0.0002
+2024-04-05 05:25:47,397 - INFO - Epoch [1/5], Train Loss: 0.0026, Validation Loss: 0.0011
+2024-04-05 05:25:47,670 - INFO - Epoch [2/5], Train Loss: 0.0017, Validation Loss: 0.0007
+2024-04-05 05:25:47,942 - INFO - Epoch [3/5], Train Loss: 0.0014, Validation Loss: 0.0003
+2024-04-05 05:25:48,205 - INFO - Epoch [4/5], Train Loss: 0.0014, Validation Loss: 0.0003
+2024-04-05 05:25:48,491 - INFO - Epoch [5/5], Train Loss: 0.0014, Validation Loss: 0.0003
+2024-04-05 05:25:48,773 - INFO - Epoch [1/5], Train Loss: 0.0021, Validation Loss: 0.0011
+2024-04-05 05:25:49,035 - INFO - Epoch [2/5], Train Loss: 0.0015, Validation Loss: 0.0006
+2024-04-05 05:25:49,307 - INFO - Epoch [3/5], Train Loss: 0.0013, Validation Loss: 0.0003
+2024-04-05 05:25:49,585 - INFO - Epoch [4/5], Train Loss: 0.0012, Validation Loss: 0.0002
+2024-04-05 05:25:49,840 - INFO - Epoch [5/5], Train Loss: 0.0012, Validation Loss: 0.0002
+2024-04-05 05:25:50,072 - INFO - Epoch [1/5], Train Loss: 0.0072, Validation Loss: 0.0026
+2024-04-05 05:25:50,282 - INFO - Epoch [2/5], Train Loss: 0.0046, Validation Loss: 0.0024
+2024-04-05 05:25:50,471 - INFO - Epoch [3/5], Train Loss: 0.0034, Validation Loss: 0.0021
+2024-04-05 05:25:50,650 - INFO - Epoch [4/5], Train Loss: 0.0026, Validation Loss: 0.0015
+2024-04-05 05:25:50,828 - INFO - Epoch [5/5], Train Loss: 0.0021, Validation Loss: 0.0010
+2024-04-05 05:25:51,303 - INFO - Epoch [1/5], Train Loss: 0.0036, Validation Loss: 0.0013
+2024-04-05 05:25:51,766 - INFO - Epoch [2/5], Train Loss: 0.0031, Validation Loss: 0.0009
+2024-04-05 05:25:52,213 - INFO - Epoch [3/5], Train Loss: 0.0029, Validation Loss: 0.0005
+2024-04-05 05:25:52,686 - INFO - Epoch [4/5], Train Loss: 0.0028, Validation Loss: 0.0004
+2024-04-05 05:25:53,176 - INFO - Epoch [5/5], Train Loss: 0.0027, Validation Loss: 0.0003
+2024-04-05 05:25:53,178 - INFO - Best trial:
+2024-04-05 05:25:53,178 - INFO - {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:25:53,180 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=7
+2024-04-05 05:26:16,784 - INFO - Epoch [1/5], Train Loss: 0.0046, Validation Loss: 0.0009
+2024-04-05 05:26:17,285 - INFO - Epoch [2/5], Train Loss: 0.0034, Validation Loss: 0.0005
+2024-04-05 05:26:17,786 - INFO - Epoch [3/5], Train Loss: 0.0032, Validation Loss: 0.0002
+2024-04-05 05:26:18,293 - INFO - Epoch [4/5], Train Loss: 0.0031, Validation Loss: 0.0002
+2024-04-05 05:26:18,801 - INFO - Epoch [5/5], Train Loss: 0.0030, Validation Loss: 0.0002
+2024-04-05 05:26:19,322 - INFO - Epoch [1/5], Train Loss: 0.0056, Validation Loss: 0.0018
+2024-04-05 05:26:19,848 - INFO - Epoch [2/5], Train Loss: 0.0047, Validation Loss: 0.0014
+2024-04-05 05:26:20,384 - INFO - Epoch [3/5], Train Loss: 0.0040, Validation Loss: 0.0009
+2024-04-05 05:26:20,919 - INFO - Epoch [4/5], Train Loss: 0.0037, Validation Loss: 0.0006
+2024-04-05 05:26:21,437 - INFO - Epoch [5/5], Train Loss: 0.0034, Validation Loss: 0.0004
+2024-04-05 05:26:21,963 - INFO - Epoch [1/5], Train Loss: 0.0064, Validation Loss: 0.0017
+2024-04-05 05:26:22,480 - INFO - Epoch [2/5], Train Loss: 0.0052, Validation Loss: 0.0017
+2024-04-05 05:26:22,992 - INFO - Epoch [3/5], Train Loss: 0.0044, Validation Loss: 0.0014
+2024-04-05 05:26:23,518 - INFO - Epoch [4/5], Train Loss: 0.0039, Validation Loss: 0.0010
+2024-04-05 05:26:24,038 - INFO - Epoch [5/5], Train Loss: 0.0035, Validation Loss: 0.0007
+2024-04-05 05:26:24,259 - INFO - Epoch [1/5], Train Loss: 0.0034, Validation Loss: 0.0018
+2024-04-05 05:26:24,469 - INFO - Epoch [2/5], Train Loss: 0.0028, Validation Loss: 0.0017
+2024-04-05 05:26:24,672 - INFO - Epoch [3/5], Train Loss: 0.0023, Validation Loss: 0.0014
+2024-04-05 05:26:24,874 - INFO - Epoch [4/5], Train Loss: 0.0019, Validation Loss: 0.0012
+2024-04-05 05:26:25,071 - INFO - Epoch [5/5], Train Loss: 0.0017, Validation Loss: 0.0009
+2024-04-05 05:26:25,299 - INFO - Epoch [1/5], Train Loss: 0.0027, Validation Loss: 0.0009
+2024-04-05 05:26:25,524 - INFO - Epoch [2/5], Train Loss: 0.0017, Validation Loss: 0.0006
+2024-04-05 05:26:25,742 - INFO - Epoch [3/5], Train Loss: 0.0015, Validation Loss: 0.0004
+2024-04-05 05:26:25,961 - INFO - Epoch [4/5], Train Loss: 0.0015, Validation Loss: 0.0003
+2024-04-05 05:26:26,191 - INFO - Epoch [5/5], Train Loss: 0.0014, Validation Loss: 0.0003
+2024-04-05 05:26:26,193 - INFO - Best trial:
+2024-04-05 05:26:26,193 - INFO - {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:26:26,194 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 05:26:49,902 - INFO - Epoch [1/5], Train Loss: 0.0094, Validation Loss: 0.0002
+2024-04-05 05:26:50,849 - INFO - Epoch [2/5], Train Loss: 0.0067, Validation Loss: 0.0002
+2024-04-05 05:26:51,778 - INFO - Epoch [3/5], Train Loss: 0.0046, Validation Loss: 0.0002
+2024-04-05 05:26:52,703 - INFO - Epoch [4/5], Train Loss: 0.0030, Validation Loss: 0.0002
+2024-04-05 05:26:53,632 - INFO - Epoch [5/5], Train Loss: 0.0019, Validation Loss: 0.0002
+2024-04-05 05:26:55,032 - INFO - Epoch [1/5], Train Loss: 0.0076, Validation Loss: 0.0002
+2024-04-05 05:26:56,387 - INFO - Epoch [2/5], Train Loss: 0.0016, Validation Loss: 0.0002
+2024-04-05 05:26:57,741 - INFO - Epoch [3/5], Train Loss: 0.0011, Validation Loss: 0.0002
+2024-04-05 05:26:59,112 - INFO - Epoch [4/5], Train Loss: 0.0009, Validation Loss: 0.0002
+2024-04-05 05:27:00,539 - INFO - Epoch [5/5], Train Loss: 0.0008, Validation Loss: 0.0002
+2024-04-05 05:27:01,926 - INFO - Epoch [1/5], Train Loss: 0.0085, Validation Loss: 0.0002
+2024-04-05 05:27:03,336 - INFO - Epoch [2/5], Train Loss: 0.0023, Validation Loss: 0.0002
+2024-04-05 05:27:05,572 - INFO - Epoch [3/5], Train Loss: 0.0014, Validation Loss: 0.0002
+2024-04-05 05:27:07,932 - INFO - Epoch [4/5], Train Loss: 0.0011, Validation Loss: 0.0002
+2024-04-05 05:27:09,961 - INFO - Epoch [5/5], Train Loss: 0.0009, Validation Loss: 0.0002
+2024-04-05 05:27:11,607 - INFO - Epoch [1/5], Train Loss: 0.0053, Validation Loss: 0.0002
+2024-04-05 05:27:13,064 - INFO - Epoch [2/5], Train Loss: 0.0017, Validation Loss: 0.0002
+2024-04-05 05:27:14,897 - INFO - Epoch [3/5], Train Loss: 0.0011, Validation Loss: 0.0002
+2024-04-05 05:27:16,929 - INFO - Epoch [4/5], Train Loss: 0.0009, Validation Loss: 0.0002
+2024-04-05 05:27:19,553 - INFO - Epoch [5/5], Train Loss: 0.0007, Validation Loss: 0.0002
+2024-04-05 05:27:21,405 - INFO - Epoch [1/5], Train Loss: 0.0056, Validation Loss: 0.0003
+2024-04-05 05:27:23,516 - INFO - Epoch [2/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 05:27:25,235 - INFO - Epoch [3/5], Train Loss: 0.0006, Validation Loss: 0.0002
+2024-04-05 05:27:26,944 - INFO - Epoch [4/5], Train Loss: 0.0005, Validation Loss: 0.0002
+2024-04-05 05:27:28,929 - INFO - Epoch [5/5], Train Loss: 0.0005, Validation Loss: 0.0002
+2024-04-05 05:27:28,931 - INFO - Best trial:
+2024-04-05 05:27:28,932 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:27:28,933 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=3
+2024-04-05 05:33:59,766 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-05 05:33:59,767 - INFO - Tuning on CPU server
+2024-04-05 05:33:59,767 - INFO - CPU Name: i386
+2024-04-05 05:33:59,767 - INFO - CPU Cores: 8
+2024-04-05 05:33:59,767 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-05 05:33:59,767 - INFO - model_group: 1 |||| model_types: ['CNN-Based', 'LSTM-based', 'GRU-based']
+2024-04-05 05:33:59,767 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 05:34:21,440 - INFO - Epoch [1/5], Train Loss: 0.0092, Validation Loss: 0.0031
+2024-04-05 05:34:21,671 - INFO - Epoch [2/5], Train Loss: 0.0076, Validation Loss: 0.0040
+2024-04-05 05:34:21,858 - INFO - Epoch [3/5], Train Loss: 0.0060, Validation Loss: 0.0046
+2024-04-05 05:34:22,066 - INFO - Epoch [4/5], Train Loss: 0.0049, Validation Loss: 0.0038
+2024-04-05 05:34:22,277 - INFO - Epoch [5/5], Train Loss: 0.0041, Validation Loss: 0.0028
+2024-04-05 05:34:22,279 - INFO - Best trial:
+2024-04-05 05:34:22,279 - INFO - {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 96, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:34:22,281 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=3
+2024-04-05 05:37:03,992 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-05 05:37:03,993 - INFO - Tuning on CPU server
+2024-04-05 05:37:03,993 - INFO - CPU Name: i386
+2024-04-05 05:37:03,993 - INFO - CPU Cores: 8
+2024-04-05 05:37:03,993 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-05 05:37:03,993 - INFO - model_group: 1 |||| model_types: ['CNN-Based', 'LSTM-based', 'GRU-based']
+2024-04-05 05:37:03,993 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=1
+2024-04-05 05:38:17,887 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-05 05:38:17,888 - INFO - Tuning on CPU server
+2024-04-05 05:38:17,888 - INFO - CPU Name: i386
+2024-04-05 05:38:17,888 - INFO - CPU Cores: 8
+2024-04-05 05:38:17,888 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-05 05:38:17,888 - INFO - model_group: 1 |||| model_types: ['CNN-Based', 'LSTM-based', 'GRU-based']
+2024-04-05 05:38:17,888 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=1
+2024-04-05 05:38:38,750 - INFO - Epoch [1/5], Train Loss: 0.0023, Validation Loss: 0.0005
+2024-04-05 05:38:38,965 - INFO - Epoch [2/5], Train Loss: 0.0020, Validation Loss: 0.0004
+2024-04-05 05:38:39,160 - INFO - Epoch [3/5], Train Loss: 0.0019, Validation Loss: 0.0003
+2024-04-05 05:38:39,347 - INFO - Epoch [4/5], Train Loss: 0.0018, Validation Loss: 0.0003
+2024-04-05 05:38:39,530 - INFO - Epoch [5/5], Train Loss: 0.0018, Validation Loss: 0.0003
+2024-04-05 05:38:39,532 - INFO - Best trial:
+2024-04-05 05:38:39,532 - INFO - {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 96, 'num_cnn_layers': 2, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:38:39,533 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=3
+2024-04-05 05:39:03,145 - INFO - Epoch [1/5], Train Loss: 0.0034, Validation Loss: 0.0012
+2024-04-05 05:39:03,576 - INFO - Epoch [2/5], Train Loss: 0.0027, Validation Loss: 0.0006
+2024-04-05 05:39:04,008 - INFO - Epoch [3/5], Train Loss: 0.0026, Validation Loss: 0.0003
+2024-04-05 05:39:04,372 - INFO - Epoch [4/5], Train Loss: 0.0026, Validation Loss: 0.0002
+2024-04-05 05:39:04,652 - INFO - Epoch [5/5], Train Loss: 0.0025, Validation Loss: 0.0002
+2024-04-05 05:39:04,654 - INFO - Best trial:
+2024-04-05 05:39:04,654 - INFO - {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:39:04,655 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=5
+2024-04-05 05:39:27,698 - INFO - Epoch [1/5], Train Loss: 0.0030, Validation Loss: 0.0013
+2024-04-05 05:39:27,890 - INFO - Epoch [2/5], Train Loss: 0.0020, Validation Loss: 0.0008
+2024-04-05 05:39:28,079 - INFO - Epoch [3/5], Train Loss: 0.0017, Validation Loss: 0.0005
+2024-04-05 05:39:28,265 - INFO - Epoch [4/5], Train Loss: 0.0015, Validation Loss: 0.0004
+2024-04-05 05:39:28,449 - INFO - Epoch [5/5], Train Loss: 0.0015, Validation Loss: 0.0003
+2024-04-05 05:39:28,450 - INFO - Best trial:
+2024-04-05 05:39:28,451 - INFO - {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:39:28,452 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=7
+2024-04-05 05:39:50,832 - INFO - Epoch [1/5], Train Loss: 0.0047, Validation Loss: 0.0020
+2024-04-05 05:39:50,973 - INFO - Epoch [2/5], Train Loss: 0.0038, Validation Loss: 0.0019
+2024-04-05 05:39:51,137 - INFO - Epoch [3/5], Train Loss: 0.0031, Validation Loss: 0.0018
+2024-04-05 05:39:51,341 - INFO - Epoch [4/5], Train Loss: 0.0026, Validation Loss: 0.0016
+2024-04-05 05:39:51,510 - INFO - Epoch [5/5], Train Loss: 0.0023, Validation Loss: 0.0013
+2024-04-05 05:39:51,512 - INFO - Best trial:
+2024-04-05 05:39:51,513 - INFO - {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:39:51,514 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 05:40:10,038 - INFO - Epoch [1/5], Train Loss: 0.0012, Validation Loss: 0.0003
+2024-04-05 05:40:10,168 - INFO - Epoch [2/5], Train Loss: 0.0011, Validation Loss: 0.0002
+2024-04-05 05:40:10,337 - INFO - Epoch [3/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 05:40:10,500 - INFO - Epoch [4/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 05:40:10,646 - INFO - Epoch [5/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 05:40:10,647 - INFO - Best trial:
+2024-04-05 05:40:10,648 - INFO - {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'num_cnn_layers': 1, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:40:10,648 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=3
+2024-04-05 05:40:30,376 - INFO - Epoch [1/5], Train Loss: 0.0044, Validation Loss: 0.0010
+2024-04-05 05:40:30,678 - INFO - Epoch [2/5], Train Loss: 0.0037, Validation Loss: 0.0007
+2024-04-05 05:40:30,982 - INFO - Epoch [3/5], Train Loss: 0.0032, Validation Loss: 0.0006
+2024-04-05 05:40:31,295 - INFO - Epoch [4/5], Train Loss: 0.0029, Validation Loss: 0.0004
+2024-04-05 05:40:31,633 - INFO - Epoch [5/5], Train Loss: 0.0027, Validation Loss: 0.0004
+2024-04-05 05:40:31,635 - INFO - Best trial:
+2024-04-05 05:40:31,635 - INFO - {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:40:31,637 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=5
+2024-04-05 05:40:52,786 - INFO - Epoch [1/5], Train Loss: 0.0068, Validation Loss: 0.0030
+2024-04-05 05:40:53,220 - INFO - Epoch [2/5], Train Loss: 0.0044, Validation Loss: 0.0023
+2024-04-05 05:40:53,736 - INFO - Epoch [3/5], Train Loss: 0.0035, Validation Loss: 0.0011
+2024-04-05 05:40:54,192 - INFO - Epoch [4/5], Train Loss: 0.0031, Validation Loss: 0.0006
+2024-04-05 05:40:54,657 - INFO - Epoch [5/5], Train Loss: 0.0028, Validation Loss: 0.0004
+2024-04-05 05:40:54,659 - INFO - Best trial:
+2024-04-05 05:40:54,659 - INFO - {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:40:54,660 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=7
+2024-04-05 05:41:13,522 - INFO - Epoch [1/5], Train Loss: 0.0047, Validation Loss: 0.0010
+2024-04-05 05:41:13,862 - INFO - Epoch [2/5], Train Loss: 0.0040, Validation Loss: 0.0008
+2024-04-05 05:41:14,196 - INFO - Epoch [3/5], Train Loss: 0.0036, Validation Loss: 0.0006
+2024-04-05 05:41:14,551 - INFO - Epoch [4/5], Train Loss: 0.0033, Validation Loss: 0.0005
+2024-04-05 05:41:14,876 - INFO - Epoch [5/5], Train Loss: 0.0032, Validation Loss: 0.0004
+2024-04-05 05:41:14,878 - INFO - Best trial:
+2024-04-05 05:41:14,878 - INFO - {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:41:14,879 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=1
+2024-04-05 05:41:38,324 - INFO - Epoch [1/5], Train Loss: 0.0031, Validation Loss: 0.0024
+2024-04-05 05:41:38,708 - INFO - Epoch [2/5], Train Loss: 0.0025, Validation Loss: 0.0013
+2024-04-05 05:41:39,022 - INFO - Epoch [3/5], Train Loss: 0.0024, Validation Loss: 0.0002
+2024-04-05 05:41:39,332 - INFO - Epoch [4/5], Train Loss: 0.0023, Validation Loss: 0.0002
+2024-04-05 05:41:39,634 - INFO - Epoch [5/5], Train Loss: 0.0023, Validation Loss: 0.0003
+2024-04-05 05:41:39,635 - INFO - Best trial:
+2024-04-05 05:41:39,636 - INFO - {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'num_cnn_layers': 2, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:41:39,636 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=3
+2024-04-05 05:41:58,236 - INFO - Epoch [1/5], Train Loss: 0.0053, Validation Loss: 0.0020
+2024-04-05 05:41:58,712 - INFO - Epoch [2/5], Train Loss: 0.0044, Validation Loss: 0.0013
+2024-04-05 05:41:59,209 - INFO - Epoch [3/5], Train Loss: 0.0039, Validation Loss: 0.0006
+2024-04-05 05:41:59,682 - INFO - Epoch [4/5], Train Loss: 0.0036, Validation Loss: 0.0003
+2024-04-05 05:42:00,137 - INFO - Epoch [5/5], Train Loss: 0.0035, Validation Loss: 0.0002
+2024-04-05 05:42:00,139 - INFO - Best trial:
+2024-04-05 05:42:00,139 - INFO - {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:42:00,140 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=5
+2024-04-05 05:42:18,386 - INFO - Epoch [1/5], Train Loss: 0.0038, Validation Loss: 0.0006
+2024-04-05 05:42:19,029 - INFO - Epoch [2/5], Train Loss: 0.0032, Validation Loss: 0.0004
+2024-04-05 05:42:19,633 - INFO - Epoch [3/5], Train Loss: 0.0031, Validation Loss: 0.0003
+2024-04-05 05:42:20,263 - INFO - Epoch [4/5], Train Loss: 0.0030, Validation Loss: 0.0003
+2024-04-05 05:42:20,876 - INFO - Epoch [5/5], Train Loss: 0.0030, Validation Loss: 0.0003
+2024-04-05 05:42:20,878 - INFO - Best trial:
+2024-04-05 05:42:20,879 - INFO - {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:42:20,880 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=7
+2024-04-05 05:42:41,859 - INFO - Epoch [1/5], Train Loss: 0.0044, Validation Loss: 0.0015
+2024-04-05 05:42:42,214 - INFO - Epoch [2/5], Train Loss: 0.0037, Validation Loss: 0.0015
+2024-04-05 05:42:42,517 - INFO - Epoch [3/5], Train Loss: 0.0032, Validation Loss: 0.0011
+2024-04-05 05:42:42,816 - INFO - Epoch [4/5], Train Loss: 0.0028, Validation Loss: 0.0007
+2024-04-05 05:42:43,113 - INFO - Epoch [5/5], Train Loss: 0.0026, Validation Loss: 0.0005
+2024-04-05 05:42:43,115 - INFO - Best trial:
+2024-04-05 05:42:43,115 - INFO - {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 96, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:42:43,116 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=1
+2024-04-05 05:43:04,857 - INFO - Epoch [1/5], Train Loss: 0.0076, Validation Loss: 0.0002
+2024-04-05 05:43:05,959 - INFO - Epoch [2/5], Train Loss: 0.0017, Validation Loss: 0.0002
+2024-04-05 05:43:07,105 - INFO - Epoch [3/5], Train Loss: 0.0012, Validation Loss: 0.0002
+2024-04-05 05:43:08,158 - INFO - Epoch [4/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 05:43:09,196 - INFO - Epoch [5/5], Train Loss: 0.0009, Validation Loss: 0.0002
+2024-04-05 05:43:09,197 - INFO - Best trial:
+2024-04-05 05:43:09,198 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.3, 'activation': 'ReLU'}
+2024-04-05 05:43:09,200 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=3
+2024-04-05 05:43:29,781 - INFO - Epoch [1/5], Train Loss: 0.0103, Validation Loss: 0.0016
+2024-04-05 05:43:30,537 - INFO - Epoch [2/5], Train Loss: 0.0075, Validation Loss: 0.0016
+2024-04-05 05:43:31,186 - INFO - Epoch [3/5], Train Loss: 0.0052, Validation Loss: 0.0016
+2024-04-05 05:43:31,913 - INFO - Epoch [4/5], Train Loss: 0.0035, Validation Loss: 0.0016
+2024-04-05 05:43:32,597 - INFO - Epoch [5/5], Train Loss: 0.0023, Validation Loss: 0.0013
+2024-04-05 05:43:32,598 - INFO - Best trial:
+2024-04-05 05:43:32,599 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:43:32,600 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=5
+2024-04-05 05:43:52,998 - INFO - Epoch [1/5], Train Loss: 0.0162, Validation Loss: 0.0008
+2024-04-05 05:43:54,311 - INFO - Epoch [2/5], Train Loss: 0.0102, Validation Loss: 0.0007
+2024-04-05 05:43:55,593 - INFO - Epoch [3/5], Train Loss: 0.0057, Validation Loss: 0.0005
+2024-04-05 05:43:56,849 - INFO - Epoch [4/5], Train Loss: 0.0027, Validation Loss: 0.0003
+2024-04-05 05:43:58,167 - INFO - Epoch [5/5], Train Loss: 0.0011, Validation Loss: 0.0002
+2024-04-05 05:43:58,169 - INFO - Best trial:
+2024-04-05 05:43:58,169 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.3, 'activation': 'ReLU'}
+2024-04-05 05:43:58,170 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=7
+2024-04-05 05:44:24,178 - INFO - Epoch [1/5], Train Loss: 0.0164, Validation Loss: 0.0008
+2024-04-05 05:44:24,909 - INFO - Epoch [2/5], Train Loss: 0.0103, Validation Loss: 0.0008
+2024-04-05 05:44:25,604 - INFO - Epoch [3/5], Train Loss: 0.0059, Validation Loss: 0.0008
+2024-04-05 05:44:26,317 - INFO - Epoch [4/5], Train Loss: 0.0030, Validation Loss: 0.0008
+2024-04-05 05:44:27,146 - INFO - Epoch [5/5], Train Loss: 0.0015, Validation Loss: 0.0005
+2024-04-05 05:44:27,148 - INFO - Best trial:
+2024-04-05 05:44:27,149 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:44:27,149 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 05:44:44,655 - INFO - Epoch [1/5], Train Loss: 0.0053, Validation Loss: 0.0002
+2024-04-05 05:44:45,291 - INFO - Epoch [2/5], Train Loss: 0.0016, Validation Loss: 0.0002
+2024-04-05 05:44:45,817 - INFO - Epoch [3/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 05:44:46,382 - INFO - Epoch [4/5], Train Loss: 0.0008, Validation Loss: 0.0002
+2024-04-05 05:44:47,115 - INFO - Epoch [5/5], Train Loss: 0.0007, Validation Loss: 0.0002
+2024-04-05 05:44:47,117 - INFO - Best trial:
+2024-04-05 05:44:47,117 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU'}
+2024-04-05 05:44:47,118 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=3
+2024-04-05 05:45:06,105 - INFO - Epoch [1/5], Train Loss: 0.0075, Validation Loss: 0.0002
+2024-04-05 05:45:07,409 - INFO - Epoch [2/5], Train Loss: 0.0014, Validation Loss: 0.0002
+2024-04-05 05:45:08,551 - INFO - Epoch [3/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 05:45:09,689 - INFO - Epoch [4/5], Train Loss: 0.0009, Validation Loss: 0.0002
+2024-04-05 05:45:10,802 - INFO - Epoch [5/5], Train Loss: 0.0008, Validation Loss: 0.0002
+2024-04-05 05:45:10,804 - INFO - Best trial:
+2024-04-05 05:45:10,804 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:45:10,805 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=5
+2024-04-05 05:50:44,029 - INFO - Epoch [1/5], Train Loss: 0.0165, Validation Loss: 0.0011
+2024-04-05 05:50:45,377 - INFO - Epoch [2/5], Train Loss: 0.0105, Validation Loss: 0.0011
+2024-04-05 05:50:46,627 - INFO - Epoch [3/5], Train Loss: 0.0060, Validation Loss: 0.0007
+2024-04-05 05:50:47,835 - INFO - Epoch [4/5], Train Loss: 0.0028, Validation Loss: 0.0003
+2024-04-05 05:50:49,178 - INFO - Epoch [5/5], Train Loss: 0.0011, Validation Loss: 0.0002
+2024-04-05 05:50:49,180 - INFO - Best trial:
+2024-04-05 05:50:49,180 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:50:49,181 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=7
+2024-04-05 05:51:10,328 - INFO - Epoch [1/5], Train Loss: 0.0053, Validation Loss: 0.0004
+2024-04-05 05:51:11,051 - INFO - Epoch [2/5], Train Loss: 0.0014, Validation Loss: 0.0002
+2024-04-05 05:51:11,716 - INFO - Epoch [3/5], Train Loss: 0.0008, Validation Loss: 0.0002
+2024-04-05 05:51:12,395 - INFO - Epoch [4/5], Train Loss: 0.0007, Validation Loss: 0.0002
+2024-04-05 05:51:13,102 - INFO - Epoch [5/5], Train Loss: 0.0006, Validation Loss: 0.0002
+2024-04-05 05:51:13,104 - INFO - Best trial:
+2024-04-05 05:51:13,104 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU'}
+2024-04-05 05:51:13,105 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=1
+2024-04-05 05:51:36,473 - INFO - Epoch [1/5], Train Loss: 0.0160, Validation Loss: 0.0002
+2024-04-05 05:51:39,201 - INFO - Epoch [2/5], Train Loss: 0.0104, Validation Loss: 0.0002
+2024-04-05 05:51:41,667 - INFO - Epoch [3/5], Train Loss: 0.0061, Validation Loss: 0.0002
+2024-04-05 05:51:44,243 - INFO - Epoch [4/5], Train Loss: 0.0032, Validation Loss: 0.0002
+2024-04-05 05:51:46,976 - INFO - Epoch [5/5], Train Loss: 0.0017, Validation Loss: 0.0002
+2024-04-05 05:51:46,978 - INFO - Best trial:
+2024-04-05 05:51:46,978 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.3, 'activation': 'ReLU'}
+2024-04-05 05:51:46,979 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=3
+2024-04-05 05:52:06,036 - INFO - Epoch [1/5], Train Loss: 0.0075, Validation Loss: 0.0002
+2024-04-05 05:52:07,920 - INFO - Epoch [2/5], Train Loss: 0.0015, Validation Loss: 0.0002
+2024-04-05 05:52:10,110 - INFO - Epoch [3/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 05:52:12,249 - INFO - Epoch [4/5], Train Loss: 0.0009, Validation Loss: 0.0002
+2024-04-05 05:52:14,577 - INFO - Epoch [5/5], Train Loss: 0.0008, Validation Loss: 0.0002
+2024-04-05 05:52:14,578 - INFO - Best trial:
+2024-04-05 05:52:14,579 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:52:14,579 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=5
+2024-04-05 05:52:36,242 - INFO - Epoch [1/5], Train Loss: 0.0077, Validation Loss: 0.0008
+2024-04-05 05:52:39,916 - INFO - Epoch [2/5], Train Loss: 0.0013, Validation Loss: 0.0002
+2024-04-05 05:52:42,365 - INFO - Epoch [3/5], Train Loss: 0.0008, Validation Loss: 0.0002
+2024-04-05 05:52:45,012 - INFO - Epoch [4/5], Train Loss: 0.0008, Validation Loss: 0.0002
+2024-04-05 05:52:47,655 - INFO - Epoch [5/5], Train Loss: 0.0007, Validation Loss: 0.0002
+2024-04-05 05:52:47,656 - INFO - Best trial:
+2024-04-05 05:52:47,657 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.3, 'activation': 'ReLU'}
+2024-04-05 05:52:47,658 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=7
+2024-04-05 05:53:14,538 - INFO - Epoch [1/5], Train Loss: 0.0077, Validation Loss: 0.0004
+2024-04-05 05:53:16,242 - INFO - Epoch [2/5], Train Loss: 0.0016, Validation Loss: 0.0002
+2024-04-05 05:53:17,998 - INFO - Epoch [3/5], Train Loss: 0.0011, Validation Loss: 0.0002
+2024-04-05 05:53:19,876 - INFO - Epoch [4/5], Train Loss: 0.0009, Validation Loss: 0.0002
+2024-04-05 05:53:21,848 - INFO - Epoch [5/5], Train Loss: 0.0008, Validation Loss: 0.0002
+2024-04-05 05:53:21,851 - INFO - Best trial:
+2024-04-05 05:53:21,851 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:53:21,852 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=1
+2024-04-05 05:53:46,976 - INFO - Epoch [1/5], Train Loss: 0.0114, Validation Loss: 0.0002
+2024-04-05 05:53:47,851 - INFO - Epoch [2/5], Train Loss: 0.0084, Validation Loss: 0.0002
+2024-04-05 05:53:48,887 - INFO - Epoch [3/5], Train Loss: 0.0059, Validation Loss: 0.0002
+2024-04-05 05:53:49,690 - INFO - Epoch [4/5], Train Loss: 0.0040, Validation Loss: 0.0002
+2024-04-05 05:53:50,471 - INFO - Epoch [5/5], Train Loss: 0.0027, Validation Loss: 0.0002
+2024-04-05 05:53:50,472 - INFO - Best trial:
+2024-04-05 05:53:50,473 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:53:50,475 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=3
+2024-04-05 05:54:12,829 - INFO - Epoch [1/5], Train Loss: 0.0121, Validation Loss: 0.0012
+2024-04-05 05:54:14,226 - INFO - Epoch [2/5], Train Loss: 0.0088, Validation Loss: 0.0011
+2024-04-05 05:54:15,348 - INFO - Epoch [3/5], Train Loss: 0.0062, Validation Loss: 0.0012
+2024-04-05 05:54:16,423 - INFO - Epoch [4/5], Train Loss: 0.0042, Validation Loss: 0.0011
+2024-04-05 05:54:17,238 - INFO - Epoch [5/5], Train Loss: 0.0027, Validation Loss: 0.0011
+2024-04-05 05:54:17,240 - INFO - Best trial:
+2024-04-05 05:54:17,241 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.3, 'activation': 'ReLU'}
+2024-04-05 05:54:17,242 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=5
+2024-04-05 05:54:38,481 - INFO - Epoch [1/5], Train Loss: 0.0121, Validation Loss: 0.0011
+2024-04-05 05:54:39,919 - INFO - Epoch [2/5], Train Loss: 0.0087, Validation Loss: 0.0009
+2024-04-05 05:54:41,362 - INFO - Epoch [3/5], Train Loss: 0.0058, Validation Loss: 0.0008
+2024-04-05 05:54:42,816 - INFO - Epoch [4/5], Train Loss: 0.0038, Validation Loss: 0.0008
+2024-04-05 05:54:44,422 - INFO - Epoch [5/5], Train Loss: 0.0024, Validation Loss: 0.0005
+2024-04-05 05:54:44,424 - INFO - Best trial:
+2024-04-05 05:54:44,424 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.4, 'activation': 'ReLU'}
+2024-04-05 05:54:44,425 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=7
+2024-04-05 05:55:09,618 - INFO - Epoch [1/5], Train Loss: 0.0066, Validation Loss: 0.0002
+2024-04-05 05:55:10,366 - INFO - Epoch [2/5], Train Loss: 0.0020, Validation Loss: 0.0002
+2024-04-05 05:55:11,121 - INFO - Epoch [3/5], Train Loss: 0.0012, Validation Loss: 0.0002
+2024-04-05 05:55:11,875 - INFO - Epoch [4/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 05:55:12,642 - INFO - Epoch [5/5], Train Loss: 0.0008, Validation Loss: 0.0002
+2024-04-05 05:55:12,644 - INFO - Best trial:
+2024-04-05 05:55:12,644 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 05:55:12,645 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 05:55:36,636 - INFO - Epoch [1/5], Train Loss: 0.0116, Validation Loss: 0.0003
+2024-04-05 05:55:38,219 - INFO - Epoch [2/5], Train Loss: 0.0085, Validation Loss: 0.0002
+2024-04-05 05:55:40,227 - INFO - Epoch [3/5], Train Loss: 0.0061, Validation Loss: 0.0002
+2024-04-05 05:55:42,191 - INFO - Epoch [4/5], Train Loss: 0.0042, Validation Loss: 0.0002
+2024-04-05 05:55:43,798 - INFO - Epoch [5/5], Train Loss: 0.0028, Validation Loss: 0.0002
+2024-04-05 05:55:43,801 - INFO - Best trial:
+2024-04-05 05:55:43,801 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:55:43,802 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=3
+2024-04-05 05:57:59,915 - INFO - Epoch [1/5], Train Loss: 0.0292, Validation Loss: 0.0012
+2024-04-05 05:58:04,886 - INFO - Epoch [2/5], Train Loss: 0.0167, Validation Loss: 0.0012
+2024-04-05 05:58:08,028 - INFO - Epoch [3/5], Train Loss: 0.0082, Validation Loss: 0.0011
+2024-04-05 05:58:10,980 - INFO - Epoch [4/5], Train Loss: 0.0032, Validation Loss: 0.0007
+2024-04-05 05:58:14,045 - INFO - Epoch [5/5], Train Loss: 0.0013, Validation Loss: 0.0002
+2024-04-05 05:58:14,047 - INFO - Best trial:
+2024-04-05 05:58:14,047 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 200, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 05:58:14,048 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=5
+2024-04-05 05:58:34,944 - INFO - Epoch [1/5], Train Loss: 0.0120, Validation Loss: 0.0008
+2024-04-05 05:58:36,212 - INFO - Epoch [2/5], Train Loss: 0.0088, Validation Loss: 0.0008
+2024-04-05 05:58:37,467 - INFO - Epoch [3/5], Train Loss: 0.0061, Validation Loss: 0.0005
+2024-04-05 05:58:38,846 - INFO - Epoch [4/5], Train Loss: 0.0039, Validation Loss: 0.0002
+2024-04-05 05:58:40,126 - INFO - Epoch [5/5], Train Loss: 0.0023, Validation Loss: 0.0002
+2024-04-05 05:58:40,128 - INFO - Best trial:
+2024-04-05 05:58:40,128 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.4, 'activation': 'ReLU'}
+2024-04-05 05:58:40,129 - INFO - Tuning with series_type=electricity | look_back=14 | forecast_period=7
+2024-04-05 05:59:04,850 - INFO - Epoch [1/5], Train Loss: 0.0142, Validation Loss: 0.0002
+2024-04-05 05:59:07,894 - INFO - Epoch [2/5], Train Loss: 0.0038, Validation Loss: 0.0002
+2024-04-05 05:59:11,974 - INFO - Epoch [3/5], Train Loss: 0.0023, Validation Loss: 0.0002
+2024-04-05 05:59:15,192 - INFO - Epoch [4/5], Train Loss: 0.0017, Validation Loss: 0.0002
+2024-04-05 05:59:17,951 - INFO - Epoch [5/5], Train Loss: 0.0013, Validation Loss: 0.0002
+2024-04-05 05:59:17,953 - INFO - Best trial:
+2024-04-05 05:59:17,954 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 200, 'dropout': 0.4, 'activation': 'ReLU'}
+2024-04-05 05:59:17,955 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=1
+2024-04-05 05:59:43,480 - INFO - Epoch [1/5], Train Loss: 0.0223, Validation Loss: 0.0016
+2024-04-05 05:59:47,291 - INFO - Epoch [2/5], Train Loss: 0.0125, Validation Loss: 0.0016
+2024-04-05 05:59:51,262 - INFO - Epoch [3/5], Train Loss: 0.0106, Validation Loss: 0.0016
+2024-04-05 05:59:55,270 - INFO - Epoch [4/5], Train Loss: 0.0094, Validation Loss: 0.0016
+2024-04-05 05:59:59,443 - INFO - Epoch [5/5], Train Loss: 0.0084, Validation Loss: 0.0016
+2024-04-05 05:59:59,445 - INFO - Best trial:
+2024-04-05 05:59:59,446 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 200, 'dropout': 0.4, 'activation': 'ReLU'}
+2024-04-05 05:59:59,447 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=3
+2024-04-05 06:00:19,381 - INFO - Epoch [1/5], Train Loss: 0.0121, Validation Loss: 0.0012
+2024-04-05 06:00:21,532 - INFO - Epoch [2/5], Train Loss: 0.0088, Validation Loss: 0.0011
+2024-04-05 06:00:24,379 - INFO - Epoch [3/5], Train Loss: 0.0062, Validation Loss: 0.0011
+2024-04-05 06:00:30,070 - INFO - Epoch [4/5], Train Loss: 0.0041, Validation Loss: 0.0011
+2024-04-05 06:00:35,762 - INFO - Epoch [5/5], Train Loss: 0.0027, Validation Loss: 0.0010
+2024-04-05 06:00:35,764 - INFO - Best trial:
+2024-04-05 06:00:35,765 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 06:00:35,766 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=5
+2024-04-05 06:00:59,837 - INFO - Epoch [1/5], Train Loss: 0.0168, Validation Loss: 0.0008
+2024-04-05 06:01:05,932 - INFO - Epoch [2/5], Train Loss: 0.0066, Validation Loss: 0.0008
+2024-04-05 06:01:11,922 - INFO - Epoch [3/5], Train Loss: 0.0048, Validation Loss: 0.0008
+2024-04-05 06:01:17,720 - INFO - Epoch [4/5], Train Loss: 0.0037, Validation Loss: 0.0008
+2024-04-05 06:01:23,513 - INFO - Epoch [5/5], Train Loss: 0.0031, Validation Loss: 0.0003
+2024-04-05 06:01:23,516 - INFO - Best trial:
+2024-04-05 06:01:23,516 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 200, 'dropout': 0.1, 'activation': 'ReLU'}
+2024-04-05 06:01:23,517 - INFO - Tuning with series_type=electricity | look_back=21 | forecast_period=7
+2024-04-05 06:01:47,946 - INFO - Epoch [1/5], Train Loss: 0.0151, Validation Loss: 0.0002
+2024-04-05 06:01:53,590 - INFO - Epoch [2/5], Train Loss: 0.0048, Validation Loss: 0.0002
+2024-04-05 06:01:58,876 - INFO - Epoch [3/5], Train Loss: 0.0031, Validation Loss: 0.0002
+2024-04-05 06:02:03,997 - INFO - Epoch [4/5], Train Loss: 0.0022, Validation Loss: 0.0002
+2024-04-05 06:02:07,889 - INFO - Epoch [5/5], Train Loss: 0.0017, Validation Loss: 0.0002
+2024-04-05 06:02:07,890 - INFO - Best trial:
+2024-04-05 06:02:07,891 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 200, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-05 06:02:07,892 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=1
+2024-04-05 06:02:29,379 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:02:29,380 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/7_1_best_params.json  📌📌📌
+2024-04-05 06:02:29,382 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 96, 'num_cnn_layers': 2, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '2.12 s'}
+2024-04-05 06:02:29,621 - INFO - Epoch [1/5], Train Loss: 0.0046, Validation Loss: 0.0016
+2024-04-05 06:02:29,839 - INFO - Epoch [2/5], Train Loss: 0.0035, Validation Loss: 0.0020
+2024-04-05 06:02:30,041 - INFO - Epoch [3/5], Train Loss: 0.0028, Validation Loss: 0.0014
+2024-04-05 06:02:30,235 - INFO - Epoch [4/5], Train Loss: 0.0023, Validation Loss: 0.0009
+2024-04-05 06:02:30,436 - INFO - Epoch [5/5], Train Loss: 0.0021, Validation Loss: 0.0006
+2024-04-05 06:02:30,450 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:02:30,450 - INFO - [-----MSE: 0.033651-----]
+
+2024-04-05 06:02:30,450 - INFO - [-----MAE: 0.156572-----]
+
+2024-04-05 06:02:30,450 - INFO - [-----RMSE: 0.183443-----]
+
+2024-04-05 06:02:30,450 - INFO - [-----MAPE: 0.584317-----]
+
+2024-04-05 06:02:30,450 - INFO - Model: CNN-Based-multivariate, Look Back: 7, Forecast Day: 1,  Period: 1D, MSE: 0.033651, MAE: 0.156572, RMSE: 0.183443, MAPE: 0.584317
+2024-04-05 06:17:10,503 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=3
+2024-04-05 06:17:25,974 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:17:25,974 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/7_3_best_params.json  📌📌📌
+2024-04-05 06:17:25,975 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '2.06 s'}
+2024-04-05 06:17:26,170 - INFO - Epoch [1/5], Train Loss: 0.0033, Validation Loss: 0.0007
+2024-04-05 06:17:26,337 - INFO - Epoch [2/5], Train Loss: 0.0027, Validation Loss: 0.0004
+2024-04-05 06:17:26,505 - INFO - Epoch [3/5], Train Loss: 0.0025, Validation Loss: 0.0002
+2024-04-05 06:17:26,735 - INFO - Epoch [4/5], Train Loss: 0.0025, Validation Loss: 0.0002
+2024-04-05 06:17:27,010 - INFO - Epoch [5/5], Train Loss: 0.0024, Validation Loss: 0.0002
+2024-04-05 06:17:27,037 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:17:27,038 - INFO - [-----MSE: 0.009879-----]
+
+2024-04-05 06:17:27,038 - INFO - [-----MAE: 0.074055-----]
+
+2024-04-05 06:17:27,038 - INFO - [-----RMSE: 0.099387-----]
+
+2024-04-05 06:17:27,038 - INFO - [-----MAPE: 0.336026-----]
+
+2024-04-05 06:17:27,038 - INFO - Model: CNN-Based-multivariate, Look Back: 7, Forecast Day: 3,  Period: 1D, MSE: 0.009879, MAE: 0.074055, RMSE: 0.099387, MAPE: 0.336026
+2024-04-05 06:23:25,587 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=5
+2024-04-05 06:23:50,801 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:23:50,802 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/7_5_best_params.json  📌📌📌
+2024-04-05 06:23:50,802 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '0.96 s'}
+2024-04-05 06:23:50,959 - INFO - Epoch [1/5], Train Loss: 0.0027, Validation Loss: 0.0010
+2024-04-05 06:23:51,192 - INFO - Epoch [2/5], Train Loss: 0.0018, Validation Loss: 0.0005
+2024-04-05 06:23:51,538 - INFO - Epoch [3/5], Train Loss: 0.0016, Validation Loss: 0.0003
+2024-04-05 06:23:51,739 - INFO - Epoch [4/5], Train Loss: 0.0015, Validation Loss: 0.0003
+2024-04-05 06:23:51,853 - INFO - Epoch [5/5], Train Loss: 0.0014, Validation Loss: 0.0003
+2024-04-05 06:23:51,862 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:23:51,862 - INFO - [-----MSE: 0.018776-----]
+
+2024-04-05 06:23:51,862 - INFO - [-----MAE: 0.108799-----]
+
+2024-04-05 06:23:51,862 - INFO - [-----RMSE: 0.135723-----]
+
+2024-04-05 06:23:51,862 - INFO - [-----MAPE: 0.597962-----]
+
+2024-04-05 06:23:51,862 - INFO - Model: CNN-Based-multivariate, Look Back: 7, Forecast Day: 5,  Period: 1D, MSE: 0.018776, MAE: 0.108799, RMSE: 0.135723, MAPE: 0.597962
+2024-04-05 06:24:15,568 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=7
+2024-04-05 06:24:37,526 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:24:37,528 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/7_7_best_params.json  📌📌📌
+2024-04-05 06:24:37,529 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '0.82 s'}
+2024-04-05 06:24:37,724 - INFO - Epoch [1/5], Train Loss: 0.0034, Validation Loss: 0.0015
+2024-04-05 06:24:37,876 - INFO - Epoch [2/5], Train Loss: 0.0026, Validation Loss: 0.0012
+2024-04-05 06:24:38,014 - INFO - Epoch [3/5], Train Loss: 0.0021, Validation Loss: 0.0010
+2024-04-05 06:24:38,230 - INFO - Epoch [4/5], Train Loss: 0.0019, Validation Loss: 0.0008
+2024-04-05 06:24:38,443 - INFO - Epoch [5/5], Train Loss: 0.0017, Validation Loss: 0.0007
+2024-04-05 06:24:38,463 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:24:38,463 - INFO - [-----MSE: 0.040148-----]
+
+2024-04-05 06:24:38,464 - INFO - [-----MAE: 0.15511-----]
+
+2024-04-05 06:24:38,464 - INFO - [-----RMSE: 0.193209-----]
+
+2024-04-05 06:24:38,464 - INFO - [-----MAPE: 0.782961-----]
+
+2024-04-05 06:24:38,464 - INFO - Model: CNN-Based-multivariate, Look Back: 7, Forecast Day: 7,  Period: 1D, MSE: 0.040148, MAE: 0.15511, RMSE: 0.193209, MAPE: 0.782961
+2024-04-05 06:24:48,259 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 06:25:09,788 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:25:09,789 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/14_1_best_params.json  📌📌📌
+2024-04-05 06:25:09,790 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'num_cnn_layers': 1, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '0.96 s'}
+2024-04-05 06:25:09,923 - INFO - Epoch [1/5], Train Loss: 0.0020, Validation Loss: 0.0015
+2024-04-05 06:25:10,042 - INFO - Epoch [2/5], Train Loss: 0.0012, Validation Loss: 0.0007
+2024-04-05 06:25:10,161 - INFO - Epoch [3/5], Train Loss: 0.0010, Validation Loss: 0.0003
+2024-04-05 06:25:10,275 - INFO - Epoch [4/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 06:25:10,392 - INFO - Epoch [5/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 06:25:10,401 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:25:10,402 - INFO - [-----MSE: 0.012619-----]
+
+2024-04-05 06:25:10,402 - INFO - [-----MAE: 0.084901-----]
+
+2024-04-05 06:25:10,402 - INFO - [-----RMSE: 0.112333-----]
+
+2024-04-05 06:25:10,402 - INFO - [-----MAPE: 0.380659-----]
+
+2024-04-05 06:25:10,402 - INFO - Model: CNN-Based-multivariate, Look Back: 14, Forecast Day: 1,  Period: 1D, MSE: 0.012619, MAE: 0.084901, RMSE: 0.112333, MAPE: 0.380659
+2024-04-05 06:25:21,276 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=3
+2024-04-05 06:25:40,216 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:25:40,218 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/14_3_best_params.json  📌📌📌
+2024-04-05 06:25:40,219 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '1.60 s'}
+2024-04-05 06:25:40,695 - INFO - Epoch [1/5], Train Loss: 0.0050, Validation Loss: 0.0017
+2024-04-05 06:25:41,171 - INFO - Epoch [2/5], Train Loss: 0.0042, Validation Loss: 0.0017
+2024-04-05 06:25:41,614 - INFO - Epoch [3/5], Train Loss: 0.0035, Validation Loss: 0.0012
+2024-04-05 06:25:42,076 - INFO - Epoch [4/5], Train Loss: 0.0031, Validation Loss: 0.0008
+2024-04-05 06:25:42,525 - INFO - Epoch [5/5], Train Loss: 0.0028, Validation Loss: 0.0005
+2024-04-05 06:25:42,547 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:25:42,547 - INFO - [-----MSE: 0.02967-----]
+
+2024-04-05 06:25:42,547 - INFO - [-----MAE: 0.139278-----]
+
+2024-04-05 06:25:42,547 - INFO - [-----RMSE: 0.16432-----]
+
+2024-04-05 06:25:42,547 - INFO - [-----MAPE: 0.596107-----]
+
+2024-04-05 06:25:42,547 - INFO - Model: CNN-Based-multivariate, Look Back: 14, Forecast Day: 3,  Period: 1D, MSE: 0.02967, MAE: 0.139278, RMSE: 0.16432, MAPE: 0.596107
+2024-04-05 06:26:32,635 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=5
+2024-04-05 06:26:56,737 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:26:56,738 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/14_5_best_params.json  📌📌📌
+2024-04-05 06:26:56,740 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '2.32 s'}
+2024-04-05 06:26:57,329 - INFO - Epoch [1/5], Train Loss: 0.0043, Validation Loss: 0.0019
+2024-04-05 06:26:57,898 - INFO - Epoch [2/5], Train Loss: 0.0030, Validation Loss: 0.0013
+2024-04-05 06:26:58,544 - INFO - Epoch [3/5], Train Loss: 0.0026, Validation Loss: 0.0006
+2024-04-05 06:26:59,090 - INFO - Epoch [4/5], Train Loss: 0.0025, Validation Loss: 0.0004
+2024-04-05 06:26:59,379 - INFO - Epoch [5/5], Train Loss: 0.0024, Validation Loss: 0.0003
+2024-04-05 06:26:59,402 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:26:59,402 - INFO - [-----MSE: 0.018153-----]
+
+2024-04-05 06:26:59,402 - INFO - [-----MAE: 0.108303-----]
+
+2024-04-05 06:26:59,402 - INFO - [-----RMSE: 0.132871-----]
+
+2024-04-05 06:26:59,402 - INFO - [-----MAPE: 0.450767-----]
+
+2024-04-05 06:26:59,402 - INFO - Model: CNN-Based-multivariate, Look Back: 14, Forecast Day: 5,  Period: 1D, MSE: 0.018153, MAE: 0.108303, RMSE: 0.132871, MAPE: 0.450767
+2024-04-05 06:27:27,681 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=7
+2024-04-05 06:27:44,956 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:27:44,957 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/14_7_best_params.json  📌📌📌
+2024-04-05 06:27:44,958 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '1.78 s'}
+2024-04-05 06:27:45,464 - INFO - Epoch [1/5], Train Loss: 0.0040, Validation Loss: 0.0012
+2024-04-05 06:27:45,925 - INFO - Epoch [2/5], Train Loss: 0.0035, Validation Loss: 0.0008
+2024-04-05 06:27:46,390 - INFO - Epoch [3/5], Train Loss: 0.0032, Validation Loss: 0.0003
+2024-04-05 06:27:46,887 - INFO - Epoch [4/5], Train Loss: 0.0031, Validation Loss: 0.0002
+2024-04-05 06:27:47,383 - INFO - Epoch [5/5], Train Loss: 0.0030, Validation Loss: 0.0002
+2024-04-05 06:27:47,414 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:27:47,414 - INFO - [-----MSE: 0.011491-----]
+
+2024-04-05 06:27:47,414 - INFO - [-----MAE: 0.083562-----]
+
+2024-04-05 06:27:47,414 - INFO - [-----RMSE: 0.107059-----]
+
+2024-04-05 06:27:47,414 - INFO - [-----MAPE: 0.42382-----]
+
+2024-04-05 06:27:47,414 - INFO - Model: CNN-Based-multivariate, Look Back: 14, Forecast Day: 7,  Period: 1D, MSE: 0.011491, MAE: 0.083562, RMSE: 0.107059, MAPE: 0.42382
+2024-04-05 06:28:02,103 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=1
+2024-04-05 06:28:23,846 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:28:23,847 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/21_1_best_params.json  📌📌📌
+2024-04-05 06:28:23,848 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'num_cnn_layers': 2, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '1.66 s'}
+2024-04-05 06:28:24,216 - INFO - Epoch [1/5], Train Loss: 0.0050, Validation Loss: 0.0004
+2024-04-05 06:28:24,524 - INFO - Epoch [2/5], Train Loss: 0.0037, Validation Loss: 0.0004
+2024-04-05 06:28:24,807 - INFO - Epoch [3/5], Train Loss: 0.0029, Validation Loss: 0.0004
+2024-04-05 06:28:25,097 - INFO - Epoch [4/5], Train Loss: 0.0026, Validation Loss: 0.0003
+2024-04-05 06:28:25,386 - INFO - Epoch [5/5], Train Loss: 0.0024, Validation Loss: 0.0003
+2024-04-05 06:28:25,404 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:28:25,404 - INFO - [-----MSE: 0.014786-----]
+
+2024-04-05 06:28:25,404 - INFO - [-----MAE: 0.099098-----]
+
+2024-04-05 06:28:25,404 - INFO - [-----RMSE: 0.121598-----]
+
+2024-04-05 06:28:25,404 - INFO - [-----MAPE: 0.398249-----]
+
+2024-04-05 06:28:25,405 - INFO - Model: CNN-Based-multivariate, Look Back: 21, Forecast Day: 1,  Period: 1D, MSE: 0.014786, MAE: 0.099098, RMSE: 0.121598, MAPE: 0.398249
+2024-04-05 06:28:33,625 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=3
+2024-04-05 06:28:52,936 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:28:52,937 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/21_3_best_params.json  📌📌📌
+2024-04-05 06:28:52,938 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '2.42 s'}
+2024-04-05 06:28:53,501 - INFO - Epoch [1/5], Train Loss: 0.0075, Validation Loss: 0.0022
+2024-04-05 06:28:54,057 - INFO - Epoch [2/5], Train Loss: 0.0059, Validation Loss: 0.0023
+2024-04-05 06:28:54,621 - INFO - Epoch [3/5], Train Loss: 0.0048, Validation Loss: 0.0015
+2024-04-05 06:28:55,198 - INFO - Epoch [4/5], Train Loss: 0.0041, Validation Loss: 0.0009
+2024-04-05 06:28:55,792 - INFO - Epoch [5/5], Train Loss: 0.0037, Validation Loss: 0.0005
+2024-04-05 06:28:55,827 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:28:55,827 - INFO - [-----MSE: 0.029136-----]
+
+2024-04-05 06:28:55,827 - INFO - [-----MAE: 0.140226-----]
+
+2024-04-05 06:28:55,827 - INFO - [-----RMSE: 0.163892-----]
+
+2024-04-05 06:28:55,828 - INFO - [-----MAPE: 0.578249-----]
+
+2024-04-05 06:28:55,828 - INFO - Model: CNN-Based-multivariate, Look Back: 21, Forecast Day: 3,  Period: 1D, MSE: 0.029136, MAE: 0.140226, RMSE: 0.163892, MAPE: 0.578249
+2024-04-05 06:29:10,336 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=5
+2024-04-05 06:29:33,615 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:29:33,616 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/21_5_best_params.json  📌📌📌
+2024-04-05 06:29:33,617 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '3.15 s'}
+2024-04-05 06:29:34,090 - INFO - Epoch [1/5], Train Loss: 0.0034, Validation Loss: 0.0008
+2024-04-05 06:29:34,506 - INFO - Epoch [2/5], Train Loss: 0.0031, Validation Loss: 0.0004
+2024-04-05 06:29:34,937 - INFO - Epoch [3/5], Train Loss: 0.0030, Validation Loss: 0.0002
+2024-04-05 06:29:35,345 - INFO - Epoch [4/5], Train Loss: 0.0030, Validation Loss: 0.0003
+2024-04-05 06:29:35,739 - INFO - Epoch [5/5], Train Loss: 0.0029, Validation Loss: 0.0002
+2024-04-05 06:29:35,762 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:29:35,762 - INFO - [-----MSE: 0.013237-----]
+
+2024-04-05 06:29:35,762 - INFO - [-----MAE: 0.08586-----]
+
+2024-04-05 06:29:35,762 - INFO - [-----RMSE: 0.113293-----]
+
+2024-04-05 06:29:35,762 - INFO - [-----MAPE: 0.441612-----]
+
+2024-04-05 06:29:35,763 - INFO - Model: CNN-Based-multivariate, Look Back: 21, Forecast Day: 5,  Period: 1D, MSE: 0.013237, MAE: 0.08586, RMSE: 0.113293, MAPE: 0.441612
+2024-04-05 06:29:50,417 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=7
+2024-04-05 06:30:12,222 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-05 06:30:12,223 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/21_7_best_params.json  📌📌📌
+2024-04-05 06:30:12,224 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 96, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 2, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '1.67 s'}
+2024-04-05 06:30:12,592 - INFO - Epoch [1/5], Train Loss: 0.0034, Validation Loss: 0.0008
+2024-04-05 06:30:12,939 - INFO - Epoch [2/5], Train Loss: 0.0029, Validation Loss: 0.0006
+2024-04-05 06:30:13,245 - INFO - Epoch [3/5], Train Loss: 0.0026, Validation Loss: 0.0004
+2024-04-05 06:30:13,581 - INFO - Epoch [4/5], Train Loss: 0.0025, Validation Loss: 0.0004
+2024-04-05 06:30:13,914 - INFO - Epoch [5/5], Train Loss: 0.0024, Validation Loss: 0.0003
+2024-04-05 06:30:13,937 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 06:30:13,937 - INFO - [-----MSE: 0.017707-----]
+
+2024-04-05 06:30:13,938 - INFO - [-----MAE: 0.105666-----]
+
+2024-04-05 06:30:13,938 - INFO - [-----RMSE: 0.130983-----]
+
+2024-04-05 06:30:13,938 - INFO - [-----MAPE: 0.571854-----]
+
+2024-04-05 06:30:13,938 - INFO - Model: CNN-Based-multivariate, Look Back: 21, Forecast Day: 7,  Period: 1D, MSE: 0.017707, MAE: 0.105666, RMSE: 0.130983, MAPE: 0.571854
+2024-04-05 12:33:55,010 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=1
+2024-04-05 12:34:11,117 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:34:11,118 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/7_1_best_params.json  📌📌📌
+2024-04-05 12:34:11,119 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '5.55 s'}
+2024-04-05 12:34:11,861 - INFO - Epoch [1/5], Train Loss: 0.0070, Validation Loss: 0.0007
+2024-04-05 12:34:12,462 - INFO - Epoch [2/5], Train Loss: 0.0009, Validation Loss: 0.0003
+2024-04-05 12:34:13,062 - INFO - Epoch [3/5], Train Loss: 0.0007, Validation Loss: 0.0002
+2024-04-05 12:34:13,596 - INFO - Epoch [4/5], Train Loss: 0.0007, Validation Loss: 0.0002
+2024-04-05 12:34:14,128 - INFO - Epoch [5/5], Train Loss: 0.0007, Validation Loss: 0.0002
+2024-04-05 12:34:14,175 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:34:14,175 - INFO - [-----MSE: 0.013107-----]
+
+2024-04-05 12:34:14,175 - INFO - [-----MAE: 0.090251-----]
+
+2024-04-05 12:34:14,175 - INFO - [-----RMSE: 0.114486-----]
+
+2024-04-05 12:34:14,175 - INFO - [-----MAPE: 0.601798-----]
+
+2024-04-05 12:34:14,175 - INFO - Model: LSTM-based-multivariate, Look Back: 7, Forecast Day: 1,  Period: 1D, MSE: 0.013107, MAE: 0.090251, RMSE: 0.114486, MAPE: 0.601798
+2024-04-05 12:34:26,627 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=3
+2024-04-05 12:34:43,951 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:34:43,952 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/7_3_best_params.json  📌📌📌
+2024-04-05 12:34:43,953 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '3.49 s'}
+2024-04-05 12:34:44,238 - INFO - Epoch [1/5], Train Loss: 0.0096, Validation Loss: 0.0006
+2024-04-05 12:34:44,512 - INFO - Epoch [2/5], Train Loss: 0.0066, Validation Loss: 0.0006
+2024-04-05 12:34:44,777 - INFO - Epoch [3/5], Train Loss: 0.0044, Validation Loss: 0.0006
+2024-04-05 12:34:45,058 - INFO - Epoch [4/5], Train Loss: 0.0028, Validation Loss: 0.0006
+2024-04-05 12:34:45,354 - INFO - Epoch [5/5], Train Loss: 0.0015, Validation Loss: 0.0002
+2024-04-05 12:34:45,370 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:34:45,370 - INFO - [-----MSE: 0.012372-----]
+
+2024-04-05 12:34:45,371 - INFO - [-----MAE: 0.088605-----]
+
+2024-04-05 12:34:45,371 - INFO - [-----RMSE: 0.110493-----]
+
+2024-04-05 12:34:45,371 - INFO - [-----MAPE: 0.486935-----]
+
+2024-04-05 12:34:45,371 - INFO - Model: LSTM-based-multivariate, Look Back: 7, Forecast Day: 3,  Period: 1D, MSE: 0.012372, MAE: 0.088605, RMSE: 0.110493, MAPE: 0.486935
+2024-04-05 12:35:10,807 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=5
+2024-04-05 12:35:31,241 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:35:31,242 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/7_5_best_params.json  📌📌📌
+2024-04-05 12:35:31,242 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '6.32 s'}
+2024-04-05 12:35:32,654 - INFO - Epoch [1/5], Train Loss: 0.0158, Validation Loss: 0.0007
+2024-04-05 12:35:34,041 - INFO - Epoch [2/5], Train Loss: 0.0096, Validation Loss: 0.0007
+2024-04-05 12:35:34,703 - INFO - Epoch [3/5], Train Loss: 0.0053, Validation Loss: 0.0007
+2024-04-05 12:35:35,276 - INFO - Epoch [4/5], Train Loss: 0.0025, Validation Loss: 0.0005
+2024-04-05 12:35:35,873 - INFO - Epoch [5/5], Train Loss: 0.0010, Validation Loss: 0.0002
+2024-04-05 12:35:35,925 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:35:35,925 - INFO - [-----MSE: 0.010609-----]
+
+2024-04-05 12:35:35,925 - INFO - [-----MAE: 0.08103-----]
+
+2024-04-05 12:35:35,925 - INFO - [-----RMSE: 0.102989-----]
+
+2024-04-05 12:35:35,926 - INFO - [-----MAPE: 0.498887-----]
+
+2024-04-05 12:35:35,926 - INFO - Model: LSTM-based-multivariate, Look Back: 7, Forecast Day: 5,  Period: 1D, MSE: 0.010609, MAE: 0.08103, RMSE: 0.102989, MAPE: 0.498887
+2024-04-05 12:36:38,221 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=7
+2024-04-05 12:36:54,743 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:36:54,743 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/7_7_best_params.json  📌📌📌
+2024-04-05 12:36:54,744 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '3.96 s'}
+2024-04-05 12:36:55,632 - INFO - Epoch [1/5], Train Loss: 0.0160, Validation Loss: 0.0008
+2024-04-05 12:36:56,307 - INFO - Epoch [2/5], Train Loss: 0.0096, Validation Loss: 0.0006
+2024-04-05 12:36:56,898 - INFO - Epoch [3/5], Train Loss: 0.0052, Validation Loss: 0.0005
+2024-04-05 12:36:57,570 - INFO - Epoch [4/5], Train Loss: 0.0024, Validation Loss: 0.0005
+2024-04-05 12:36:58,319 - INFO - Epoch [5/5], Train Loss: 0.0012, Validation Loss: 0.0002
+2024-04-05 12:36:58,365 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:36:58,365 - INFO - [-----MSE: 0.013934-----]
+
+2024-04-05 12:36:58,365 - INFO - [-----MAE: 0.093508-----]
+
+2024-04-05 12:36:58,365 - INFO - [-----RMSE: 0.115824-----]
+
+2024-04-05 12:36:58,365 - INFO - [-----MAPE: 0.496331-----]
+
+2024-04-05 12:36:58,366 - INFO - Model: LSTM-based-multivariate, Look Back: 7, Forecast Day: 7,  Period: 1D, MSE: 0.013934, MAE: 0.093508, RMSE: 0.115824, MAPE: 0.496331
+2024-04-05 12:37:29,059 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 12:37:45,754 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:37:45,755 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/14_1_best_params.json  📌📌📌
+2024-04-05 12:37:45,756 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '3.20 s'}
+2024-04-05 12:37:46,459 - INFO - Epoch [1/5], Train Loss: 0.0056, Validation Loss: 0.0015
+2024-04-05 12:37:47,160 - INFO - Epoch [2/5], Train Loss: 0.0020, Validation Loss: 0.0005
+2024-04-05 12:37:47,937 - INFO - Epoch [3/5], Train Loss: 0.0006, Validation Loss: 0.0003
+2024-04-05 12:37:48,663 - INFO - Epoch [4/5], Train Loss: 0.0005, Validation Loss: 0.0002
+2024-04-05 12:37:49,316 - INFO - Epoch [5/5], Train Loss: 0.0005, Validation Loss: 0.0002
+2024-04-05 12:37:49,361 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:37:49,361 - INFO - [-----MSE: 0.013634-----]
+
+2024-04-05 12:37:49,361 - INFO - [-----MAE: 0.092226-----]
+
+2024-04-05 12:37:49,361 - INFO - [-----RMSE: 0.116766-----]
+
+2024-04-05 12:37:49,361 - INFO - [-----MAPE: 0.621874-----]
+
+2024-04-05 12:37:49,361 - INFO - Model: LSTM-based-multivariate, Look Back: 14, Forecast Day: 1,  Period: 1D, MSE: 0.013634, MAE: 0.092226, RMSE: 0.116766, MAPE: 0.621874
+2024-04-05 12:37:54,147 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=3
+2024-04-05 12:38:10,523 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:38:10,524 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/14_3_best_params.json  📌📌📌
+2024-04-05 12:38:10,524 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '5.98 s'}
+2024-04-05 12:38:11,653 - INFO - Epoch [1/5], Train Loss: 0.0073, Validation Loss: 0.0007
+2024-04-05 12:38:12,761 - INFO - Epoch [2/5], Train Loss: 0.0014, Validation Loss: 0.0004
+2024-04-05 12:38:13,846 - INFO - Epoch [3/5], Train Loss: 0.0009, Validation Loss: 0.0003
+2024-04-05 12:38:15,047 - INFO - Epoch [4/5], Train Loss: 0.0008, Validation Loss: 0.0003
+2024-04-05 12:38:16,136 - INFO - Epoch [5/5], Train Loss: 0.0007, Validation Loss: 0.0003
+2024-04-05 12:38:16,216 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:38:16,216 - INFO - [-----MSE: 0.016377-----]
+
+2024-04-05 12:38:16,216 - INFO - [-----MAE: 0.103181-----]
+
+2024-04-05 12:38:16,217 - INFO - [-----RMSE: 0.127945-----]
+
+2024-04-05 12:38:16,217 - INFO - [-----MAPE: 0.688505-----]
+
+2024-04-05 12:38:16,217 - INFO - Model: LSTM-based-multivariate, Look Back: 14, Forecast Day: 3,  Period: 1D, MSE: 0.016377, MAE: 0.103181, RMSE: 0.127945, MAPE: 0.688505
+2024-04-05 12:38:48,926 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=5
+2024-04-05 12:39:07,062 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:39:07,062 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/14_5_best_params.json  📌📌📌
+2024-04-05 12:39:07,063 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '6.62 s'}
+2024-04-05 12:39:08,547 - INFO - Epoch [1/5], Train Loss: 0.0158, Validation Loss: 0.0005
+2024-04-05 12:39:09,823 - INFO - Epoch [2/5], Train Loss: 0.0097, Validation Loss: 0.0004
+2024-04-05 12:39:11,078 - INFO - Epoch [3/5], Train Loss: 0.0054, Validation Loss: 0.0004
+2024-04-05 12:39:12,395 - INFO - Epoch [4/5], Train Loss: 0.0027, Validation Loss: 0.0004
+2024-04-05 12:39:13,897 - INFO - Epoch [5/5], Train Loss: 0.0014, Validation Loss: 0.0003
+2024-04-05 12:39:13,991 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:39:13,992 - INFO - [-----MSE: 0.015454-----]
+
+2024-04-05 12:39:13,992 - INFO - [-----MAE: 0.096599-----]
+
+2024-04-05 12:39:13,992 - INFO - [-----RMSE: 0.117932-----]
+
+2024-04-05 12:39:13,992 - INFO - [-----MAPE: 0.508211-----]
+
+2024-04-05 12:39:13,992 - INFO - Model: LSTM-based-multivariate, Look Back: 14, Forecast Day: 5,  Period: 1D, MSE: 0.015454, MAE: 0.096599, RMSE: 0.117932, MAPE: 0.508211
+2024-04-05 12:39:44,284 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=7
+2024-04-05 12:40:03,561 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:40:03,562 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/14_7_best_params.json  📌📌📌
+2024-04-05 12:40:03,563 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '3.50 s'}
+2024-04-05 12:40:05,167 - INFO - Epoch [1/5], Train Loss: 0.0053, Validation Loss: 0.0009
+2024-04-05 12:40:06,560 - INFO - Epoch [2/5], Train Loss: 0.0014, Validation Loss: 0.0004
+2024-04-05 12:40:07,155 - INFO - Epoch [3/5], Train Loss: 0.0007, Validation Loss: 0.0003
+2024-04-05 12:40:07,715 - INFO - Epoch [4/5], Train Loss: 0.0006, Validation Loss: 0.0003
+2024-04-05 12:40:08,240 - INFO - Epoch [5/5], Train Loss: 0.0006, Validation Loss: 0.0002
+2024-04-05 12:40:08,276 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:40:08,276 - INFO - [-----MSE: 0.014869-----]
+
+2024-04-05 12:40:08,276 - INFO - [-----MAE: 0.097373-----]
+
+2024-04-05 12:40:08,276 - INFO - [-----RMSE: 0.121927-----]
+
+2024-04-05 12:40:08,276 - INFO - [-----MAPE: 0.651926-----]
+
+2024-04-05 12:40:08,276 - INFO - Model: LSTM-based-multivariate, Look Back: 14, Forecast Day: 7,  Period: 1D, MSE: 0.014869, MAE: 0.097373, RMSE: 0.121927, MAPE: 0.651926
+2024-04-05 12:40:12,116 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=1
+2024-04-05 12:40:29,293 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:40:29,294 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/21_1_best_params.json  📌📌📌
+2024-04-05 12:40:29,294 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '13.25 s'}
+2024-04-05 12:40:31,083 - INFO - Epoch [1/5], Train Loss: 0.0155, Validation Loss: 0.0002
+2024-04-05 12:40:32,672 - INFO - Epoch [2/5], Train Loss: 0.0098, Validation Loss: 0.0002
+2024-04-05 12:40:34,503 - INFO - Epoch [3/5], Train Loss: 0.0055, Validation Loss: 0.0002
+2024-04-05 12:40:36,263 - INFO - Epoch [4/5], Train Loss: 0.0028, Validation Loss: 0.0002
+2024-04-05 12:40:37,948 - INFO - Epoch [5/5], Train Loss: 0.0015, Validation Loss: 0.0002
+2024-04-05 12:40:38,084 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:40:38,084 - INFO - [-----MSE: 0.009168-----]
+
+2024-04-05 12:40:38,084 - INFO - [-----MAE: 0.075302-----]
+
+2024-04-05 12:40:38,084 - INFO - [-----RMSE: 0.095749-----]
+
+2024-04-05 12:40:38,084 - INFO - [-----MAPE: 0.46936-----]
+
+2024-04-05 12:40:38,084 - INFO - Model: LSTM-based-multivariate, Look Back: 21, Forecast Day: 1,  Period: 1D, MSE: 0.009168, MAE: 0.075302, RMSE: 0.095749, MAPE: 0.46936
+2024-04-05 12:40:56,206 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=3
+2024-04-05 12:41:12,305 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:41:12,306 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/21_3_best_params.json  📌📌📌
+2024-04-05 12:41:12,306 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '10.41 s'}
+2024-04-05 12:41:14,020 - INFO - Epoch [1/5], Train Loss: 0.0071, Validation Loss: 0.0009
+2024-04-05 12:41:15,651 - INFO - Epoch [2/5], Train Loss: 0.0010, Validation Loss: 0.0004
+2024-04-05 12:41:17,117 - INFO - Epoch [3/5], Train Loss: 0.0007, Validation Loss: 0.0003
+2024-04-05 12:41:18,607 - INFO - Epoch [4/5], Train Loss: 0.0007, Validation Loss: 0.0003
+2024-04-05 12:41:20,159 - INFO - Epoch [5/5], Train Loss: 0.0007, Validation Loss: 0.0003
+2024-04-05 12:41:20,286 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:41:20,286 - INFO - [-----MSE: 0.016965-----]
+
+2024-04-05 12:41:20,286 - INFO - [-----MAE: 0.104802-----]
+
+2024-04-05 12:41:20,286 - INFO - [-----RMSE: 0.13025-----]
+
+2024-04-05 12:41:20,286 - INFO - [-----MAPE: 0.704648-----]
+
+2024-04-05 12:41:20,286 - INFO - Model: LSTM-based-multivariate, Look Back: 21, Forecast Day: 3,  Period: 1D, MSE: 0.016965, MAE: 0.104802, RMSE: 0.13025, MAPE: 0.704648
+2024-04-05 12:41:34,806 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=5
+2024-04-05 12:41:51,550 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:41:51,550 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/21_5_best_params.json  📌📌📌
+2024-04-05 12:41:51,551 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '14.93 s'}
+2024-04-05 12:41:52,629 - INFO - Epoch [1/5], Train Loss: 0.0071, Validation Loss: 0.0007
+2024-04-05 12:41:53,745 - INFO - Epoch [2/5], Train Loss: 0.0012, Validation Loss: 0.0004
+2024-04-05 12:41:54,923 - INFO - Epoch [3/5], Train Loss: 0.0009, Validation Loss: 0.0004
+2024-04-05 12:41:56,519 - INFO - Epoch [4/5], Train Loss: 0.0008, Validation Loss: 0.0003
+2024-04-05 12:41:58,238 - INFO - Epoch [5/5], Train Loss: 0.0007, Validation Loss: 0.0003
+2024-04-05 12:41:58,369 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:41:58,369 - INFO - [-----MSE: 0.01715-----]
+
+2024-04-05 12:41:58,369 - INFO - [-----MAE: 0.105858-----]
+
+2024-04-05 12:41:58,369 - INFO - [-----RMSE: 0.130953-----]
+
+2024-04-05 12:41:58,369 - INFO - [-----MAPE: 0.70837-----]
+
+2024-04-05 12:41:58,370 - INFO - Model: LSTM-based-multivariate, Look Back: 21, Forecast Day: 5,  Period: 1D, MSE: 0.01715, MAE: 0.105858, RMSE: 0.130953, MAPE: 0.70837
+2024-04-05 12:42:10,004 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=7
+2024-04-05 12:42:28,797 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-05 12:42:28,798 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/21_7_best_params.json  📌📌📌
+2024-04-05 12:42:28,799 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '9.42 s'}
+2024-04-05 12:42:30,317 - INFO - Epoch [1/5], Train Loss: 0.0071, Validation Loss: 0.0006
+2024-04-05 12:42:31,823 - INFO - Epoch [2/5], Train Loss: 0.0013, Validation Loss: 0.0004
+2024-04-05 12:42:33,365 - INFO - Epoch [3/5], Train Loss: 0.0010, Validation Loss: 0.0003
+2024-04-05 12:42:35,028 - INFO - Epoch [4/5], Train Loss: 0.0008, Validation Loss: 0.0003
+2024-04-05 12:42:36,542 - INFO - Epoch [5/5], Train Loss: 0.0008, Validation Loss: 0.0003
+2024-04-05 12:42:36,656 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:42:36,656 - INFO - [-----MSE: 0.01681-----]
+
+2024-04-05 12:42:36,656 - INFO - [-----MAE: 0.104695-----]
+
+2024-04-05 12:42:36,656 - INFO - [-----RMSE: 0.129623-----]
+
+2024-04-05 12:42:36,656 - INFO - [-----MAPE: 0.699606-----]
+
+2024-04-05 12:42:36,656 - INFO - Model: LSTM-based-multivariate, Look Back: 21, Forecast Day: 7,  Period: 1D, MSE: 0.01681, MAE: 0.104695, RMSE: 0.129623, MAPE: 0.699606
+2024-04-05 12:43:16,637 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=1
+2024-04-05 12:43:36,863 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 12:43:36,864 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/7_1_best_params.json  📌📌📌
+2024-04-05 12:43:36,865 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '4.36 s'}
+2024-04-05 12:43:38,044 - INFO - Epoch [1/5], Train Loss: 0.0120, Validation Loss: 0.0015
+2024-04-05 12:43:39,204 - INFO - Epoch [2/5], Train Loss: 0.0084, Validation Loss: 0.0015
+2024-04-05 12:43:40,367 - INFO - Epoch [3/5], Train Loss: 0.0056, Validation Loss: 0.0015
+2024-04-05 12:43:41,491 - INFO - Epoch [4/5], Train Loss: 0.0036, Validation Loss: 0.0015
+2024-04-05 12:43:42,634 - INFO - Epoch [5/5], Train Loss: 0.0024, Validation Loss: 0.0015
+2024-04-05 12:43:42,714 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:43:42,714 - INFO - [-----MSE: 0.080888-----]
+
+2024-04-05 12:43:42,715 - INFO - [-----MAE: 0.266153-----]
+
+2024-04-05 12:43:42,715 - INFO - [-----RMSE: 0.284408-----]
+
+2024-04-05 12:43:42,715 - INFO - [-----MAPE: 1.0-----]
+
+2024-04-05 12:43:42,715 - INFO - Model: GRU-based-multivariate, Look Back: 7, Forecast Day: 1,  Period: 1D, MSE: 0.080888, MAE: 0.266153, RMSE: 0.284408, MAPE: 1.0
+2024-04-05 12:43:49,409 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=3
+2024-04-05 12:44:07,401 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 12:44:07,403 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/7_3_best_params.json  📌📌📌
+2024-04-05 12:44:07,403 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '5.98 s'}
+2024-04-05 12:44:08,153 - INFO - Epoch [1/5], Train Loss: 0.0112, Validation Loss: 0.0002
+2024-04-05 12:44:08,893 - INFO - Epoch [2/5], Train Loss: 0.0078, Validation Loss: 0.0002
+2024-04-05 12:44:09,718 - INFO - Epoch [3/5], Train Loss: 0.0053, Validation Loss: 0.0002
+2024-04-05 12:44:10,636 - INFO - Epoch [4/5], Train Loss: 0.0034, Validation Loss: 0.0002
+2024-04-05 12:44:11,516 - INFO - Epoch [5/5], Train Loss: 0.0021, Validation Loss: 0.0002
+2024-04-05 12:44:11,568 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:44:11,569 - INFO - [-----MSE: 0.009071-----]
+
+2024-04-05 12:44:11,569 - INFO - [-----MAE: 0.074883-----]
+
+2024-04-05 12:44:11,569 - INFO - [-----RMSE: 0.09524-----]
+
+2024-04-05 12:44:11,569 - INFO - [-----MAPE: 0.455549-----]
+
+2024-04-05 12:44:11,569 - INFO - Model: GRU-based-multivariate, Look Back: 7, Forecast Day: 3,  Period: 1D, MSE: 0.009071, MAE: 0.074883, RMSE: 0.09524, MAPE: 0.455549
+2024-04-05 12:44:18,151 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=5
+2024-04-05 12:44:35,673 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 12:44:35,674 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/7_5_best_params.json  📌📌📌
+2024-04-05 12:44:35,675 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '7.53 s'}
+2024-04-05 12:44:36,240 - INFO - Epoch [1/5], Train Loss: 0.0114, Validation Loss: 0.0004
+2024-04-05 12:44:36,804 - INFO - Epoch [2/5], Train Loss: 0.0080, Validation Loss: 0.0004
+2024-04-05 12:44:37,568 - INFO - Epoch [3/5], Train Loss: 0.0054, Validation Loss: 0.0004
+2024-04-05 12:44:38,341 - INFO - Epoch [4/5], Train Loss: 0.0034, Validation Loss: 0.0004
+2024-04-05 12:44:39,230 - INFO - Epoch [5/5], Train Loss: 0.0021, Validation Loss: 0.0003
+2024-04-05 12:44:39,283 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:44:39,283 - INFO - [-----MSE: 0.016202-----]
+
+2024-04-05 12:44:39,283 - INFO - [-----MAE: 0.098135-----]
+
+2024-04-05 12:44:39,283 - INFO - [-----RMSE: 0.119483-----]
+
+2024-04-05 12:44:39,283 - INFO - [-----MAPE: 0.504915-----]
+
+2024-04-05 12:44:39,284 - INFO - Model: GRU-based-multivariate, Look Back: 7, Forecast Day: 5,  Period: 1D, MSE: 0.016202, MAE: 0.098135, RMSE: 0.119483, MAPE: 0.504915
+2024-04-05 12:44:45,648 - INFO - Training with series_type=electricity | look_back=7 | forecast_period=7
+2024-04-05 12:45:03,934 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 12:45:03,935 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/7_7_best_params.json  📌📌📌
+2024-04-05 12:45:03,935 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '3.81 s'}
+2024-04-05 12:45:04,666 - INFO - Epoch [1/5], Train Loss: 0.0066, Validation Loss: 0.0010
+2024-04-05 12:45:05,576 - INFO - Epoch [2/5], Train Loss: 0.0017, Validation Loss: 0.0005
+2024-04-05 12:45:06,365 - INFO - Epoch [3/5], Train Loss: 0.0009, Validation Loss: 0.0003
+2024-04-05 12:45:07,158 - INFO - Epoch [4/5], Train Loss: 0.0007, Validation Loss: 0.0003
+2024-04-05 12:45:07,988 - INFO - Epoch [5/5], Train Loss: 0.0007, Validation Loss: 0.0002
+2024-04-05 12:45:08,039 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:45:08,039 - INFO - [-----MSE: 0.014808-----]
+
+2024-04-05 12:45:08,039 - INFO - [-----MAE: 0.097293-----]
+
+2024-04-05 12:45:08,039 - INFO - [-----RMSE: 0.121666-----]
+
+2024-04-05 12:45:08,039 - INFO - [-----MAPE: 0.648769-----]
+
+2024-04-05 12:45:08,039 - INFO - Model: GRU-based-multivariate, Look Back: 7, Forecast Day: 7,  Period: 1D, MSE: 0.014808, MAE: 0.097293, RMSE: 0.121666, MAPE: 0.648769
+2024-04-05 12:45:31,851 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=1
+2024-04-05 12:45:48,092 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 12:45:48,093 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/14_1_best_params.json  📌📌📌
+2024-04-05 12:45:48,093 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '8.63 s'}
+2024-04-05 12:45:49,390 - INFO - Epoch [1/5], Train Loss: 0.0111, Validation Loss: 0.0002
+2024-04-05 12:45:50,703 - INFO - Epoch [2/5], Train Loss: 0.0079, Validation Loss: 0.0002
+2024-04-05 12:45:52,238 - INFO - Epoch [3/5], Train Loss: 0.0054, Validation Loss: 0.0001
+2024-04-05 12:45:53,920 - INFO - Epoch [4/5], Train Loss: 0.0035, Validation Loss: 0.0001
+2024-04-05 12:45:55,332 - INFO - Epoch [5/5], Train Loss: 0.0022, Validation Loss: 0.0001
+2024-04-05 12:45:55,442 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:45:55,442 - INFO - [-----MSE: 0.00737-----]
+
+2024-04-05 12:45:55,442 - INFO - [-----MAE: 0.06715-----]
+
+2024-04-05 12:45:55,442 - INFO - [-----RMSE: 0.085848-----]
+
+2024-04-05 12:45:55,442 - INFO - [-----MAPE: 0.380548-----]
+
+2024-04-05 12:45:55,442 - INFO - Model: GRU-based-multivariate, Look Back: 14, Forecast Day: 1,  Period: 1D, MSE: 0.00737, MAE: 0.06715, RMSE: 0.085848, MAPE: 0.380548
+2024-04-05 12:45:59,651 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=3
+2024-04-05 12:46:18,211 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 12:46:18,212 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/14_3_best_params.json  📌📌📌
+2024-04-05 12:46:18,213 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 200, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '19.80 s'}
+2024-04-05 12:46:22,013 - INFO - Epoch [1/5], Train Loss: 0.0285, Validation Loss: 0.0015
+2024-04-05 12:46:25,480 - INFO - Epoch [2/5], Train Loss: 0.0157, Validation Loss: 0.0015
+2024-04-05 12:46:27,553 - INFO - Epoch [3/5], Train Loss: 0.0072, Validation Loss: 0.0014
+2024-04-05 12:46:29,472 - INFO - Epoch [4/5], Train Loss: 0.0026, Validation Loss: 0.0003
+2024-04-05 12:46:31,371 - INFO - Epoch [5/5], Train Loss: 0.0009, Validation Loss: 0.0002
+2024-04-05 12:46:31,479 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 12:46:31,479 - INFO - [-----MSE: 0.010853-----]
+
+2024-04-05 12:46:31,479 - INFO - [-----MAE: 0.081559-----]
+
+2024-04-05 12:46:31,479 - INFO - [-----RMSE: 0.104113-----]
+
+2024-04-05 12:46:31,479 - INFO - [-----MAPE: 0.526498-----]
+
+2024-04-05 12:46:31,479 - INFO - Model: GRU-based-multivariate, Look Back: 14, Forecast Day: 3,  Period: 1D, MSE: 0.010853, MAE: 0.081559, RMSE: 0.104113, MAPE: 0.526498
+2024-04-05 14:35:49,255 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=5
+2024-04-05 14:36:05,100 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 14:36:05,101 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/14_5_best_params.json  📌📌📌
+2024-04-05 14:36:05,102 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '6.61 s'}
+2024-04-05 14:36:06,774 - INFO - Epoch [1/5], Train Loss: 0.0115, Validation Loss: 0.0007
+2024-04-05 14:36:08,139 - INFO - Epoch [2/5], Train Loss: 0.0082, Validation Loss: 0.0007
+2024-04-05 14:36:09,433 - INFO - Epoch [3/5], Train Loss: 0.0055, Validation Loss: 0.0007
+2024-04-05 14:36:10,740 - INFO - Epoch [4/5], Train Loss: 0.0035, Validation Loss: 0.0005
+2024-04-05 14:36:12,107 - INFO - Epoch [5/5], Train Loss: 0.0018, Validation Loss: 0.0002
+2024-04-05 14:36:12,190 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 14:36:12,190 - INFO - [-----MSE: 0.01006-----]
+
+2024-04-05 14:36:12,190 - INFO - [-----MAE: 0.07925-----]
+
+2024-04-05 14:36:12,190 - INFO - [-----RMSE: 0.100036-----]
+
+2024-04-05 14:36:12,190 - INFO - [-----MAPE: 0.484868-----]
+
+2024-04-05 14:36:12,190 - INFO - Model: GRU-based-multivariate, Look Back: 14, Forecast Day: 5,  Period: 1D, MSE: 0.01006, MAE: 0.07925, RMSE: 0.100036, MAPE: 0.484868
+2024-04-05 14:36:53,225 - INFO - Training with series_type=electricity | look_back=14 | forecast_period=7
+2024-04-05 14:37:10,684 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 14:37:10,685 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/14_7_best_params.json  📌📌📌
+2024-04-05 14:37:10,685 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 200, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '17.46 s'}
+2024-04-05 14:37:14,325 - INFO - Epoch [1/5], Train Loss: 0.0141, Validation Loss: 0.0009
+2024-04-05 14:37:17,941 - INFO - Epoch [2/5], Train Loss: 0.0036, Validation Loss: 0.0005
+2024-04-05 14:37:20,811 - INFO - Epoch [3/5], Train Loss: 0.0022, Validation Loss: 0.0004
+2024-04-05 14:37:23,571 - INFO - Epoch [4/5], Train Loss: 0.0016, Validation Loss: 0.0004
+2024-04-05 14:37:26,484 - INFO - Epoch [5/5], Train Loss: 0.0013, Validation Loss: 0.0003
+2024-04-05 14:37:26,679 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 14:37:26,679 - INFO - [-----MSE: 0.019867-----]
+
+2024-04-05 14:37:26,679 - INFO - [-----MAE: 0.115452-----]
+
+2024-04-05 14:37:26,679 - INFO - [-----RMSE: 0.140827-----]
+
+2024-04-05 14:37:26,679 - INFO - [-----MAPE: 0.762805-----]
+
+2024-04-05 14:37:26,679 - INFO - Model: GRU-based-multivariate, Look Back: 14, Forecast Day: 7,  Period: 1D, MSE: 0.019867, MAE: 0.115452, RMSE: 0.140827, MAPE: 0.762805
+2024-04-05 14:37:32,239 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=1
+2024-04-05 14:37:49,242 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 14:37:49,242 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/21_1_best_params.json  📌📌📌
+2024-04-05 14:37:49,243 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 200, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '20.40 s'}
+2024-04-05 14:37:53,837 - INFO - Epoch [1/5], Train Loss: 0.0106, Validation Loss: 0.0021
+2024-04-05 14:37:58,405 - INFO - Epoch [2/5], Train Loss: 0.0015, Validation Loss: 0.0003
+2024-04-05 14:38:03,730 - INFO - Epoch [3/5], Train Loss: 0.0011, Validation Loss: 0.0003
+2024-04-05 14:38:09,165 - INFO - Epoch [4/5], Train Loss: 0.0010, Validation Loss: 0.0003
+2024-04-05 14:38:12,910 - INFO - Epoch [5/5], Train Loss: 0.0010, Validation Loss: 0.0003
+2024-04-05 14:38:13,141 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 14:38:13,141 - INFO - [-----MSE: 0.018138-----]
+
+2024-04-05 14:38:13,141 - INFO - [-----MAE: 0.109266-----]
+
+2024-04-05 14:38:13,141 - INFO - [-----RMSE: 0.134676-----]
+
+2024-04-05 14:38:13,141 - INFO - [-----MAPE: 0.730106-----]
+
+2024-04-05 14:38:13,141 - INFO - Model: GRU-based-multivariate, Look Back: 21, Forecast Day: 1,  Period: 1D, MSE: 0.018138, MAE: 0.109266, RMSE: 0.134676, MAPE: 0.730106
+2024-04-05 14:38:16,933 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=3
+2024-04-05 14:38:32,893 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 14:38:32,894 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/21_3_best_params.json  📌📌📌
+2024-04-05 14:38:32,895 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '18.33 s'}
+2024-04-05 14:38:34,976 - INFO - Epoch [1/5], Train Loss: 0.0117, Validation Loss: 0.0006
+2024-04-05 14:38:36,552 - INFO - Epoch [2/5], Train Loss: 0.0083, Validation Loss: 0.0006
+2024-04-05 14:38:38,195 - INFO - Epoch [3/5], Train Loss: 0.0057, Validation Loss: 0.0006
+2024-04-05 14:38:39,954 - INFO - Epoch [4/5], Train Loss: 0.0035, Validation Loss: 0.0002
+2024-04-05 14:38:42,332 - INFO - Epoch [5/5], Train Loss: 0.0020, Validation Loss: 0.0002
+2024-04-05 14:38:42,496 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 14:38:42,496 - INFO - [-----MSE: 0.008552-----]
+
+2024-04-05 14:38:42,496 - INFO - [-----MAE: 0.072742-----]
+
+2024-04-05 14:38:42,496 - INFO - [-----RMSE: 0.09247-----]
+
+2024-04-05 14:38:42,496 - INFO - [-----MAPE: 0.440813-----]
+
+2024-04-05 14:38:42,496 - INFO - Model: GRU-based-multivariate, Look Back: 21, Forecast Day: 3,  Period: 1D, MSE: 0.008552, MAE: 0.072742, RMSE: 0.09247, MAPE: 0.440813
+2024-04-05 14:57:21,271 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=5
+2024-04-05 14:57:36,519 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 14:57:36,519 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/21_5_best_params.json  📌📌📌
+2024-04-05 14:57:36,520 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 40, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 200, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '28.60 s'}
+2024-04-05 14:57:40,788 - INFO - Epoch [1/5], Train Loss: 0.0172, Validation Loss: 0.0011
+2024-04-05 14:57:45,195 - INFO - Epoch [2/5], Train Loss: 0.0074, Validation Loss: 0.0009
+2024-04-05 14:57:50,417 - INFO - Epoch [3/5], Train Loss: 0.0055, Validation Loss: 0.0009
+2024-04-05 14:57:54,990 - INFO - Epoch [4/5], Train Loss: 0.0044, Validation Loss: 0.0008
+2024-04-05 14:57:58,136 - INFO - Epoch [5/5], Train Loss: 0.0035, Validation Loss: 0.0006
+2024-04-05 14:57:58,316 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 14:57:58,316 - INFO - [-----MSE: 0.035278-----]
+
+2024-04-05 14:57:58,316 - INFO - [-----MAE: 0.157068-----]
+
+2024-04-05 14:57:58,316 - INFO - [-----RMSE: 0.180644-----]
+
+2024-04-05 14:57:58,316 - INFO - [-----MAPE: 0.87568-----]
+
+2024-04-05 14:57:58,316 - INFO - Model: GRU-based-multivariate, Look Back: 21, Forecast Day: 5,  Period: 1D, MSE: 0.035278, MAE: 0.157068, RMSE: 0.180644, MAPE: 0.87568
+2024-04-05 14:58:58,948 - INFO - Training with series_type=electricity | look_back=21 | forecast_period=7
+2024-04-05 14:59:16,001 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-05 14:59:16,002 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/21_7_best_params.json  📌📌📌
+2024-04-05 14:59:16,003 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 200, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '26.39 s'}
+2024-04-05 14:59:19,189 - INFO - Epoch [1/5], Train Loss: 0.0169, Validation Loss: 0.0013
+2024-04-05 14:59:23,000 - INFO - Epoch [2/5], Train Loss: 0.0072, Validation Loss: 0.0010
+2024-04-05 14:59:26,191 - INFO - Epoch [3/5], Train Loss: 0.0051, Validation Loss: 0.0009
+2024-04-05 14:59:30,656 - INFO - Epoch [4/5], Train Loss: 0.0039, Validation Loss: 0.0007
+2024-04-05 14:59:34,842 - INFO - Epoch [5/5], Train Loss: 0.0030, Validation Loss: 0.0006
+2024-04-05 14:59:35,090 - INFO - [-----MODEL METRICS-----]
+
+2024-04-05 14:59:35,090 - INFO - [-----MSE: 0.034629-----]
+
+2024-04-05 14:59:35,090 - INFO - [-----MAE: 0.157143-----]
+
+2024-04-05 14:59:35,090 - INFO - [-----RMSE: 0.180901-----]
+
+2024-04-05 14:59:35,090 - INFO - [-----MAPE: 0.905168-----]
+
+2024-04-05 14:59:35,091 - INFO - Model: GRU-based-multivariate, Look Back: 21, Forecast Day: 7,  Period: 1D, MSE: 0.034629, MAE: 0.157143, RMSE: 0.180901, MAPE: 0.905168

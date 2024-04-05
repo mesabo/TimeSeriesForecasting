@@ -1,0 +1,10 @@
+{
+  "CNN-BiGRU-Attention-based": {
+    "training_loss": [
+      0.002165108683862184
+    ],
+    "validation_loss": [
+      0.0004428686717381844
+    ]
+  }
+}
