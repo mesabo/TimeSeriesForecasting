@@ -106,10 +106,10 @@ def is_running_on_server():
 logger = logging.getLogger(__name__)
 if is_running_on_server():
     logger.info("The code is running on a server.")
-    EPOCHS = 5
-    N_TRIAL = 2
+    EPOCHS = 2
+    N_TRIAL = 1
     LOOK_BACKS = [7, 14, 21]
-    FORECAST_PERIODS = [1, 3, 5, 7]
+    FORECAST_PERIODS = [1, 2, 3, 4, 5, 6, 7]
 
     BASE_PATH = '/home/23r9802_chen/messou/TimeSeriesForecasting/'
     DATASET_FEATURES_PATH = "/home/23r9802_chen/messou/TimeSeriesForecasting/input/data_features.json"
