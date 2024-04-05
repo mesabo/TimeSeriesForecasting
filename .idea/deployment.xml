@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="TimeSeriesGPU" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="TimeSeriesGPU">
+      <paths name="TimeSeriesForecastingGPU">
         <serverdata>
           <mappings>
-            <mapping deploy="/TimeSerieForecasting" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/TimeSeriesForecasting" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

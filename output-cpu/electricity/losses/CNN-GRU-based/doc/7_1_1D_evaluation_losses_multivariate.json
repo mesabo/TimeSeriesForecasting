@@ -1,0 +1,10 @@
+{
+  "CNN-GRU-based": {
+    "training_loss": [
+      0.00453164817994101
+    ],
+    "validation_loss": [
+      0.0003163376627685307
+    ]
+  }
+}

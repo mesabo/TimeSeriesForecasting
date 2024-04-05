@@ -16,14 +16,12 @@ Lab: Prof YU Keping's Lab
 
 import numpy as np
 import pandas as pd
-from scipy.interpolate import interp1d
 from sklearn.preprocessing import MinMaxScaler
 
 from utils.constants import (DATASET_FEATURES_PATH, ELECTRICITY_DATASET_PATH,
                              ELECTRICITY, APARTMENT, APARTMENT_DATASET_PATH,
                              HOUSE_DATASET_PATH, HOUSE)
 from utils.file_loader import read_features
-from utils.noising_methods import robust_data_augmentation
 
 
 def fill_missing_data(data, meth=2):

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="c00ff57d-e6e2-4fbd-ba2e-ce605ec559e6" name="TimeSeriesGPU" url="http://133.25.196.39">
-        <fileTransfer rootFolder="/home/23r9802_chen/messou/TimeSerieForecasting" accessType="SFTP" host="133.25.196.39" port="22" sshConfigId="52c18b35-b21b-40a1-8034-59a8e048e579" sshConfig="23r9802_chen@133.25.196.39:22 password">
+      <webServer id="4dfdfa64-e093-4904-ae00-95eccaa383d4" name="TimeSeriesForecastingGPU" url="http://133.25.196.39">
+        <fileTransfer rootFolder="/home/23r9802_chen/messou" accessType="SFTP" host="133.25.196.39" port="22" sshConfigId="52c18b35-b21b-40a1-8034-59a8e048e579" sshConfig="23r9802_chen@133.25.196.39:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" isUseRsync="true" />
           </advancedOptions>

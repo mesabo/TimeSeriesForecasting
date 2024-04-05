@@ -1,0 +1,16 @@
+{
+  "CNN-Based": {
+    "lr": 0.0001,
+    "optimizer": "Adam",
+    "l1_regularizer": 0.0001,
+    "l2_regularizer": 0.0001,
+    "min_delta": 1e-08,
+    "patience": 40,
+    "batch_size": 64,
+    "filters": 128,
+    "num_cnn_layers": 2,
+    "dropout": 0.1,
+    "activation": "ReLU",
+    "processing_time": "1.66 s"
+  }
+}

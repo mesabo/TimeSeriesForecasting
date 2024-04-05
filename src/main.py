@@ -29,10 +29,7 @@ from hyperparameter_tuning.model_tuner_study import model_tuner_and_study
 from models.model_training import ComprehensiveModelTrainer
 from utils.constants import (
     ELECTRICITY, LOOK_BACKS, FORECAST_PERIODS, SEEDER, LOG_FILE,
-    LSTM_MODEL, GRU_MODEL, CNN_MODEL, CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_BiLSTM_MODEL, CNN_BiGRU_MODEL,
-    LSTM_ATTENTION_MODEL, GRU_ATTENTION_MODEL, CNN_ATTENTION_MODEL,
-    BiLSTM_ATTENTION_MODEL, BiGRU_ATTENTION_MODEL,
-    CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
+    LSTM_MODEL, GRU_MODEL, CNN_MODEL, CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
     CNN_BiLSTM_ATTENTION_MODEL, CNN_BiGRU_ATTENTION_MODEL,
     CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL,
     CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL, APARTMENT, HOUSE, )
@@ -95,7 +92,7 @@ def main(model_group, dataset):
     elif model_group == 5:
         model_types = model_group4
     else:
-        model_types = model_group5
+        model_types = model_group2
 
     logger.info(f"model_group: {model_group} |||| model_types: {model_types}")
 
@@ -103,9 +100,9 @@ def main(model_group, dataset):
     model_tuner_and_study(look_backs, forecast_periods, model_types, series)
 
     # Build best model
-    # trainer = ComprehensiveModelTrainer(look_backs=look_backs, forecast_periods=forecast_periods,
-    #                                     model_types=model_types, series_types=series)
-    # trainer.build_and_train_models()
+    trainer = ComprehensiveModelTrainer(look_backs=look_backs, forecast_periods=forecast_periods,
+                                        model_types=model_types, series_types=series)
+    trainer.build_and_train_models()
 
 
 '''----------------------------------------------------------------------------------------------'''

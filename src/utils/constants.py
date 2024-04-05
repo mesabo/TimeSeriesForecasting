@@ -88,10 +88,10 @@ UNI_OR_MULTI_VARIATE = 'multivariate'
 # Define model names as variables
 SEEDER = 2024
 
-EPOCHS = 100
-N_TRIAL = 5
-LOOK_BACKS = [14]
-FORECAST_PERIODS = [1, 3, 7]
+EPOCHS = 1
+N_TRIAL = 1
+LOOK_BACKS = [7]
+FORECAST_PERIODS = [1, 2, 3, 4, 5, 6, 7]
 PERIOD = ['1D']
 ELECTRICITY = 'electricity'
 HOUSE = 'house'
@@ -106,16 +106,16 @@ def is_running_on_server():
 logger = logging.getLogger(__name__)
 if is_running_on_server():
     logger.info("The code is running on a server.")
-    EPOCHS = 100
-    N_TRIAL = 500
+    EPOCHS = 5
+    N_TRIAL = 2
     LOOK_BACKS = [7, 14, 21]
     FORECAST_PERIODS = [1, 3, 5, 7]
 
-    BASE_PATH = '/home/23r9802_chen/messou/TimeSerieForecasting/'
-    DATASET_FEATURES_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/data_features.json"
-    ELECTRICITY_DATASET_PATH = "/home/23r9802_chen/messou/TimeSerieForecasting/input/electricity/household_power_consumption.txt"
-    HOUSE_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSerieForecasting/input/house/WHE.csv"
-    APARTMENT_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSerieForecasting/input/apartment/MidriseApartment_SAN_FRANCISCO.csv"
+    BASE_PATH = '/home/23r9802_chen/messou/TimeSeriesForecasting/'
+    DATASET_FEATURES_PATH = "/home/23r9802_chen/messou/TimeSeriesForecasting/input/data_features.json"
+    ELECTRICITY_DATASET_PATH = "/home/23r9802_chen/messou/TimeSeriesForecasting/input/electricity/household_power_consumption.txt"
+    HOUSE_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/house/WHE.csv"
+    APARTMENT_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/apartment/MidriseApartment_SAN_FRANCISCO.csv"
 
     OUTPUT_PATH = "/output-gpu/"
     LOG_FILE = f"./logs/gpu/time_serie_gpu"

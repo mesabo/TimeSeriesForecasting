@@ -1,0 +1,10 @@
+{
+  "CNN-LSTM-based": {
+    "training_loss": [
+      0.03541722584148528
+    ],
+    "validation_loss": [
+      0.0020070076382286113
+    ]
+  }
+}

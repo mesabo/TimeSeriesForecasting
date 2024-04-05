@@ -1,0 +1,20 @@
+{
+  "CNN-GRU-based": {
+    "lr": 0.001,
+    "optimizer": "Adam",
+    "l1_regularizer": 1e-05,
+    "l2_regularizer": 0.0001,
+    "min_delta": 1e-07,
+    "patience": 40,
+    "batch_size": 64,
+    "filters": 64,
+    "kernel_size": 2,
+    "pool_size": 2,
+    "num_cnn_layers": 3,
+    "num_gru_layers": 3,
+    "gru_units": 200,
+    "dropout": 0.1,
+    "activation": "ReLU",
+    "processing_time": "0.47 s"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "LSTM-based": {
+    "lr": 0.001,
+    "optimizer": "RMSprop",
+    "l1_regularizer": 0.0001,
+    "l2_regularizer": 0.0001,
+    "min_delta": 1e-07,
+    "patience": 40,
+    "batch_size": 64,
+    "num_lstm_layers": 2,
+    "lstm_units": 100,
+    "dropout": 0.3,
+    "activation": "ReLU",
+    "processing_time": "3.20 s"
+  }
+}
