@@ -92,7 +92,7 @@ def main(model_group, dataset):
     elif model_group == 5:
         model_types = model_group4
     else:
-        model_types = model_group2
+        model_types = model_group4
 
     logger.info(f"model_group: {model_group} |||| model_types: {model_types}")
 

@@ -90,7 +90,7 @@ SEEDER = 2024
 
 EPOCHS = 1
 N_TRIAL = 1
-LOOK_BACKS = [7]
+LOOK_BACKS = [7, 14, 21]
 FORECAST_PERIODS = [1, 2, 3, 4, 5, 6, 7]
 PERIOD = ['1D']
 ELECTRICITY = 'electricity'
