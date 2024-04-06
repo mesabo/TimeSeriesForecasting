@@ -1,8 +1,0 @@
-{
-  "CNN-BiGRU-Attention-based": {
-    "MSE": 0.026509,
-    "MAE": 0.136959,
-    "RMSE": 0.158987,
-    "MAPE": 0.499604
-  }
-}

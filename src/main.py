@@ -92,7 +92,7 @@ def main(model_group, dataset):
     elif model_group == 5:
         model_types = model_group4
     else:
-        model_types = model_group4
+        model_types = model_group1
 
     logger.info(f"model_group: {model_group} |||| model_types: {model_types}")
 
@@ -100,9 +100,9 @@ def main(model_group, dataset):
     model_tuner_and_study(look_backs, forecast_periods, model_types, series)
 
     # Build best model
-    trainer = ComprehensiveModelTrainer(look_backs=look_backs, forecast_periods=forecast_periods,
-                                        model_types=model_types, series_types=series)
-    trainer.build_and_train_models()
+    #trainer = ComprehensiveModelTrainer(look_backs=look_backs, forecast_periods=forecast_periods,
+    #                                    model_types=model_types, series_types=series)
+    #trainer.build_and_train_models()
 
 
 '''----------------------------------------------------------------------------------------------'''
@@ -159,4 +159,4 @@ if __name__ == "__main__":
     logger.info(f"CURRENT PATH IS: {current_dir}")
 
     # Call the main function and pass the model_group parameter
-    main(args.model_group or 0, args.dataset or ELECTRICITY)
+    main(args.model_group or 1, args.dataset or ELECTRICITY)

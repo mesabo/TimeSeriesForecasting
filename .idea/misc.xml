@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="$USER_HOME$/anaconda3" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="time_series_torch (2)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="time_serie_torch" project-jdk-type="Python SDK" />
 </project>

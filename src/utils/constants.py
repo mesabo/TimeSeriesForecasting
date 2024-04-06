@@ -88,8 +88,8 @@ UNI_OR_MULTI_VARIATE = 'multivariate'
 # Define model names as variables
 SEEDER = 2024
 
-EPOCHS = 1
-N_TRIAL = 1
+EPOCHS = 100
+N_TRIAL = 200
 LOOK_BACKS = [7, 14, 21]
 FORECAST_PERIODS = [1, 2, 3, 4, 5, 6, 7]
 PERIOD = ['1D']
@@ -106,8 +106,8 @@ def is_running_on_server():
 logger = logging.getLogger(__name__)
 if is_running_on_server():
     logger.info("The code is running on a server.")
-    EPOCHS = 2
-    N_TRIAL = 1
+    EPOCHS = 100
+    N_TRIAL = 200
     LOOK_BACKS = [7, 14, 21]
     FORECAST_PERIODS = [1, 2, 3, 4, 5, 6, 7]
 
