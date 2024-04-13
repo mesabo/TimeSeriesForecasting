@@ -1,0 +1,8 @@
+{
+  "CNN-Attention-BiLSTM-based": {
+    "MSE": 0.009543,
+    "MAE": 0.07688,
+    "RMSE": 0.097678,
+    "MAPE": 0.344826
+  }
+}

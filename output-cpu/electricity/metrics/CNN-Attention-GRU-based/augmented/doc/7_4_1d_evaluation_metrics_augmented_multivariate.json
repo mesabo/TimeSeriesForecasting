@@ -1,0 +1,8 @@
+{
+  "CNN-Attention-GRU-based": {
+    "MSE": 0.008067,
+    "MAE": 0.069678,
+    "RMSE": 0.089813,
+    "MAPE": 0.28897
+  }
+}

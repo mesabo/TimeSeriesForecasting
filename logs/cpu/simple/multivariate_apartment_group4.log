@@ -1,0 +1,516 @@
+2024-04-13 21:32:05,006 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-13 21:32:05,007 - INFO - Tuning on CPU server
+2024-04-13 21:32:05,007 - INFO - CPU Name: i386
+2024-04-13 21:32:05,007 - INFO - CPU Cores: 8
+2024-04-13 21:32:05,007 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-13 21:32:05,007 - INFO - model_group: 4 |||| model_types: ['CNN-LSTM-Attention-based', 'CNN-GRU-Attention-based']
+2024-04-13 21:32:05,007 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=1
+2024-04-13 21:32:05,044 - INFO - 
+**************************************************************
+** CNN-LSTM-Attention-based
+**************************************************************
+2024-04-13 21:32:05,044 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-LSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:32:05,045 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 35, 'batch_size': 64, 'filters': 32, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '40.56 min'}
+2024-04-13 21:32:13,997 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:32:13,997 - INFO - [-----MSE: 0.028291-----]
+
+2024-04-13 21:32:13,997 - INFO - [-----MAE: 0.132401-----]
+
+2024-04-13 21:32:13,997 - INFO - [-----RMSE: 0.168199-----]
+
+2024-04-13 21:32:13,997 - INFO - [-----MAPE: 0.598953-----]
+
+2024-04-13 21:32:13,997 - INFO - Model: CNN-LSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 1,  Period: 1d, MSE: 0.028291, MAE: 0.132401, RMSE: 0.168199, MAPE: 0.598953
+2024-04-13 21:32:20,542 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=2
+2024-04-13 21:32:20,587 - INFO - 
+**************************************************************
+** CNN-LSTM-Attention-based
+**************************************************************
+2024-04-13 21:32:20,588 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-LSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:32:20,588 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 35, 'batch_size': 64, 'filters': 32, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '40.56 min'}
+2024-04-13 21:32:34,540 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:32:34,542 - INFO - [-----MSE: 0.026607-----]
+
+2024-04-13 21:32:34,542 - INFO - [-----MAE: 0.110379-----]
+
+2024-04-13 21:32:34,542 - INFO - [-----RMSE: 0.163109-----]
+
+2024-04-13 21:32:34,542 - INFO - [-----MAPE: 0.436667-----]
+
+2024-04-13 21:32:34,542 - INFO - Model: CNN-LSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 2,  Period: 1d, MSE: 0.026607, MAE: 0.110379, RMSE: 0.163109, MAPE: 0.436667
+2024-04-13 21:32:40,935 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=3
+2024-04-13 21:32:40,966 - INFO - 
+**************************************************************
+** CNN-LSTM-Attention-based
+**************************************************************
+2024-04-13 21:32:40,966 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-LSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:32:40,966 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 35, 'batch_size': 64, 'filters': 32, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '40.56 min'}
+2024-04-13 21:32:55,475 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:32:55,475 - INFO - [-----MSE: 0.027271-----]
+
+2024-04-13 21:32:55,475 - INFO - [-----MAE: 0.110605-----]
+
+2024-04-13 21:32:55,475 - INFO - [-----RMSE: 0.165124-----]
+
+2024-04-13 21:32:55,475 - INFO - [-----MAPE: 0.41377-----]
+
+2024-04-13 21:32:55,475 - INFO - Model: CNN-LSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 3,  Period: 1d, MSE: 0.027271, MAE: 0.110605, RMSE: 0.165124, MAPE: 0.41377
+2024-04-13 21:33:01,875 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=4
+2024-04-13 21:33:01,910 - INFO - 
+**************************************************************
+** CNN-LSTM-Attention-based
+**************************************************************
+2024-04-13 21:33:01,911 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-LSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:33:01,911 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 35, 'batch_size': 64, 'filters': 32, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '40.56 min'}
+2024-04-13 21:33:16,664 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:33:16,665 - INFO - [-----MSE: 0.027202-----]
+
+2024-04-13 21:33:16,665 - INFO - [-----MAE: 0.117784-----]
+
+2024-04-13 21:33:16,665 - INFO - [-----RMSE: 0.164879-----]
+
+2024-04-13 21:33:16,665 - INFO - [-----MAPE: 0.461575-----]
+
+2024-04-13 21:33:16,665 - INFO - Model: CNN-LSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 4,  Period: 1d, MSE: 0.027202, MAE: 0.117784, RMSE: 0.164879, MAPE: 0.461575
+2024-04-13 21:33:23,082 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=5
+2024-04-13 21:33:23,124 - INFO - 
+**************************************************************
+** CNN-LSTM-Attention-based
+**************************************************************
+2024-04-13 21:33:23,125 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-LSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:33:23,125 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 35, 'batch_size': 64, 'filters': 32, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '40.56 min'}
+2024-04-13 21:33:38,118 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:33:38,119 - INFO - [-----MSE: 0.027057-----]
+
+2024-04-13 21:33:38,119 - INFO - [-----MAE: 0.120689-----]
+
+2024-04-13 21:33:38,119 - INFO - [-----RMSE: 0.164376-----]
+
+2024-04-13 21:33:38,119 - INFO - [-----MAPE: 0.492977-----]
+
+2024-04-13 21:33:38,119 - INFO - Model: CNN-LSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 5,  Period: 1d, MSE: 0.027057, MAE: 0.120689, RMSE: 0.164376, MAPE: 0.492977
+2024-04-13 21:33:44,615 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=6
+2024-04-13 21:33:44,649 - INFO - 
+**************************************************************
+** CNN-LSTM-Attention-based
+**************************************************************
+2024-04-13 21:33:44,650 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-LSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:33:44,650 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 35, 'batch_size': 64, 'filters': 32, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '40.56 min'}
+2024-04-13 21:33:58,972 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:33:58,973 - INFO - [-----MSE: 0.027861-----]
+
+2024-04-13 21:33:58,973 - INFO - [-----MAE: 0.119069-----]
+
+2024-04-13 21:33:58,974 - INFO - [-----RMSE: 0.166843-----]
+
+2024-04-13 21:33:58,974 - INFO - [-----MAPE: 0.447855-----]
+
+2024-04-13 21:33:58,974 - INFO - Model: CNN-LSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 6,  Period: 1d, MSE: 0.027861, MAE: 0.119069, RMSE: 0.166843, MAPE: 0.447855
+2024-04-13 21:34:05,403 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=7
+2024-04-13 21:34:05,435 - INFO - 
+**************************************************************
+** CNN-LSTM-Attention-based
+**************************************************************
+2024-04-13 21:34:05,436 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-LSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:34:05,436 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 35, 'batch_size': 64, 'filters': 32, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'num_lstm_layers': 2, 'lstm_units': 150, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '40.56 min'}
+2024-04-13 21:34:22,634 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:34:22,634 - INFO - [-----MSE: 0.027857-----]
+
+2024-04-13 21:34:22,634 - INFO - [-----MAE: 0.120308-----]
+
+2024-04-13 21:34:22,634 - INFO - [-----RMSE: 0.166829-----]
+
+2024-04-13 21:34:22,634 - INFO - [-----MAPE: 0.460731-----]
+
+2024-04-13 21:34:22,635 - INFO - Model: CNN-LSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.027857, MAE: 0.120308, RMSE: 0.166829, MAPE: 0.460731
+2024-04-13 21:34:29,220 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=1
+2024-04-13 21:34:29,251 - INFO - 
+**************************************************************
+** CNN-GRU-Attention-based
+**************************************************************
+2024-04-13 21:34:29,251 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-GRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:34:29,252 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 32, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_gru_layers': 2, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '31.30 min'}
+2024-04-13 21:34:40,762 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:34:40,763 - INFO - [-----MSE: 0.032395-----]
+
+2024-04-13 21:34:40,763 - INFO - [-----MAE: 0.136955-----]
+
+2024-04-13 21:34:40,763 - INFO - [-----RMSE: 0.179985-----]
+
+2024-04-13 21:34:40,763 - INFO - [-----MAPE: 0.443243-----]
+
+2024-04-13 21:34:40,763 - INFO - Model: CNN-GRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 1,  Period: 1d, MSE: 0.032395, MAE: 0.136955, RMSE: 0.179985, MAPE: 0.443243
+2024-04-13 21:34:47,190 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=2
+2024-04-13 21:34:47,231 - INFO - 
+**************************************************************
+** CNN-GRU-Attention-based
+**************************************************************
+2024-04-13 21:34:47,231 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-GRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:34:47,232 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 32, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_gru_layers': 2, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '31.30 min'}
+2024-04-13 21:34:54,430 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:34:54,431 - INFO - [-----MSE: 0.04826-----]
+
+2024-04-13 21:34:54,431 - INFO - [-----MAE: 0.162481-----]
+
+2024-04-13 21:34:54,431 - INFO - [-----RMSE: 0.219239-----]
+
+2024-04-13 21:34:54,431 - INFO - [-----MAPE: 0.520321-----]
+
+2024-04-13 21:34:54,431 - INFO - Model: CNN-GRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 2,  Period: 1d, MSE: 0.04826, MAE: 0.162481, RMSE: 0.219239, MAPE: 0.520321
+2024-04-13 21:35:00,830 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=3
+2024-04-13 21:35:00,881 - INFO - 
+**************************************************************
+** CNN-GRU-Attention-based
+**************************************************************
+2024-04-13 21:35:00,881 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-GRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:35:00,882 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 32, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_gru_layers': 2, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '31.30 min'}
+2024-04-13 21:35:06,443 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:35:06,444 - INFO - [-----MSE: 0.032751-----]
+
+2024-04-13 21:35:06,444 - INFO - [-----MAE: 0.14385-----]
+
+2024-04-13 21:35:06,444 - INFO - [-----RMSE: 0.18065-----]
+
+2024-04-13 21:35:06,444 - INFO - [-----MAPE: 0.648857-----]
+
+2024-04-13 21:35:06,444 - INFO - Model: CNN-GRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 3,  Period: 1d, MSE: 0.032751, MAE: 0.14385, RMSE: 0.18065, MAPE: 0.648857
+2024-04-13 21:35:12,849 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=4
+2024-04-13 21:35:12,892 - INFO - 
+**************************************************************
+** CNN-GRU-Attention-based
+**************************************************************
+2024-04-13 21:35:12,892 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-GRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:35:12,893 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 32, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_gru_layers': 2, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '31.30 min'}
+2024-04-13 21:35:18,132 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:35:18,132 - INFO - [-----MSE: 0.040674-----]
+
+2024-04-13 21:35:18,132 - INFO - [-----MAE: 0.144962-----]
+
+2024-04-13 21:35:18,132 - INFO - [-----RMSE: 0.20124-----]
+
+2024-04-13 21:35:18,132 - INFO - [-----MAPE: 0.499743-----]
+
+2024-04-13 21:35:18,132 - INFO - Model: CNN-GRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 4,  Period: 1d, MSE: 0.040674, MAE: 0.144962, RMSE: 0.20124, MAPE: 0.499743
+2024-04-13 21:35:24,556 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=5
+2024-04-13 21:35:24,592 - INFO - 
+**************************************************************
+** CNN-GRU-Attention-based
+**************************************************************
+2024-04-13 21:35:24,592 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-GRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:35:24,592 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 32, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_gru_layers': 2, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '31.30 min'}
+2024-04-13 21:35:30,847 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:35:30,848 - INFO - [-----MSE: 0.029379-----]
+
+2024-04-13 21:35:30,848 - INFO - [-----MAE: 0.127145-----]
+
+2024-04-13 21:35:30,848 - INFO - [-----RMSE: 0.170942-----]
+
+2024-04-13 21:35:30,848 - INFO - [-----MAPE: 0.527106-----]
+
+2024-04-13 21:35:30,848 - INFO - Model: CNN-GRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 5,  Period: 1d, MSE: 0.029379, MAE: 0.127145, RMSE: 0.170942, MAPE: 0.527106
+2024-04-13 21:35:37,283 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=6
+2024-04-13 21:35:37,318 - INFO - 
+**************************************************************
+** CNN-GRU-Attention-based
+**************************************************************
+2024-04-13 21:35:37,318 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-GRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:35:37,318 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 32, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_gru_layers': 2, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '31.30 min'}
+2024-04-13 21:35:44,278 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:35:44,278 - INFO - [-----MSE: 0.029074-----]
+
+2024-04-13 21:35:44,278 - INFO - [-----MAE: 0.121412-----]
+
+2024-04-13 21:35:44,278 - INFO - [-----RMSE: 0.17041-----]
+
+2024-04-13 21:35:44,278 - INFO - [-----MAPE: 0.451085-----]
+
+2024-04-13 21:35:44,278 - INFO - Model: CNN-GRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 6,  Period: 1d, MSE: 0.029074, MAE: 0.121412, RMSE: 0.17041, MAPE: 0.451085
+2024-04-13 21:35:50,727 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=7
+2024-04-13 21:35:50,765 - INFO - 
+**************************************************************
+** CNN-GRU-Attention-based
+**************************************************************
+2024-04-13 21:35:50,765 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-GRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 21:35:50,765 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 32, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_gru_layers': 2, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '31.30 min'}
+2024-04-13 21:35:57,442 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:35:57,442 - INFO - [-----MSE: 0.02986-----]
+
+2024-04-13 21:35:57,442 - INFO - [-----MAE: 0.127738-----]
+
+2024-04-13 21:35:57,442 - INFO - [-----RMSE: 0.172629-----]
+
+2024-04-13 21:35:57,442 - INFO - [-----MAPE: 0.4951-----]
+
+2024-04-13 21:35:57,443 - INFO - Model: CNN-GRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.02986, MAE: 0.127738, RMSE: 0.172629, MAPE: 0.4951
+2024-04-13 22:11:18,921 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-13 22:11:18,921 - INFO - Tuning on CPU server
+2024-04-13 22:11:18,921 - INFO - CPU Name: i386
+2024-04-13 22:11:18,922 - INFO - CPU Cores: 8
+2024-04-13 22:11:18,922 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-13 22:11:18,922 - INFO - model_group: 4 |||| model_types: ['CNN-BiLSTM-Attention-based', 'CNN-BiGRU-Attention-based']
+2024-04-13 22:11:18,922 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=1
+2024-04-13 22:11:18,981 - INFO - 
+**************************************************************
+** CNN-BiLSTM-Attention-based
+**************************************************************
+2024-04-13 22:11:18,981 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiLSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:11:18,981 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 64, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bilstm_layers': 2, 'bilstm_units': 200, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '42.79 min'}
+2024-04-13 22:12:04,242 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:12:04,242 - INFO - [-----MSE: 0.021458-----]
+
+2024-04-13 22:12:04,242 - INFO - [-----MAE: 0.10783-----]
+
+2024-04-13 22:12:04,242 - INFO - [-----RMSE: 0.146485-----]
+
+2024-04-13 22:12:04,242 - INFO - [-----MAPE: 0.451195-----]
+
+2024-04-13 22:12:04,242 - INFO - Model: CNN-BiLSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 1,  Period: 1d, MSE: 0.021458, MAE: 0.10783, RMSE: 0.146485, MAPE: 0.451195
+2024-04-13 22:12:15,016 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=2
+2024-04-13 22:12:15,059 - INFO - 
+**************************************************************
+** CNN-BiLSTM-Attention-based
+**************************************************************
+2024-04-13 22:12:15,059 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiLSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:12:15,060 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 64, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bilstm_layers': 2, 'bilstm_units': 200, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '42.79 min'}
+2024-04-13 22:13:03,414 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:13:03,415 - INFO - [-----MSE: 0.023128-----]
+
+2024-04-13 22:13:03,415 - INFO - [-----MAE: 0.108065-----]
+
+2024-04-13 22:13:03,415 - INFO - [-----RMSE: 0.1518-----]
+
+2024-04-13 22:13:03,415 - INFO - [-----MAPE: 0.431303-----]
+
+2024-04-13 22:13:03,415 - INFO - Model: CNN-BiLSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 2,  Period: 1d, MSE: 0.023128, MAE: 0.108065, RMSE: 0.1518, MAPE: 0.431303
+2024-04-13 22:13:13,852 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=3
+2024-04-13 22:13:13,877 - INFO - 
+**************************************************************
+** CNN-BiLSTM-Attention-based
+**************************************************************
+2024-04-13 22:13:13,877 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiLSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:13:13,877 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 64, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bilstm_layers': 2, 'bilstm_units': 200, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '42.79 min'}
+2024-04-13 22:13:46,543 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:13:46,543 - INFO - [-----MSE: 0.030147-----]
+
+2024-04-13 22:13:46,543 - INFO - [-----MAE: 0.114907-----]
+
+2024-04-13 22:13:46,543 - INFO - [-----RMSE: 0.173434-----]
+
+2024-04-13 22:13:46,543 - INFO - [-----MAPE: 0.36338-----]
+
+2024-04-13 22:13:46,543 - INFO - Model: CNN-BiLSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 3,  Period: 1d, MSE: 0.030147, MAE: 0.114907, RMSE: 0.173434, MAPE: 0.36338
+2024-04-13 22:13:57,096 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=4
+2024-04-13 22:13:57,133 - INFO - 
+**************************************************************
+** CNN-BiLSTM-Attention-based
+**************************************************************
+2024-04-13 22:13:57,133 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiLSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:13:57,134 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 64, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bilstm_layers': 2, 'bilstm_units': 200, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '42.79 min'}
+2024-04-13 22:14:51,510 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:14:51,511 - INFO - [-----MSE: 0.027013-----]
+
+2024-04-13 22:14:51,511 - INFO - [-----MAE: 0.10767-----]
+
+2024-04-13 22:14:51,511 - INFO - [-----RMSE: 0.164168-----]
+
+2024-04-13 22:14:51,511 - INFO - [-----MAPE: 0.361937-----]
+
+2024-04-13 22:14:51,511 - INFO - Model: CNN-BiLSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 4,  Period: 1d, MSE: 0.027013, MAE: 0.10767, RMSE: 0.164168, MAPE: 0.361937
+2024-04-13 22:15:02,080 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=5
+2024-04-13 22:15:02,119 - INFO - 
+**************************************************************
+** CNN-BiLSTM-Attention-based
+**************************************************************
+2024-04-13 22:15:02,119 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiLSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:15:02,120 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 64, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bilstm_layers': 2, 'bilstm_units': 200, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '42.79 min'}
+2024-04-13 22:16:13,973 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:16:13,973 - INFO - [-----MSE: 0.027117-----]
+
+2024-04-13 22:16:13,973 - INFO - [-----MAE: 0.108141-----]
+
+2024-04-13 22:16:13,973 - INFO - [-----RMSE: 0.16458-----]
+
+2024-04-13 22:16:13,973 - INFO - [-----MAPE: 0.337605-----]
+
+2024-04-13 22:16:13,973 - INFO - Model: CNN-BiLSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 5,  Period: 1d, MSE: 0.027117, MAE: 0.108141, RMSE: 0.16458, MAPE: 0.337605
+2024-04-13 22:16:24,927 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=6
+2024-04-13 22:16:24,974 - INFO - 
+**************************************************************
+** CNN-BiLSTM-Attention-based
+**************************************************************
+2024-04-13 22:16:24,974 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiLSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:16:24,974 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 64, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bilstm_layers': 2, 'bilstm_units': 200, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '42.79 min'}
+2024-04-13 22:17:27,241 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:17:27,241 - INFO - [-----MSE: 0.027473-----]
+
+2024-04-13 22:17:27,241 - INFO - [-----MAE: 0.110602-----]
+
+2024-04-13 22:17:27,241 - INFO - [-----RMSE: 0.165671-----]
+
+2024-04-13 22:17:27,241 - INFO - [-----MAPE: 0.376861-----]
+
+2024-04-13 22:17:27,241 - INFO - Model: CNN-BiLSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 6,  Period: 1d, MSE: 0.027473, MAE: 0.110602, RMSE: 0.165671, MAPE: 0.376861
+2024-04-13 22:17:37,844 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=7
+2024-04-13 22:17:37,882 - INFO - 
+**************************************************************
+** CNN-BiLSTM-Attention-based
+**************************************************************
+2024-04-13 22:17:37,882 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiLSTM-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:17:37,882 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 1e-05, 'min_delta': 1e-08, 'patience': 30, 'batch_size': 64, 'filters': 64, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bilstm_layers': 2, 'bilstm_units': 200, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '42.79 min'}
+2024-04-13 22:18:52,390 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:18:52,390 - INFO - [-----MSE: 0.028748-----]
+
+2024-04-13 22:18:52,390 - INFO - [-----MAE: 0.113474-----]
+
+2024-04-13 22:18:52,390 - INFO - [-----RMSE: 0.169508-----]
+
+2024-04-13 22:18:52,390 - INFO - [-----MAPE: 0.381331-----]
+
+2024-04-13 22:18:52,390 - INFO - Model: CNN-BiLSTM-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.028748, MAE: 0.113474, RMSE: 0.169508, MAPE: 0.381331
+2024-04-13 22:19:03,043 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=1
+2024-04-13 22:19:03,086 - INFO - 
+**************************************************************
+** CNN-BiGRU-Attention-based
+**************************************************************
+2024-04-13 22:19:03,086 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiGRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:19:03,086 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 1e-05, 'min_delta': 1e-07, 'patience': 30, 'batch_size': 32, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bigru_layers': 2, 'bigru_units': 50, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '59.87 min'}
+2024-04-13 22:19:44,010 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:19:44,010 - INFO - [-----MSE: 0.024055-----]
+
+2024-04-13 22:19:44,010 - INFO - [-----MAE: 0.109065-----]
+
+2024-04-13 22:19:44,010 - INFO - [-----RMSE: 0.155096-----]
+
+2024-04-13 22:19:44,010 - INFO - [-----MAPE: 0.438367-----]
+
+2024-04-13 22:19:44,010 - INFO - Model: CNN-BiGRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 1,  Period: 1d, MSE: 0.024055, MAE: 0.109065, RMSE: 0.155096, MAPE: 0.438367
+2024-04-13 22:19:54,613 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=2
+2024-04-13 22:19:54,657 - INFO - 
+**************************************************************
+** CNN-BiGRU-Attention-based
+**************************************************************
+2024-04-13 22:19:54,657 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiGRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:19:54,658 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 1e-05, 'min_delta': 1e-07, 'patience': 30, 'batch_size': 32, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bigru_layers': 2, 'bigru_units': 50, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '59.87 min'}
+2024-04-13 22:20:50,403 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:20:50,403 - INFO - [-----MSE: 0.02544-----]
+
+2024-04-13 22:20:50,403 - INFO - [-----MAE: 0.105509-----]
+
+2024-04-13 22:20:50,403 - INFO - [-----RMSE: 0.159291-----]
+
+2024-04-13 22:20:50,403 - INFO - [-----MAPE: 0.360956-----]
+
+2024-04-13 22:20:50,403 - INFO - Model: CNN-BiGRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 2,  Period: 1d, MSE: 0.02544, MAE: 0.105509, RMSE: 0.159291, MAPE: 0.360956
+2024-04-13 22:21:00,986 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=3
+2024-04-13 22:21:01,032 - INFO - 
+**************************************************************
+** CNN-BiGRU-Attention-based
+**************************************************************
+2024-04-13 22:21:01,032 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiGRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:21:01,033 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 1e-05, 'min_delta': 1e-07, 'patience': 30, 'batch_size': 32, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bigru_layers': 2, 'bigru_units': 50, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '59.87 min'}
+2024-04-13 22:21:21,310 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:21:21,310 - INFO - [-----MSE: 0.051191-----]
+
+2024-04-13 22:21:21,310 - INFO - [-----MAE: 0.166001-----]
+
+2024-04-13 22:21:21,310 - INFO - [-----RMSE: 0.226219-----]
+
+2024-04-13 22:21:21,310 - INFO - [-----MAPE: 0.458386-----]
+
+2024-04-13 22:21:21,310 - INFO - Model: CNN-BiGRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 3,  Period: 1d, MSE: 0.051191, MAE: 0.166001, RMSE: 0.226219, MAPE: 0.458386
+2024-04-13 22:21:31,886 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=4
+2024-04-13 22:21:31,932 - INFO - 
+**************************************************************
+** CNN-BiGRU-Attention-based
+**************************************************************
+2024-04-13 22:21:31,932 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiGRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:21:31,933 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 1e-05, 'min_delta': 1e-07, 'patience': 30, 'batch_size': 32, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bigru_layers': 2, 'bigru_units': 50, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '59.87 min'}
+2024-04-13 22:22:29,738 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:22:29,739 - INFO - [-----MSE: 0.031112-----]
+
+2024-04-13 22:22:29,739 - INFO - [-----MAE: 0.113177-----]
+
+2024-04-13 22:22:29,739 - INFO - [-----RMSE: 0.176147-----]
+
+2024-04-13 22:22:29,739 - INFO - [-----MAPE: 0.335831-----]
+
+2024-04-13 22:22:29,739 - INFO - Model: CNN-BiGRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 4,  Period: 1d, MSE: 0.031112, MAE: 0.113177, RMSE: 0.176147, MAPE: 0.335831
+2024-04-13 22:22:40,284 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=5
+2024-04-13 22:22:40,320 - INFO - 
+**************************************************************
+** CNN-BiGRU-Attention-based
+**************************************************************
+2024-04-13 22:22:40,320 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiGRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:22:40,321 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 1e-05, 'min_delta': 1e-07, 'patience': 30, 'batch_size': 32, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bigru_layers': 2, 'bigru_units': 50, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '59.87 min'}
+2024-04-13 22:23:31,686 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:23:31,687 - INFO - [-----MSE: 0.032462-----]
+
+2024-04-13 22:23:31,687 - INFO - [-----MAE: 0.113987-----]
+
+2024-04-13 22:23:31,688 - INFO - [-----RMSE: 0.180137-----]
+
+2024-04-13 22:23:31,688 - INFO - [-----MAPE: 0.322425-----]
+
+2024-04-13 22:23:31,688 - INFO - Model: CNN-BiGRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 5,  Period: 1d, MSE: 0.032462, MAE: 0.113987, RMSE: 0.180137, MAPE: 0.322425
+2024-04-13 22:23:42,271 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=6
+2024-04-13 22:23:42,311 - INFO - 
+**************************************************************
+** CNN-BiGRU-Attention-based
+**************************************************************
+2024-04-13 22:23:42,311 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiGRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:23:42,312 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 1e-05, 'min_delta': 1e-07, 'patience': 30, 'batch_size': 32, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bigru_layers': 2, 'bigru_units': 50, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '59.87 min'}
+2024-04-13 22:24:10,051 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:24:10,052 - INFO - [-----MSE: 0.038977-----]
+
+2024-04-13 22:24:10,052 - INFO - [-----MAE: 0.13089-----]
+
+2024-04-13 22:24:10,052 - INFO - [-----RMSE: 0.19741-----]
+
+2024-04-13 22:24:10,052 - INFO - [-----MAPE: 0.351927-----]
+
+2024-04-13 22:24:10,052 - INFO - Model: CNN-BiGRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 6,  Period: 1d, MSE: 0.038977, MAE: 0.13089, RMSE: 0.19741, MAPE: 0.351927
+2024-04-13 22:24:20,649 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=7
+2024-04-13 22:24:20,688 - INFO - 
+**************************************************************
+** CNN-BiGRU-Attention-based
+**************************************************************
+2024-04-13 22:24:20,688 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-BiGRU-Attention-based/best_params.json  📌📌📌
+2024-04-13 22:24:20,689 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 1e-05, 'min_delta': 1e-07, 'patience': 30, 'batch_size': 32, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 1, 'num_bigru_layers': 2, 'bigru_units': 50, 'dropout': 0.4, 'activation': 'ReLU', 'processing_time': '59.87 min'}
+2024-04-13 22:24:43,905 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 22:24:43,907 - INFO - [-----MSE: 0.040493-----]
+
+2024-04-13 22:24:43,907 - INFO - [-----MAE: 0.134702-----]
+
+2024-04-13 22:24:43,907 - INFO - [-----RMSE: 0.201192-----]
+
+2024-04-13 22:24:43,907 - INFO - [-----MAPE: 0.361027-----]
+
+2024-04-13 22:24:43,907 - INFO - Model: CNN-BiGRU-Attention-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.040493, MAE: 0.134702, RMSE: 0.201192, MAPE: 0.361027

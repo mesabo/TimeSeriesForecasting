@@ -1,0 +1,384 @@
+2024-04-13 21:37:25,956 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-13 21:37:25,957 - INFO - Tuning on CPU server
+2024-04-13 21:37:25,957 - INFO - CPU Name: i386
+2024-04-13 21:37:25,957 - INFO - CPU Cores: 8
+2024-04-13 21:37:25,957 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-13 21:37:25,957 - INFO - model_group: 1 |||| model_types: ['CNN-Based', 'LSTM-based', 'GRU-based']
+2024-04-13 21:37:25,957 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=1
+2024-04-13 21:37:25,998 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-13 21:37:25,998 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-04-13 21:37:25,998 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-04-13 21:37:28,789 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:37:28,789 - INFO - [-----MSE: 0.033598-----]
+
+2024-04-13 21:37:28,789 - INFO - [-----MAE: 0.144412-----]
+
+2024-04-13 21:37:28,789 - INFO - [-----RMSE: 0.183298-----]
+
+2024-04-13 21:37:28,789 - INFO - [-----MAPE: 0.657284-----]
+
+2024-04-13 21:37:28,789 - INFO - Model: CNN-Based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 1,  Period: 1d, MSE: 0.033598, MAE: 0.144412, RMSE: 0.183298, MAPE: 0.657284
+2024-04-13 21:37:39,311 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=2
+2024-04-13 21:37:39,356 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-13 21:37:39,356 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-04-13 21:37:39,356 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-04-13 21:37:44,438 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:37:44,438 - INFO - [-----MSE: 0.045592-----]
+
+2024-04-13 21:37:44,438 - INFO - [-----MAE: 0.147006-----]
+
+2024-04-13 21:37:44,438 - INFO - [-----RMSE: 0.212696-----]
+
+2024-04-13 21:37:44,438 - INFO - [-----MAPE: 0.406393-----]
+
+2024-04-13 21:37:44,438 - INFO - Model: CNN-Based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 2,  Period: 1d, MSE: 0.045592, MAE: 0.147006, RMSE: 0.212696, MAPE: 0.406393
+2024-04-13 21:37:54,925 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=3
+2024-04-13 21:37:54,954 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-13 21:37:54,954 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-04-13 21:37:54,954 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-04-13 21:37:57,291 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:37:57,291 - INFO - [-----MSE: 0.037052-----]
+
+2024-04-13 21:37:57,291 - INFO - [-----MAE: 0.139157-----]
+
+2024-04-13 21:37:57,291 - INFO - [-----RMSE: 0.190067-----]
+
+2024-04-13 21:37:57,291 - INFO - [-----MAPE: 0.518957-----]
+
+2024-04-13 21:37:57,291 - INFO - Model: CNN-Based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 3,  Period: 1d, MSE: 0.037052, MAE: 0.139157, RMSE: 0.190067, MAPE: 0.518957
+2024-04-13 21:38:07,724 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=4
+2024-04-13 21:38:07,761 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-13 21:38:07,761 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-04-13 21:38:07,761 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-04-13 21:38:12,034 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:38:12,034 - INFO - [-----MSE: 0.039432-----]
+
+2024-04-13 21:38:12,034 - INFO - [-----MAE: 0.149799-----]
+
+2024-04-13 21:38:12,034 - INFO - [-----RMSE: 0.195429-----]
+
+2024-04-13 21:38:12,034 - INFO - [-----MAPE: 0.605387-----]
+
+2024-04-13 21:38:12,034 - INFO - Model: CNN-Based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 4,  Period: 1d, MSE: 0.039432, MAE: 0.149799, RMSE: 0.195429, MAPE: 0.605387
+2024-04-13 21:38:22,504 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=5
+2024-04-13 21:38:22,528 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-13 21:38:22,528 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-04-13 21:38:22,529 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-04-13 21:38:25,075 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:38:25,075 - INFO - [-----MSE: 0.035408-----]
+
+2024-04-13 21:38:25,075 - INFO - [-----MAE: 0.131096-----]
+
+2024-04-13 21:38:25,076 - INFO - [-----RMSE: 0.187815-----]
+
+2024-04-13 21:38:25,076 - INFO - [-----MAPE: 0.442855-----]
+
+2024-04-13 21:38:25,076 - INFO - Model: CNN-Based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 5,  Period: 1d, MSE: 0.035408, MAE: 0.131096, RMSE: 0.187815, MAPE: 0.442855
+2024-04-13 21:38:35,640 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=6
+2024-04-13 21:38:35,677 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-13 21:38:35,678 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-04-13 21:38:35,678 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-04-13 21:38:40,010 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:38:40,010 - INFO - [-----MSE: 0.035963-----]
+
+2024-04-13 21:38:40,010 - INFO - [-----MAE: 0.138106-----]
+
+2024-04-13 21:38:40,010 - INFO - [-----RMSE: 0.189069-----]
+
+2024-04-13 21:38:40,010 - INFO - [-----MAPE: 0.516035-----]
+
+2024-04-13 21:38:40,010 - INFO - Model: CNN-Based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 6,  Period: 1d, MSE: 0.035963, MAE: 0.138106, RMSE: 0.189069, MAPE: 0.516035
+2024-04-13 21:38:50,521 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=7
+2024-04-13 21:38:50,546 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-04-13 21:38:50,546 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-04-13 21:38:50,546 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-04-13 21:38:53,140 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:38:53,140 - INFO - [-----MSE: 0.037014-----]
+
+2024-04-13 21:38:53,140 - INFO - [-----MAE: 0.139596-----]
+
+2024-04-13 21:38:53,140 - INFO - [-----RMSE: 0.191891-----]
+
+2024-04-13 21:38:53,140 - INFO - [-----MAPE: 0.485972-----]
+
+2024-04-13 21:38:53,140 - INFO - Model: CNN-Based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.037014, MAE: 0.139596, RMSE: 0.191891, MAPE: 0.485972
+2024-04-13 21:39:03,674 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=1
+2024-04-13 21:39:03,711 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-13 21:39:03,711 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/best_params.json  📌📌📌
+2024-04-13 21:39:03,712 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '55.88 min'}
+2024-04-13 21:39:10,824 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:39:10,824 - INFO - [-----MSE: 0.042279-----]
+
+2024-04-13 21:39:10,824 - INFO - [-----MAE: 0.14144-----]
+
+2024-04-13 21:39:10,824 - INFO - [-----RMSE: 0.205618-----]
+
+2024-04-13 21:39:10,824 - INFO - [-----MAPE: 0.415145-----]
+
+2024-04-13 21:39:10,824 - INFO - Model: LSTM-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 1,  Period: 1d, MSE: 0.042279, MAE: 0.14144, RMSE: 0.205618, MAPE: 0.415145
+2024-04-13 21:39:21,296 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=2
+2024-04-13 21:39:21,321 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-13 21:39:21,321 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/best_params.json  📌📌📌
+2024-04-13 21:39:21,322 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '55.88 min'}
+2024-04-13 21:39:27,150 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:39:27,151 - INFO - [-----MSE: 0.042064-----]
+
+2024-04-13 21:39:27,151 - INFO - [-----MAE: 0.140811-----]
+
+2024-04-13 21:39:27,151 - INFO - [-----RMSE: 0.205094-----]
+
+2024-04-13 21:39:27,151 - INFO - [-----MAPE: 0.41376-----]
+
+2024-04-13 21:39:27,151 - INFO - Model: LSTM-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 2,  Period: 1d, MSE: 0.042064, MAE: 0.140811, RMSE: 0.205094, MAPE: 0.41376
+2024-04-13 21:39:37,691 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=3
+2024-04-13 21:39:37,737 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-13 21:39:37,737 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/best_params.json  📌📌📌
+2024-04-13 21:39:37,738 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '55.88 min'}
+2024-04-13 21:39:42,045 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:39:42,045 - INFO - [-----MSE: 0.043326-----]
+
+2024-04-13 21:39:42,045 - INFO - [-----MAE: 0.143746-----]
+
+2024-04-13 21:39:42,045 - INFO - [-----RMSE: 0.208148-----]
+
+2024-04-13 21:39:42,045 - INFO - [-----MAPE: 0.414558-----]
+
+2024-04-13 21:39:42,045 - INFO - Model: LSTM-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 3,  Period: 1d, MSE: 0.043326, MAE: 0.143746, RMSE: 0.208148, MAPE: 0.414558
+2024-04-13 21:39:52,485 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=4
+2024-04-13 21:39:52,524 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-13 21:39:52,525 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/best_params.json  📌📌📌
+2024-04-13 21:39:52,525 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '55.88 min'}
+2024-04-13 21:39:59,054 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:39:59,054 - INFO - [-----MSE: 0.04349-----]
+
+2024-04-13 21:39:59,054 - INFO - [-----MAE: 0.144161-----]
+
+2024-04-13 21:39:59,054 - INFO - [-----RMSE: 0.208543-----]
+
+2024-04-13 21:39:59,054 - INFO - [-----MAPE: 0.405105-----]
+
+2024-04-13 21:39:59,054 - INFO - Model: LSTM-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 4,  Period: 1d, MSE: 0.04349, MAE: 0.144161, RMSE: 0.208543, MAPE: 0.405105
+2024-04-13 21:40:09,510 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=5
+2024-04-13 21:40:09,533 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-13 21:40:09,533 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/best_params.json  📌📌📌
+2024-04-13 21:40:09,534 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '55.88 min'}
+2024-04-13 21:40:12,665 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:40:12,665 - INFO - [-----MSE: 0.04401-----]
+
+2024-04-13 21:40:12,665 - INFO - [-----MAE: 0.145757-----]
+
+2024-04-13 21:40:12,665 - INFO - [-----RMSE: 0.209768-----]
+
+2024-04-13 21:40:12,665 - INFO - [-----MAPE: 0.402572-----]
+
+2024-04-13 21:40:12,665 - INFO - Model: LSTM-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 5,  Period: 1d, MSE: 0.04401, MAE: 0.145757, RMSE: 0.209768, MAPE: 0.402572
+2024-04-13 21:40:23,140 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=6
+2024-04-13 21:40:23,176 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-13 21:40:23,176 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/best_params.json  📌📌📌
+2024-04-13 21:40:23,177 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '55.88 min'}
+2024-04-13 21:40:28,301 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:40:28,301 - INFO - [-----MSE: 0.044486-----]
+
+2024-04-13 21:40:28,301 - INFO - [-----MAE: 0.14728-----]
+
+2024-04-13 21:40:28,301 - INFO - [-----RMSE: 0.2109-----]
+
+2024-04-13 21:40:28,301 - INFO - [-----MAPE: 0.402002-----]
+
+2024-04-13 21:40:28,301 - INFO - Model: LSTM-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 6,  Period: 1d, MSE: 0.044486, MAE: 0.14728, RMSE: 0.2109, MAPE: 0.402002
+2024-04-13 21:40:38,763 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=7
+2024-04-13 21:40:38,799 - INFO - 
+**************************************************************
+** LSTM-based
+**************************************************************
+2024-04-13 21:40:38,799 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/LSTM-based/best_params.json  📌📌📌
+2024-04-13 21:40:38,799 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 40, 'batch_size': 64, 'num_lstm_layers': 2, 'lstm_units': 100, 'dropout': 0.3, 'activation': 'ReLU', 'processing_time': '55.88 min'}
+2024-04-13 21:40:44,759 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:40:44,759 - INFO - [-----MSE: 0.045182-----]
+
+2024-04-13 21:40:44,759 - INFO - [-----MAE: 0.149435-----]
+
+2024-04-13 21:40:44,760 - INFO - [-----RMSE: 0.212525-----]
+
+2024-04-13 21:40:44,760 - INFO - [-----MAPE: 0.404171-----]
+
+2024-04-13 21:40:44,760 - INFO - Model: LSTM-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.045182, MAE: 0.149435, RMSE: 0.212525, MAPE: 0.404171
+2024-04-13 21:40:55,234 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=1
+2024-04-13 21:40:55,259 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-13 21:40:55,260 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/best_params.json  📌📌📌
+2024-04-13 21:40:55,260 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '1.22 h'}
+2024-04-13 21:41:03,092 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:41:03,092 - INFO - [-----MSE: 0.039655-----]
+
+2024-04-13 21:41:03,092 - INFO - [-----MAE: 0.134097-----]
+
+2024-04-13 21:41:03,092 - INFO - [-----RMSE: 0.199135-----]
+
+2024-04-13 21:41:03,092 - INFO - [-----MAPE: 0.400914-----]
+
+2024-04-13 21:41:03,092 - INFO - Model: GRU-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 1,  Period: 1d, MSE: 0.039655, MAE: 0.134097, RMSE: 0.199135, MAPE: 0.400914
+2024-04-13 21:41:13,579 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=2
+2024-04-13 21:41:13,609 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-13 21:41:13,609 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/best_params.json  📌📌📌
+2024-04-13 21:41:13,610 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '1.22 h'}
+2024-04-13 21:41:23,686 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:41:23,688 - INFO - [-----MSE: 0.044825-----]
+
+2024-04-13 21:41:23,688 - INFO - [-----MAE: 0.148589-----]
+
+2024-04-13 21:41:23,688 - INFO - [-----RMSE: 0.211719-----]
+
+2024-04-13 21:41:23,688 - INFO - [-----MAPE: 0.431445-----]
+
+2024-04-13 21:41:23,688 - INFO - Model: GRU-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 2,  Period: 1d, MSE: 0.044825, MAE: 0.148589, RMSE: 0.211719, MAPE: 0.431445
+2024-04-13 21:41:34,101 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=3
+2024-04-13 21:41:34,128 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-13 21:41:34,128 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/best_params.json  📌📌📌
+2024-04-13 21:41:34,129 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '1.22 h'}
+2024-04-13 21:41:40,915 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:41:40,915 - INFO - [-----MSE: 0.044685-----]
+
+2024-04-13 21:41:40,915 - INFO - [-----MAE: 0.147522-----]
+
+2024-04-13 21:41:40,915 - INFO - [-----RMSE: 0.211387-----]
+
+2024-04-13 21:41:40,915 - INFO - [-----MAPE: 0.423371-----]
+
+2024-04-13 21:41:40,915 - INFO - Model: GRU-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 3,  Period: 1d, MSE: 0.044685, MAE: 0.147522, RMSE: 0.211387, MAPE: 0.423371
+2024-04-13 21:41:51,353 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=4
+2024-04-13 21:41:51,390 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-13 21:41:51,390 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/best_params.json  📌📌📌
+2024-04-13 21:41:51,390 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '1.22 h'}
+2024-04-13 21:42:02,588 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:42:02,588 - INFO - [-----MSE: 0.045398-----]
+
+2024-04-13 21:42:02,589 - INFO - [-----MAE: 0.149595-----]
+
+2024-04-13 21:42:02,589 - INFO - [-----RMSE: 0.213066-----]
+
+2024-04-13 21:42:02,589 - INFO - [-----MAPE: 0.418991-----]
+
+2024-04-13 21:42:02,589 - INFO - Model: GRU-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 4,  Period: 1d, MSE: 0.045398, MAE: 0.149595, RMSE: 0.213066, MAPE: 0.418991
+2024-04-13 21:42:13,050 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=5
+2024-04-13 21:42:13,087 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-13 21:42:13,087 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/best_params.json  📌📌📌
+2024-04-13 21:42:13,087 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '1.22 h'}
+2024-04-13 21:42:25,731 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:42:25,731 - INFO - [-----MSE: 0.045888-----]
+
+2024-04-13 21:42:25,731 - INFO - [-----MAE: 0.151092-----]
+
+2024-04-13 21:42:25,731 - INFO - [-----RMSE: 0.214201-----]
+
+2024-04-13 21:42:25,731 - INFO - [-----MAPE: 0.416563-----]
+
+2024-04-13 21:42:25,731 - INFO - Model: GRU-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 5,  Period: 1d, MSE: 0.045888, MAE: 0.151092, RMSE: 0.214201, MAPE: 0.416563
+2024-04-13 21:42:36,198 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=6
+2024-04-13 21:42:36,235 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-13 21:42:36,235 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/best_params.json  📌📌📌
+2024-04-13 21:42:36,236 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '1.22 h'}
+2024-04-13 21:42:48,449 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:42:48,449 - INFO - [-----MSE: 0.046319-----]
+
+2024-04-13 21:42:48,449 - INFO - [-----MAE: 0.152471-----]
+
+2024-04-13 21:42:48,449 - INFO - [-----RMSE: 0.215194-----]
+
+2024-04-13 21:42:48,449 - INFO - [-----MAPE: 0.415895-----]
+
+2024-04-13 21:42:48,449 - INFO - Model: GRU-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 6,  Period: 1d, MSE: 0.046319, MAE: 0.152471, RMSE: 0.215194, MAPE: 0.415895
+2024-04-13 21:42:58,969 - INFO - Training with series_type=apartment | look_back=7 | forecast_period=7
+2024-04-13 21:42:59,007 - INFO - 
+**************************************************************
+** GRU-based
+**************************************************************
+2024-04-13 21:42:59,007 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/GRU-based/best_params.json  📌📌📌
+2024-04-13 21:42:59,008 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'num_gru_layers': 3, 'gru_units': 100, 'dropout': 0.1, 'activation': 'ReLU', 'processing_time': '1.22 h'}
+2024-04-13 21:43:19,533 - INFO - [-----MODEL METRICS-----]
+
+2024-04-13 21:43:19,534 - INFO - [-----MSE: 0.046797-----]
+
+2024-04-13 21:43:19,534 - INFO - [-----MAE: 0.153977-----]
+
+2024-04-13 21:43:19,534 - INFO - [-----RMSE: 0.216284-----]
+
+2024-04-13 21:43:19,534 - INFO - [-----MAPE: 0.416468-----]
+
+2024-04-13 21:43:19,534 - INFO - Model: GRU-based-('simple', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.046797, MAE: 0.153977, RMSE: 0.216284, MAPE: 0.416468
