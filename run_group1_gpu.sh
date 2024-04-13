@@ -22,5 +22,5 @@ fi
 # Change directory to the script directory
 cd "$SCRIPT_DIR" || { echo "Error: Unable to change directory to $SCRIPT_DIR"; exit 1; }
 
-# Pass the model_group and electricity parameters to the Python script
+# Pass the model_group and [electricity, house, apartment, energy] parameters to the Python script
 python ./src/main.py --model_group 1 --dataset 'electricity'

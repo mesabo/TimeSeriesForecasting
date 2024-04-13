@@ -1,0 +1,16 @@
+{
+  "GRU-based": {
+    "lr": 0.001,
+    "optimizer": "Adam",
+    "l1_regularizer": 0.0001,
+    "l2_regularizer": 0.0001,
+    "min_delta": 1e-08,
+    "patience": 50,
+    "batch_size": 64,
+    "num_gru_layers": 3,
+    "gru_units": 100,
+    "dropout": 0.1,
+    "activation": "ReLU",
+    "processing_time": "1.22 h"
+  }
+}

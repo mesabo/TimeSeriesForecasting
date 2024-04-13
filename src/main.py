@@ -25,14 +25,13 @@ import numpy as np
 import psutil
 import torch
 
-from hyperparameter_tuning.model_tuner_study import model_tuner_and_study
-from models.model_training import ComprehensiveModelTrainer
+from models.model_validation import ComprehensiveModelValidator
 from utils.constants import (
     ELECTRICITY, LOOK_BACKS, FORECAST_PERIODS, SEEDER, LOG_FILE,
     LSTM_MODEL, GRU_MODEL, CNN_MODEL, CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
-    CNN_BiLSTM_ATTENTION_MODEL, CNN_BiGRU_ATTENTION_MODEL,
     CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL,
-    CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL, APARTMENT, HOUSE, )
+    CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL, APARTMENT, HOUSE, ENERGY, SIMPLE_OR_AUGMENTED,
+    UNI_OR_MULTI_VARIATE, CNN_BiGRU_ATTENTION_MODEL, CNN_BiLSTM_ATTENTION_MODEL, )
 
 # Set seed for reproducibility
 os.environ['CUBLAS_WORKSPACE_CONFIG'] = ":4096:8"
@@ -54,6 +53,8 @@ def main(model_group, dataset):
         series = HOUSE
     elif dataset == 'apartment':
         series = APARTMENT
+    elif dataset == 'energy':
+        series = ENERGY
     else:
         series = ELECTRICITY
 
@@ -61,16 +62,14 @@ def main(model_group, dataset):
 
     model_group2 = [CNN_LSTM_MODEL, CNN_GRU_MODEL]
 
-    # model_group3 = [LSTM_ATTENTION_MODEL, GRU_ATTENTION_MODEL,
-    #                 CNN_ATTENTION_MODEL,BiLSTM_ATTENTION_MODEL,
-    #                 BiGRU_ATTENTION_MODEL, ]
-
-    model_group4 = [CNN_LSTM_ATTENTION_MODEL,
+    model_group4 = [
+                    CNN_LSTM_ATTENTION_MODEL,
                     CNN_GRU_ATTENTION_MODEL,
                     CNN_BiLSTM_ATTENTION_MODEL,
                     CNN_BiGRU_ATTENTION_MODEL,
                     ]
-    model_group5 = [CNN_ATTENTION_LSTM_MODEL,
+    model_group5 = [
+                    CNN_ATTENTION_LSTM_MODEL,
                     CNN_ATTENTION_GRU_MODEL,
                     CNN_ATTENTION_BiLSTM_MODEL,
                     CNN_ATTENTION_BiGRU_MODEL
@@ -85,24 +84,27 @@ def main(model_group, dataset):
         model_types = model_group1
     elif model_group == 2:
         model_types = model_group2
-    # elif model_group == 3:
-    #     model_types = model_group3
     elif model_group == 4:
         model_types = model_group4
     elif model_group == 5:
-        model_types = model_group4
+        model_types = model_group5
     else:
-        model_types = model_group1
+        model_types = model_group0
 
     logger.info(f"model_group: {model_group} |||| model_types: {model_types}")
 
     # Create ModelTuner instance and Optuna study
-    model_tuner_and_study(look_backs, forecast_periods, model_types, series)
+    # if model_group != 0:
+    # model_tuner_and_study(look_backs, forecast_periods, model_types, series)
 
     # Build best model
-    #trainer = ComprehensiveModelTrainer(look_backs=look_backs, forecast_periods=forecast_periods,
-    #                                    model_types=model_types, series_types=series)
-    #trainer.build_and_train_models()
+    # trainer = ComprehensiveModelTrainer(look_backs=look_backs, forecast_periods=forecast_periods,
+    #                                     model_types=model_types, series_types=series)
+    # trainer.build_and_train_models()
+
+    trainer = ComprehensiveModelValidator(look_backs=look_backs, forecast_periods=forecast_periods,
+                                          model_types=model_types, series_types=series)
+    trainer.build_and_train_models()
 
 
 '''----------------------------------------------------------------------------------------------'''
@@ -143,7 +145,11 @@ if __name__ == "__main__":
     parser.add_argument("--model_group", type=int, help="Model group parameter: group of models to process")
     parser.add_argument("--dataset", type=str, default="default_dataset", help="Dataset parameter: dataset to use")
     args = parser.parse_args()
-    log_filename = LOG_FILE + str(args.model_group or 0) + '.log'
+    log_filename = (LOG_FILE + SIMPLE_OR_AUGMENTED +
+                    '/' + str(UNI_OR_MULTI_VARIATE) +  # Convert UNI_OR_MULTI_VARIATE to a string
+                    '_' + str(args.dataset or ELECTRICITY) +
+                    '_group' + str(args.model_group or 0) +
+                    '.log')
 
     # Logging settings config
     logging.basicConfig(
@@ -159,4 +165,4 @@ if __name__ == "__main__":
     logger.info(f"CURRENT PATH IS: {current_dir}")
 
     # Call the main function and pass the model_group parameter
-    main(args.model_group or 1, args.dataset or ELECTRICITY)
+    main(args.model_group or 0, args.dataset or ELECTRICITY)

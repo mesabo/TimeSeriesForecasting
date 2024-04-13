@@ -77,25 +77,28 @@ DATASET_FEATURES_PATH = f"input/data_features.json"
 ELECTRICITY_DATASET_PATH = f"input/electricity/household_power_consumption.txt"
 HOUSE_DATASET_PATH = f"input/house/WHE.csv"
 APARTMENT_DATASET_PATH = f"input/apartment/MidriseApartment_SAN_FRANCISCO.csv"
+ENERGY_DATASET_PATH = f"input/energy/energy.csv"
 
 OUTPUT_PATH = f"output-cpu/"
 BASE_PATH = f'./'
 CHECK_PATH = "checks/"
 CHECK_HYPERBAND = "hyperband/"
 HYPERBAND_PATH = "hyperband/"
-LOG_FILE = './logs/cpu/time_serie_cpu'
+LOG_FILE = './logs/cpu/'
 UNI_OR_MULTI_VARIATE = 'multivariate'
+SIMPLE_OR_AUGMENTED = 'augmented'
 # Define model names as variables
 SEEDER = 2024
 
 EPOCHS = 100
-N_TRIAL = 200
-LOOK_BACKS = [7, 14, 21]
+N_TRIAL = 20
+LOOK_BACKS = [7]
 FORECAST_PERIODS = [1, 2, 3, 4, 5, 6, 7]
-PERIOD = ['1D']
+PERIOD = ['1d']
 ELECTRICITY = 'electricity'
 HOUSE = 'house'
 APARTMENT = 'apartment'
+ENERGY = 'energy'
 
 
 def is_running_on_server():
@@ -106,9 +109,9 @@ def is_running_on_server():
 logger = logging.getLogger(__name__)
 if is_running_on_server():
     logger.info("The code is running on a server.")
-    EPOCHS = 100
+    EPOCHS = 200
     N_TRIAL = 200
-    LOOK_BACKS = [7, 14, 21]
+    LOOK_BACKS = [7, 14]
     FORECAST_PERIODS = [1, 2, 3, 4, 5, 6, 7]
 
     BASE_PATH = '/home/23r9802_chen/messou/TimeSeriesForecasting/'
@@ -116,8 +119,9 @@ if is_running_on_server():
     ELECTRICITY_DATASET_PATH = "/home/23r9802_chen/messou/TimeSeriesForecasting/input/electricity/household_power_consumption.txt"
     HOUSE_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/house/WHE.csv"
     APARTMENT_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/apartment/MidriseApartment_SAN_FRANCISCO.csv"
+    ENERGY_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/energy/energy.csv"
 
     OUTPUT_PATH = "/output-gpu/"
-    LOG_FILE = f"./logs/gpu/time_serie_gpu"
+    LOG_FILE = f"./logs/gpu/"
 else:
     logger.info("The code is running locally.")

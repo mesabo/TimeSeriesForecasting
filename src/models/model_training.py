@@ -16,14 +16,16 @@ Lab: Prof YU Keping's Lab
 import logging
 
 import torch
+
 from hyperparameter_tuning.build_best_model import train_model
 from input_processing.data_processing import default_preprocess_and_split_dataset
 from models.model_selection import ModelSelection
 from output_processing.custom_functions import (evaluate_model, plot_evaluation_metrics, save_evaluation_metrics,
-                                                plot_losses, save_losses, make_predictions, plot_multi_step_predictions)
+                                                plot_losses, save_losses, make_predictions, plot_multi_step_predictions,
+                                                save_predicted_values, plot_single_prediction)
 from utils.constants import (
     SAVING_METRIC_DIR, SAVING_LOSS_DIR, BASE_PATH,
-    OUTPUT_PATH, SAVING_PREDICTION_DIR, HYPERBAND_PATH, ELECTRICITY, PERIOD, UNI_OR_MULTI_VARIATE
+    OUTPUT_PATH, SAVING_PREDICTION_DIR, HYPERBAND_PATH, ELECTRICITY, PERIOD, SIMPLE_OR_AUGMENTED, UNI_OR_MULTI_VARIATE
 )
 from utils.file_loader import read_best_params
 
@@ -94,9 +96,9 @@ class ComprehensiveModelTrainer:
     def evaluate_and_save_results(self, model, x_test, y_test, scaler, train_history, model_type, series_type,
                                   look_back_day,
                                   forecast_day, period):
-        saving_path_metric = f"{BASE_PATH + OUTPUT_PATH + series_type}/{SAVING_METRIC_DIR}/{model_type}/"
-        saving_path_loss = f"{BASE_PATH + OUTPUT_PATH + series_type}/{SAVING_LOSS_DIR}/{model_type}/"
-        saving_path_prediction = f"{BASE_PATH + OUTPUT_PATH + series_type}/{SAVING_PREDICTION_DIR}/{model_type}/"
+        saving_path_metric = f"{BASE_PATH + OUTPUT_PATH + series_type}/{SAVING_METRIC_DIR}/{model_type}/{SIMPLE_OR_AUGMENTED}/"
+        saving_path_loss = f"{BASE_PATH + OUTPUT_PATH + series_type}/{SAVING_LOSS_DIR}/{model_type}/{SIMPLE_OR_AUGMENTED}/"
+        saving_path_prediction = f"{BASE_PATH + OUTPUT_PATH + series_type}/{SAVING_PREDICTION_DIR}/{model_type}/{SIMPLE_OR_AUGMENTED}/"
 
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -112,26 +114,34 @@ class ComprehensiveModelTrainer:
 
         # Logging the metrics for this model
         logger.info(
-            f"Model: {model_type}-{UNI_OR_MULTI_VARIATE}, Look Back: {look_back_day}, Forecast Day: {forecast_day},  Period: {period}, MSE: {mse}, MAE: {mae}, RMSE: {rmse}, MAPE: {mape}")
+            f"Model: {model_type}-{SIMPLE_OR_AUGMENTED, UNI_OR_MULTI_VARIATE}, Look Back: {look_back_day}, Forecast Day: {forecast_day},  Period: {period}, MSE: {mse}, MAE: {mae}, RMSE: {rmse}, MAPE: {mape}")
 
         # Saving the evaluation metrics - ensure the saving path is defined and accessible
-        plot_evaluation_metrics(UNI_OR_MULTI_VARIATE, mse, mae, rmse, mape, model_type, look_back_day, forecast_day,
+        plot_evaluation_metrics(SIMPLE_OR_AUGMENTED, UNI_OR_MULTI_VARIATE, mse, mae, rmse, mape, model_type,
+                                look_back_day, forecast_day,
                                 period,
                                 saving_path_metric)
-        save_evaluation_metrics(UNI_OR_MULTI_VARIATE, mse, mae, rmse, mape, model_type, look_back_day, forecast_day,
+        save_evaluation_metrics(SIMPLE_OR_AUGMENTED, UNI_OR_MULTI_VARIATE, mse, mae, rmse, mape, model_type,
+                                look_back_day, forecast_day,
                                 period,
                                 saving_path_metric)
 
         # Plotting and saving loss curves
-        plot_losses(UNI_OR_MULTI_VARIATE, train_history, model_type, look_back_day, forecast_day, period,
+        plot_losses(SIMPLE_OR_AUGMENTED, UNI_OR_MULTI_VARIATE, train_history, model_type, look_back_day, forecast_day,
+                    period,
                     saving_path_loss)
-        save_losses(UNI_OR_MULTI_VARIATE, train_history, model_type, look_back_day, forecast_day, period,
+        save_losses(SIMPLE_OR_AUGMENTED, UNI_OR_MULTI_VARIATE, train_history, model_type, look_back_day, forecast_day,
+                    period,
                     saving_path_loss)
 
         # Plotting and saving predictions
         testPredict, testOutput = make_predictions(model, x_test, y_test, scaler)
-        # save_predicted_values(UNI_OR_MULTI_VARIATE, testOutput, testPredict, model_type, look_back_day, forecast_day,period,saving_path_prediction)
-        # plot_single_prediction(UNI_OR_MULTI_VARIATE,  testPredict,testOutput, model_type, look_back_day, forecast_day,period,saving_path_prediction)
-        plot_multi_step_predictions(UNI_OR_MULTI_VARIATE, testPredict, testOutput, model_type, look_back_day,
+        save_predicted_values(SIMPLE_OR_AUGMENTED, UNI_OR_MULTI_VARIATE, testOutput, testPredict, model_type,
+                              look_back_day, forecast_day, period, saving_path_prediction)
+        plot_single_prediction(SIMPLE_OR_AUGMENTED, UNI_OR_MULTI_VARIATE, testPredict, testOutput, model_type,
+                               series_type, look_back_day, forecast_day, period, saving_path_prediction)
+        plot_multi_step_predictions(SIMPLE_OR_AUGMENTED, UNI_OR_MULTI_VARIATE, testPredict, testOutput, model_type,
+                                    series_type,
+                                    look_back_day,
                                     forecast_day, period,
                                     saving_path_prediction)

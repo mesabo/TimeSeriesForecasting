@@ -24,6 +24,8 @@ from sklearn.metrics import (mean_squared_error, mean_absolute_error,
                              mean_absolute_percentage_error,
                              root_mean_squared_error)
 
+from utils.constants import (ELECTRICITY, APARTMENT, ENERGY, HOUSE)
+
 logger = logging.getLogger(__name__)
 
 
@@ -86,7 +88,8 @@ def evaluate_model(testY, testPredict):
     return mse, mae, rmse, mape
 
 
-def plot_evaluation_metrics(uni_or_multi_variate,mse, mae, rmse, mape, model_type, look_back, forecast_day, period, save_path=None):
+def plot_evaluation_metrics(simple_or_augmented, uni_or_multi_variate, mse, mae, rmse, mape, model_type, look_back,
+                            forecast_day, period, save_path=None):
     metrics = ['MSE', 'MAE', 'RMSE', 'MAPE']
     values = [mse, mae, rmse, mape]
 
@@ -96,15 +99,17 @@ def plot_evaluation_metrics(uni_or_multi_variate,mse, mae, rmse, mape, model_typ
     plt.ylabel('Value')
 
     if save_path:
-        file_name = f'{look_back}_{forecast_day}_{period}_evaluation_metrics_{uni_or_multi_variate}.png'
+        file_name = f'{look_back}_{forecast_day}_{period}_evaluation_metrics_{simple_or_augmented}_{uni_or_multi_variate}.png'
         file_path = os.path.join(save_path, 'image', file_name)
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         plt.savefig(file_path)
 
-    plt.show()
+    # plt.show()
+        plt.clf()
 
 
-def plot_losses(uni_or_multi_variate,history, model_type, look_back, forecast_day, period, save_path=None):
+def plot_losses(simple_or_augmented, uni_or_multi_variate, history, model_type, look_back, forecast_day, period,
+                save_path=None):
     plt.plot(history['train_loss'], label='Training Loss')
     plt.plot(history['val_loss'], label='Validation Loss')
     plt.title(f'{model_type} - {uni_or_multi_variate} Loss - ({look_back} x {period} lookback)')
@@ -113,35 +118,50 @@ def plot_losses(uni_or_multi_variate,history, model_type, look_back, forecast_da
     plt.legend()
 
     if save_path:
-        file_name = f'{look_back}_{forecast_day}_{period}_evaluation_metrics_{uni_or_multi_variate}.png'
+        file_name = f'{look_back}_{forecast_day}_{period}_evaluation_metrics_{simple_or_augmented}_{uni_or_multi_variate}.png'
         file_dir = os.path.join(save_path, 'image')
         os.makedirs(file_dir, exist_ok=True)
         file_path = os.path.join(file_dir, file_name)
         plt.savefig(file_path)
 
-    plt.show()
+
+#     plt.show()
+    plt.clf()
 
 
-def plot_single_prediction(uni_or_multi_variate,predicted, actual, model_type, look_back, forecast_day, period, save_path=None):
+def plot_single_prediction(simple_or_augmented, uni_or_multi_variate, predicted, actual, model_type, series_type,
+                           look_back,
+                           forecast_day, period, save_path=None):
     plt.figure(figsize=(10, 6))
     plt.plot(actual[:, -1], label='Actual')
-    plt.plot(predicted[:, -1], label='Predicted')
+    for i in len(predicted):
+        plt.plot(predicted[i][:, -1], label=model_type[i])
     plt.xlabel(f'Timestamp resolution ({period})')
-    plt.ylabel('Global Active Power (Kw)')
+    if series_type == ELECTRICITY:
+        plt.ylabel('Global Active Power (Kw)')
+    elif series_type == APARTMENT:
+        plt.ylabel('Facility (Kw)')
+    elif series_type == ENERGY:
+        plt.ylabel('Appliances (Kw)')
+    elif series_type == HOUSE:
+        plt.ylabel('Power (Kw)')
     plt.title(f'{model_type} - {uni_or_multi_variate} - Actual vs Predicted - ({look_back} x {period} lookback) ')
     plt.legend()
     if save_path:
-        file_name = f'{look_back}_{forecast_day}_{period}_single_prediction_{uni_or_multi_variate}.png'
+        file_name = f'{look_back}_{forecast_day}_{period}_single_prediction_{simple_or_augmented}_{uni_or_multi_variate}.png'
         file_dir = os.path.join(save_path, 'image')
         os.makedirs(file_dir, exist_ok=True)
         file_path = os.path.join(file_dir, file_name)
         plt.savefig(file_path)
-    plt.show()
 
 
+#     plt.show()
+    plt.clf()
 
 
-def plot_multi_step_predictions(uni_or_multi_variate, predicted, actual, model_type, look_back, forecast_days, period,
+def plot_multi_step_predictions(simple_or_augmented, uni_or_multi_variate, predicted, actual, model_type, series_type,
+                                look_back,
+                                forecast_days, period,
                                 save_path=None):
     plt.figure(figsize=(10, 8))
 
@@ -156,24 +176,34 @@ def plot_multi_step_predictions(uni_or_multi_variate, predicted, actual, model_t
             plt.plot(predicted[:, i], label=f'{i + 1} steps ahead')
 
     plt.xlabel(f'Timestamp resolution ({period})')
-    plt.ylabel('Global Active Power (Kw)')
+    if series_type == ELECTRICITY:
+        plt.ylabel('Global Active Power (Kw)')
+    elif series_type == APARTMENT:
+        plt.ylabel('Facility (Kw)')
+    elif series_type == ENERGY:
+        plt.ylabel('Appliances (Kw)')
+    elif series_type == HOUSE:
+        plt.ylabel('Power (Kw)')
     plt.title(f'{model_type} - Actual vs Predicted - ({look_back} x {period} lookback) - {uni_or_multi_variate}')
     plt.legend()
 
     if save_path:
-        file_name = f'{look_back}_{forecast_days}_{period}_prediction_{uni_or_multi_variate}.png'
+        file_name = f'{look_back}_{forecast_days}_{period}_prediction_{simple_or_augmented}_{uni_or_multi_variate}.png'
         file_dir = os.path.join(save_path, 'image')
         os.makedirs(file_dir, exist_ok=True)
         file_path = os.path.join(file_dir, file_name)
         plt.savefig(file_path)
 
-    plt.show()
+
+#     plt.show()
+    plt.clf()
 
 
-def save_predicted_values(uni_or_multi_variate, actual, predicted, model_type, look_back, forecast_day, period,
+def save_predicted_values(simple_or_augmented, uni_or_multi_variate, actual, predicted, model_type, look_back,
+                          forecast_day, period,
                           save_path=None):
     # Define the file name and directory
-    file_name = f'{look_back}_{forecast_day}_{period}_prediction_{uni_or_multi_variate}.json'
+    file_name = f'{look_back}_{forecast_day}_{period}_prediction_{simple_or_augmented}_{uni_or_multi_variate}.json'
     file_dir = os.path.join(save_path, 'doc') if save_path else 'doc'
     os.makedirs(file_dir, exist_ok=True)
     file_path = os.path.join(file_dir, file_name)
@@ -200,9 +230,10 @@ def save_predicted_values(uni_or_multi_variate, actual, predicted, model_type, l
         json.dump(loss_data, file, indent=2)
 
 
-def save_evaluation_metrics(uni_or_multi_variate, mse, mae, rmse, mape, model_type, look_back, forecast_day, period,
+def save_evaluation_metrics(simple_or_augmented, uni_or_multi_variate, mse, mae, rmse, mape, model_type, look_back,
+                            forecast_day, period,
                             save_path=None):
-    file_name = f'{look_back}_{forecast_day}_{period}_evaluation_metrics_{uni_or_multi_variate}.json'
+    file_name = f'{look_back}_{forecast_day}_{period}_evaluation_metrics_{simple_or_augmented}_{uni_or_multi_variate}.json'
     file_path = os.path.join(save_path, 'doc', file_name)
 
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
@@ -224,8 +255,9 @@ def save_evaluation_metrics(uni_or_multi_variate, mse, mae, rmse, mape, model_ty
         json.dump(evaluation_data, file, indent=2)
 
 
-def save_losses(uni_or_multi_variate, history, model_type, look_back, forecast_day, period, save_path=None):
-    file_name = f'{look_back}_{forecast_day}_{period}_evaluation_losses_{uni_or_multi_variate}.json'
+def save_losses(simple_or_augmented, uni_or_multi_variate, history, model_type, look_back, forecast_day, period,
+                save_path=None):
+    file_name = f'{look_back}_{forecast_day}_{period}_evaluation_losses_{simple_or_augmented}_{uni_or_multi_variate}.json'
     file_dir = os.path.join(save_path, 'doc')
     os.makedirs(file_dir, exist_ok=True)
     file_path = os.path.join(file_dir, file_name)

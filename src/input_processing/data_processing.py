@@ -20,8 +20,10 @@ from sklearn.preprocessing import MinMaxScaler
 
 from utils.constants import (DATASET_FEATURES_PATH, ELECTRICITY_DATASET_PATH,
                              ELECTRICITY, APARTMENT, APARTMENT_DATASET_PATH,
-                             HOUSE_DATASET_PATH, HOUSE)
+                             HOUSE_DATASET_PATH, HOUSE, UNI_OR_MULTI_VARIATE)
+from utils.constants import ENERGY, ENERGY_DATASET_PATH, SIMPLE_OR_AUGMENTED
 from utils.file_loader import read_features
+from utils.noising_methods import robust_data_augmentation
 
 
 def fill_missing_data(data, meth=2):
@@ -95,12 +97,35 @@ def default_load_dataset(dataset_type='electricity', period='D'):
         df['day_of_week'] = df['datetime'].dt.dayofweek
         df['month'] = df['datetime'].dt.month
 
-        # Assuming 'selected_features' is obtained from elsewhere in your code
-        selected_features = selected_features + ['hour', 'day_of_week', 'month']
+        # Assuming 'selected_features' is obtained from elsewhere
+        if UNI_OR_MULTI_VARIATE == 'multivariate':
+            selected_features = selected_features + ['hour', 'day_of_week', 'month']
+        else:
+            selected_features = selected_features[0]
 
         # Resample data and drop NA values that might be created during resampling
         data = df.set_index('datetime')[selected_features].resample(period).mean().dropna()
+    elif dataset_type == ENERGY:
+        dataset = pd.read_csv(ENERGY_DATASET_PATH, na_values=['?'])
+        # Convert Date/Time column to datetime format with specific format
+        dataset['date'] = pd.to_datetime(dataset['date'], format='%Y-%m-%d %H:%M:%S')
 
+        df = fill_missing_data(dataset, meth=0)
+        selected_features = read_features(DATASET_FEATURES_PATH, dataset_type)
+
+        # Extract time features
+        df['hour'] = df['date'].dt.hour
+        df['day_of_week'] = df['date'].dt.dayofweek
+        df['month'] = df['date'].dt.month
+
+        # Assuming 'selected_features' is obtained from elsewhere in your code
+        if UNI_OR_MULTI_VARIATE == 'multivariate':
+            selected_features = selected_features + ['hour', 'day_of_week', 'month']
+        else:
+            selected_features = selected_features[:, 0]
+
+        # Resample data and drop NA values that might be created during resampling
+        data = df.set_index('date')[selected_features].resample(period).mean().dropna()
     else:
         if dataset_type == APARTMENT:
             dataset = pd.read_csv(APARTMENT_DATASET_PATH, na_values=['?'])
@@ -110,6 +135,10 @@ def default_load_dataset(dataset_type='electricity', period='D'):
             dataset = pd.read_csv(HOUSE_DATASET_PATH, na_values=['?'])
             # Convert Date/Time column to datetime format with specific format
             dataset['Date/Time'] = pd.to_datetime(dataset['Date/Time'], format='%Y/%m/%d %H:%M')
+        elif dataset_type == ENERGY:
+            dataset = pd.read_csv(ENERGY_DATASET_PATH, na_values=['?'])
+            # Convert Date/Time column to datetime format with specific format
+            dataset['date'] = pd.to_datetime(dataset['date'], format='%Y/%m/%d %H:%M')
         else:
             raise ValueError('Cannot load dataset type {}'.format(dataset_type))
 
@@ -122,7 +151,10 @@ def default_load_dataset(dataset_type='electricity', period='D'):
         df['month'] = df['Date/Time'].dt.month
 
         # Assuming 'selected_features' is obtained from elsewhere in your code
-        selected_features = selected_features + ['hour', 'day_of_week', 'month']
+        if UNI_OR_MULTI_VARIATE == 'multivariate':
+            selected_features = selected_features + ['hour', 'day_of_week', 'month']
+        else:
+            selected_features = selected_features[:, 0]
 
         # Resample data and drop NA values that might be created during resampling
         data = df.set_index('Date/Time')[selected_features].resample(period).mean().dropna()
@@ -141,6 +173,9 @@ def default_preprocess_and_split_dataset(url, period, look_back, forecast_period
     # Combine features and target variable
     # dataset = np.concatenate((features, target), axis=1)
 
+    if SIMPLE_OR_AUGMENTED == 'augmented':
+        dataset = robust_data_augmentation(dataset)
+
     # Normalize entire dataset
     scaler = MinMaxScaler(feature_range=(0, 1))
     scaled_dataset = scaler.fit_transform(dataset)
@@ -149,14 +184,39 @@ def default_preprocess_and_split_dataset(url, period, look_back, forecast_period
     X, y = create_dataset(scaled_dataset, look_back, forecast_period)
 
     # Split dataset into train and test sets
-    if len(X) > 1000 and (period == 'd' or period == 'D' or period == '1d'):
-        train_size = int(len(X) - 365)
-    else:
-        train_size = int(len(X) * 0.8)
+    # if len(X) > 1000 and (period == 'd' or period == 'D' or period == '1d'):
+    #     train_size = int(len(X) - 365)
+    # else:
+    train_size = int(len(X) * 0.8)
     X_train, X_test = X[:train_size], X[train_size:]
     y_train, y_test = y[:train_size], y[train_size:]
 
     return X_train, X_test, y_train, y_test, scaler
+
+
+def validation_preprocess_and_split_dataset(url, period, look_back, forecast_period):
+    # Load dataset and fill missing values
+    dataset = default_load_dataset(url, period)
+
+    # Combine features and target variable
+    # dataset = np.concatenate((features, target), axis=1)
+
+    if SIMPLE_OR_AUGMENTED == 'augmented':
+        dataset = robust_data_augmentation(dataset)
+
+    # Normalize entire dataset
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    scaled_dataset = scaler.fit_transform(dataset)
+
+    # Split dataset into input sequences (X) and target sequences (y)
+    X, y = create_dataset(scaled_dataset, look_back, forecast_period)
+
+    train_size = int(len(X) * 0.7)
+    val_size = int(len(X) * 0.15)
+    X_train, X_val, X_test = X[:train_size], X[train_size:train_size + val_size], X[train_size + val_size:]
+    y_train, y_val, y_test = y[:train_size], y[train_size:train_size + val_size], y[train_size + val_size:]
+
+    return X_train, X_val, X_test, y_train, y_val, y_test, scaler
 
 
 def tuning_preprocess_and_split_dataset(url, period, look_back, forecast_period):
@@ -175,10 +235,10 @@ def tuning_preprocess_and_split_dataset(url, period, look_back, forecast_period)
     X, y = create_dataset(scaled_dataset, look_back, forecast_period)
 
     # Split dataset into train and test sets
-    if len(X) > 1000 and (period == 'd' or period == 'D' or period == '1d'):
-        train_size = int(len(X) - 365)
-    else:
-        train_size = int(len(X) * 0.8)
+    # if len(X) > 1000 and (period == 'd' or period == 'D' or period == '1d'):
+    #     train_size = int(len(X) - 365)
+    # else:
+    train_size = int(len(X) * 0.8)
     X_train, X_test = X[:train_size], X[train_size:]
     y_train, y_test = y[:train_size], y[train_size:]
 

@@ -22,7 +22,7 @@ def add_noise(data):
     Add normal distribution noise with varying standard deviations to the data.
 
     Parameters:
-    - data: numpy array, input data concatenated with target
+    - data: numpy array, input data
 
     Returns:
     - numpy array, data with added noise
@@ -30,8 +30,8 @@ def add_noise(data):
     noise_levels = np.random.uniform(0.1, 1.0, size=data.shape[0])
     noised_data = np.copy(data)
     for i, level in enumerate(noise_levels):
-        noise = np.random.normal(0, level, size=data.shape[1])  # Ensure noise shape matches the data shape
-        noised_data[i] += noise
+        noise = np.random.normal(0, level, size=data.shape[1] - 1)  # Exclude target from noise
+        noised_data[i, 1:] += noise  # Exclude target from noise addition
     return noised_data
 
 
@@ -53,7 +53,7 @@ def permute(data_with_target):
             continue  # Skip spline fitting if there are not enough data points
         spline = UnivariateSpline(x, y, k=3, s=20)  # Adjust smoothing factor (s) as needed
         noise = np.random.normal(0, 0.1, data_with_target.shape[1] - 1)  # To be adjusted as needed
-        permuted_data[i, :-1] = spline(x) + noise
+        permuted_data[i, 1:] = spline(x) + noise  # Exclude target from permuted data assignment
     return permuted_data
 
 
@@ -62,7 +62,7 @@ def scale_data(data):
     Scale the amplitude of the data.
 
     Parameters:
-    - data: numpy array, input data concatenated with target
+    - data: numpy array, input data
 
     Returns:
     - numpy array, scaled data
@@ -70,7 +70,7 @@ def scale_data(data):
     scaling_factors = np.random.uniform(0.5, 2.0, size=data.shape[0])  # Sample scaling factors from a range
     scaled_data = np.copy(data)
     for i, factor in enumerate(scaling_factors):
-        scaled_data[i, :-1] *= factor  # Exclude target from scaling
+        scaled_data[i, 1:] *= factor  # Exclude target from scaling
     return scaled_data
 
 
@@ -79,20 +79,21 @@ def warp_data(data):
     Apply random warping to the data.
 
     Parameters:
-    - data: numpy array, input data concatenated with target
+    - data: numpy array, input data
 
     Returns:
     - numpy array, warped data
     """
     warped_data = np.copy(data)
     for i in range(data.shape[0]):
-        num_control_points = np.random.randint(2, 10)  # Adjust the number of control points as needed
-        control_points = np.linspace(0, data.shape[1] - 2,
-                                     num_control_points)  # Exclude target from control_points
+        num_control_points = np.random.randint(2, 10)  # To adjust the number of control points as needed
+        control_points = np.linspace(0, data.shape[1] - 1,
+                                     num_control_points)  # To exclude target from control_points
         warp_factors = np.random.uniform(0.8, 1.2, num_control_points)  # Adjust warp factors as needed
-        warped_data[i, :-1] = np.interp(np.arange(data.shape[1] - 1), control_points,
-                                        control_points * warp_factors)
+        warped_data[i, 1:] = np.interp(np.arange(data.shape[1] - 1), control_points,
+                                       control_points * warp_factors)
     return warped_data
+
 
 
 def robust_data_augmentation(dataset):
@@ -110,9 +111,13 @@ def robust_data_augmentation(dataset):
     # Concatenate features and target
 
     # Apply augmentation methods
-    augmented_dataset = add_noise(dataset)
-    augmented_dataset = permute(augmented_dataset)
-    augmented_dataset = scale_data(augmented_dataset)
-    augmented_dataset = warp_data(augmented_dataset)
+    augmented_data = np.copy(dataset)
+    augmented_data = add_noise(augmented_data)
+    augmented_data = permute(augmented_data)
+    augmented_data = scale_data(augmented_data)
+    augmented_data = warp_data(augmented_data)
+
+    # Concatenate the augmented dataset with itself to double its size
+    augmented_dataset = np.concatenate((augmented_data, augmented_data), axis=0)
 
     return augmented_dataset

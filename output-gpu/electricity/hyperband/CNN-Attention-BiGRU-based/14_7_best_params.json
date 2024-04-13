@@ -1,0 +1,20 @@
+{
+  "CNN-Attention-BiGRU-based": {
+    "lr": 0.001,
+    "optimizer": "Adam",
+    "l1_regularizer": 0.0001,
+    "l2_regularizer": 0.0001,
+    "min_delta": 1e-08,
+    "patience": 45,
+    "batch_size": 96,
+    "filters": 128,
+    "kernel_size": 3,
+    "pool_size": 1,
+    "num_cnn_layers": 1,
+    "num_bigru_layers": 1,
+    "bigru_units": 150,
+    "dropout": 0.3,
+    "activation": "ReLU",
+    "processing_time": "48.90 min"
+  }
+}
