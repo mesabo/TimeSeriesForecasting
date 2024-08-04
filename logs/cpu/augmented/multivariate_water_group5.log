@@ -1,0 +1,132 @@
+2024-07-30 13:35:00,075 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:35:00,075 - INFO - Tuning on CPU server
+2024-07-30 13:35:00,075 - INFO - CPU Name: i386
+2024-07-30 13:35:00,075 - INFO - CPU Cores: 8
+2024-07-30 13:35:00,075 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:35:00,075 - INFO - model_group: 5 |||| model_types: ['CNN-Attention-BiLSTM-based']
+2024-07-30 13:35:00,075 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:35:00,117 - INFO - 
+**************************************************************
+** CNN-Attention-BiLSTM-based
+**************************************************************
+2024-07-30 13:35:00,117 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Attention-BiLSTM-based/best_params.json  📌📌📌
+2024-07-30 13:35:00,118 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 50, 'batch_size': 96, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 3, 'num_bilstm_layers': 1, 'bilstm_units': 150, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-07-30 14:03:36,430 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 14:03:36,431 - INFO - [-----MSE: 0.005612-----]
+
+2024-07-30 14:03:36,431 - INFO - [-----MAE: 0.054631-----]
+
+2024-07-30 14:03:36,431 - INFO - [-----RMSE: 0.074914-----]
+
+2024-07-30 14:03:36,431 - INFO - [-----MAPE: 0.160931-----]
+
+2024-07-30 14:03:36,432 - INFO - Model: CNN-Attention-BiLSTM-based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 1,  Period: 1d, MSE: 0.005612, MAE: 0.054631, RMSE: 0.074914, MAPE: 0.160931
+2024-07-30 14:03:37,905 - INFO - Training with series_type=water | look_back=7 | forecast_period=2
+2024-07-30 14:03:37,938 - INFO - 
+**************************************************************
+** CNN-Attention-BiLSTM-based
+**************************************************************
+2024-07-30 14:03:37,938 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Attention-BiLSTM-based/best_params.json  📌📌📌
+2024-07-30 14:03:37,939 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 50, 'batch_size': 96, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 3, 'num_bilstm_layers': 1, 'bilstm_units': 150, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-07-30 14:30:10,578 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 14:30:10,579 - INFO - [-----MSE: 0.003215-----]
+
+2024-07-30 14:30:10,579 - INFO - [-----MAE: 0.041242-----]
+
+2024-07-30 14:30:10,579 - INFO - [-----RMSE: 0.056553-----]
+
+2024-07-30 14:30:10,579 - INFO - [-----MAPE: 0.124787-----]
+
+2024-07-30 14:30:10,579 - INFO - Model: CNN-Attention-BiLSTM-based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 2,  Period: 1d, MSE: 0.003215, MAE: 0.041242, RMSE: 0.056553, MAPE: 0.124787
+2024-07-30 14:30:11,144 - INFO - Training with series_type=water | look_back=7 | forecast_period=3
+2024-07-30 14:30:11,179 - INFO - 
+**************************************************************
+** CNN-Attention-BiLSTM-based
+**************************************************************
+2024-07-30 14:30:11,179 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Attention-BiLSTM-based/best_params.json  📌📌📌
+2024-07-30 14:30:11,180 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 50, 'batch_size': 96, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 3, 'num_bilstm_layers': 1, 'bilstm_units': 150, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-07-30 14:32:14,788 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 14:32:14,789 - INFO - [-----MSE: 0.002856-----]
+
+2024-07-30 14:32:14,789 - INFO - [-----MAE: 0.038283-----]
+
+2024-07-30 14:32:14,789 - INFO - [-----RMSE: 0.052931-----]
+
+2024-07-30 14:32:14,789 - INFO - [-----MAPE: 0.115855-----]
+
+2024-07-30 14:32:14,789 - INFO - Model: CNN-Attention-BiLSTM-based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 3,  Period: 1d, MSE: 0.002856, MAE: 0.038283, RMSE: 0.052931, MAPE: 0.115855
+2024-07-30 14:32:15,272 - INFO - Training with series_type=water | look_back=7 | forecast_period=4
+2024-07-30 14:32:15,297 - INFO - 
+**************************************************************
+** CNN-Attention-BiLSTM-based
+**************************************************************
+2024-07-30 14:32:15,297 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Attention-BiLSTM-based/best_params.json  📌📌📌
+2024-07-30 14:32:15,298 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 50, 'batch_size': 96, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 3, 'num_bilstm_layers': 1, 'bilstm_units': 150, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-07-30 14:34:22,388 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 14:34:22,389 - INFO - [-----MSE: 0.003549-----]
+
+2024-07-30 14:34:22,389 - INFO - [-----MAE: 0.042918-----]
+
+2024-07-30 14:34:22,389 - INFO - [-----RMSE: 0.059242-----]
+
+2024-07-30 14:34:22,389 - INFO - [-----MAPE: 0.127385-----]
+
+2024-07-30 14:34:22,389 - INFO - Model: CNN-Attention-BiLSTM-based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 4,  Period: 1d, MSE: 0.003549, MAE: 0.042918, RMSE: 0.059242, MAPE: 0.127385
+2024-07-30 14:34:22,846 - INFO - Training with series_type=water | look_back=7 | forecast_period=5
+2024-07-30 14:34:22,870 - INFO - 
+**************************************************************
+** CNN-Attention-BiLSTM-based
+**************************************************************
+2024-07-30 14:34:22,870 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Attention-BiLSTM-based/best_params.json  📌📌📌
+2024-07-30 14:34:22,871 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 50, 'batch_size': 96, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 3, 'num_bilstm_layers': 1, 'bilstm_units': 150, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-07-30 14:36:09,400 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 14:36:09,401 - INFO - [-----MSE: 0.004223-----]
+
+2024-07-30 14:36:09,401 - INFO - [-----MAE: 0.048657-----]
+
+2024-07-30 14:36:09,402 - INFO - [-----RMSE: 0.064804-----]
+
+2024-07-30 14:36:09,402 - INFO - [-----MAPE: 0.149396-----]
+
+2024-07-30 14:36:09,402 - INFO - Model: CNN-Attention-BiLSTM-based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 5,  Period: 1d, MSE: 0.004223, MAE: 0.048657, RMSE: 0.064804, MAPE: 0.149396
+2024-07-30 14:36:09,905 - INFO - Training with series_type=water | look_back=7 | forecast_period=6
+2024-07-30 14:36:09,931 - INFO - 
+**************************************************************
+** CNN-Attention-BiLSTM-based
+**************************************************************
+2024-07-30 14:36:09,932 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Attention-BiLSTM-based/best_params.json  📌📌📌
+2024-07-30 14:36:09,932 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 50, 'batch_size': 96, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 3, 'num_bilstm_layers': 1, 'bilstm_units': 150, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-07-30 14:38:25,303 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 14:38:25,304 - INFO - [-----MSE: 0.005047-----]
+
+2024-07-30 14:38:25,305 - INFO - [-----MAE: 0.054604-----]
+
+2024-07-30 14:38:25,305 - INFO - [-----RMSE: 0.070943-----]
+
+2024-07-30 14:38:25,305 - INFO - [-----MAPE: 0.167752-----]
+
+2024-07-30 14:38:25,305 - INFO - Model: CNN-Attention-BiLSTM-based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 6,  Period: 1d, MSE: 0.005047, MAE: 0.054604, RMSE: 0.070943, MAPE: 0.167752
+2024-07-30 14:38:25,802 - INFO - Training with series_type=water | look_back=7 | forecast_period=7
+2024-07-30 14:38:25,827 - INFO - 
+**************************************************************
+** CNN-Attention-BiLSTM-based
+**************************************************************
+2024-07-30 14:38:25,827 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Attention-BiLSTM-based/best_params.json  📌📌📌
+2024-07-30 14:38:25,828 - INFO - Best params loaded: {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 50, 'batch_size': 96, 'filters': 96, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 3, 'num_bilstm_layers': 1, 'bilstm_units': 150, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-07-30 14:40:48,499 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 14:40:48,500 - INFO - [-----MSE: 0.004837-----]
+
+2024-07-30 14:40:48,500 - INFO - [-----MAE: 0.051492-----]
+
+2024-07-30 14:40:48,500 - INFO - [-----RMSE: 0.069267-----]
+
+2024-07-30 14:40:48,500 - INFO - [-----MAPE: 0.15612-----]
+
+2024-07-30 14:40:48,500 - INFO - Model: CNN-Attention-BiLSTM-based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.004837, MAE: 0.051492, RMSE: 0.069267, MAPE: 0.15612

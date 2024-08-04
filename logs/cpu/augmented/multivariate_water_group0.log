@@ -1,0 +1,285 @@
+2024-07-29 17:16:14,067 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-29 17:16:14,069 - INFO - Tuning on CPU server
+2024-07-29 17:16:14,069 - INFO - CPU Name: arm
+2024-07-29 17:16:14,069 - INFO - CPU Cores: 8
+2024-07-29 17:16:14,069 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-29 17:16:14,069 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-29 17:16:14,069 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-29 17:16:49,936 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-29 17:16:49,936 - INFO - Tuning on CPU server
+2024-07-29 17:16:49,937 - INFO - CPU Name: arm
+2024-07-29 17:16:49,937 - INFO - CPU Cores: 8
+2024-07-29 17:16:49,937 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-29 17:16:49,937 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-29 17:16:49,937 - INFO - Tuning with series_type=water | look_back=7 | forecast_period=1
+2024-07-29 17:21:12,593 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-29 17:21:12,593 - INFO - Tuning on CPU server
+2024-07-29 17:21:12,593 - INFO - CPU Name: arm
+2024-07-29 17:21:12,593 - INFO - CPU Cores: 8
+2024-07-29 17:21:12,593 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-29 17:21:12,593 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-29 17:21:12,593 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-29 17:22:30,889 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-29 17:22:30,890 - INFO - Tuning on CPU server
+2024-07-29 17:22:30,890 - INFO - CPU Name: arm
+2024-07-29 17:22:30,890 - INFO - CPU Cores: 8
+2024-07-29 17:22:30,890 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-29 17:22:30,890 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-29 17:22:30,890 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-29 17:22:50,586 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-29 17:22:50,586 - INFO - Tuning on CPU server
+2024-07-29 17:22:50,586 - INFO - CPU Name: arm
+2024-07-29 17:22:50,586 - INFO - CPU Cores: 8
+2024-07-29 17:22:50,586 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-29 17:22:50,586 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-29 17:22:50,586 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-29 17:39:31,784 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-29 17:39:31,784 - INFO - Tuning on CPU server
+2024-07-29 17:39:31,784 - INFO - CPU Name: arm
+2024-07-29 17:39:31,784 - INFO - CPU Cores: 8
+2024-07-29 17:39:31,784 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-29 17:39:31,784 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-29 17:39:31,784 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 08:24:05,535 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 08:24:05,535 - INFO - Tuning on CPU server
+2024-07-30 08:24:05,535 - INFO - CPU Name: i386
+2024-07-30 08:24:05,535 - INFO - CPU Cores: 8
+2024-07-30 08:24:05,535 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 08:24:05,535 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 08:24:05,536 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 08:37:35,040 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 08:37:35,041 - INFO - Tuning on CPU server
+2024-07-30 08:37:35,041 - INFO - CPU Name: i386
+2024-07-30 08:37:35,041 - INFO - CPU Cores: 8
+2024-07-30 08:37:35,041 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 08:37:35,041 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 08:37:35,041 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 12:59:11,878 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 12:59:11,878 - INFO - Tuning on CPU server
+2024-07-30 12:59:11,878 - INFO - CPU Name: i386
+2024-07-30 12:59:11,878 - INFO - CPU Cores: 8
+2024-07-30 12:59:11,879 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 12:59:11,879 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 12:59:11,879 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:02:44,404 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:02:44,404 - INFO - Tuning on CPU server
+2024-07-30 13:02:44,404 - INFO - CPU Name: i386
+2024-07-30 13:02:44,404 - INFO - CPU Cores: 8
+2024-07-30 13:02:44,405 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:02:44,405 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:02:44,405 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:06:08,423 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:06:08,424 - INFO - Tuning on CPU server
+2024-07-30 13:06:08,424 - INFO - CPU Name: i386
+2024-07-30 13:06:08,424 - INFO - CPU Cores: 8
+2024-07-30 13:06:08,424 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:06:08,424 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:06:08,424 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:06:37,138 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:06:37,139 - INFO - Tuning on CPU server
+2024-07-30 13:06:37,139 - INFO - CPU Name: i386
+2024-07-30 13:06:37,140 - INFO - CPU Cores: 8
+2024-07-30 13:06:37,140 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:06:37,140 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:06:37,140 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:07:33,113 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:07:33,113 - INFO - Tuning on CPU server
+2024-07-30 13:07:33,113 - INFO - CPU Name: i386
+2024-07-30 13:07:33,113 - INFO - CPU Cores: 8
+2024-07-30 13:07:33,113 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:07:33,113 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:07:33,113 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:09:30,624 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:09:30,625 - INFO - Tuning on CPU server
+2024-07-30 13:09:30,625 - INFO - CPU Name: i386
+2024-07-30 13:09:30,625 - INFO - CPU Cores: 8
+2024-07-30 13:09:30,625 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:09:30,625 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:09:30,625 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:10:10,187 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:10:10,188 - INFO - Tuning on CPU server
+2024-07-30 13:10:10,188 - INFO - CPU Name: i386
+2024-07-30 13:10:10,188 - INFO - CPU Cores: 8
+2024-07-30 13:10:10,188 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:10:10,188 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:10:10,188 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:15:35,457 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:15:35,458 - INFO - Tuning on CPU server
+2024-07-30 13:15:35,458 - INFO - CPU Name: i386
+2024-07-30 13:15:35,458 - INFO - CPU Cores: 8
+2024-07-30 13:15:35,459 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:15:35,459 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:15:35,459 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:16:49,510 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:16:49,511 - INFO - Tuning on CPU server
+2024-07-30 13:16:49,512 - INFO - CPU Name: i386
+2024-07-30 13:16:49,512 - INFO - CPU Cores: 8
+2024-07-30 13:16:49,512 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:16:49,512 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:16:49,512 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:19:00,236 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:19:00,237 - INFO - Tuning on CPU server
+2024-07-30 13:19:00,237 - INFO - CPU Name: i386
+2024-07-30 13:19:00,238 - INFO - CPU Cores: 8
+2024-07-30 13:19:00,238 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:19:00,238 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:19:00,238 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:21:25,204 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:21:25,205 - INFO - Tuning on CPU server
+2024-07-30 13:21:25,205 - INFO - CPU Name: i386
+2024-07-30 13:21:25,205 - INFO - CPU Cores: 8
+2024-07-30 13:21:25,206 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:21:25,206 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:21:25,206 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:26:19,543 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:26:19,544 - INFO - Tuning on CPU server
+2024-07-30 13:26:19,544 - INFO - CPU Name: i386
+2024-07-30 13:26:19,544 - INFO - CPU Cores: 8
+2024-07-30 13:26:19,544 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:26:19,544 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:26:19,544 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:26:39,572 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:26:39,572 - INFO - Tuning on CPU server
+2024-07-30 13:26:39,572 - INFO - CPU Name: i386
+2024-07-30 13:26:39,572 - INFO - CPU Cores: 8
+2024-07-30 13:26:39,572 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:26:39,572 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:26:39,572 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:26:40,268 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-07-30 13:26:40,268 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/7_1_best_params.json  📌📌📌
+2024-07-30 13:26:40,269 - INFO - Best params loaded: None
+2024-07-30 13:31:25,664 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-07-30 13:31:25,665 - INFO - Tuning on CPU server
+2024-07-30 13:31:25,665 - INFO - CPU Name: i386
+2024-07-30 13:31:25,665 - INFO - CPU Cores: 8
+2024-07-30 13:31:25,665 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-07-30 13:31:25,665 - INFO - model_group: 0 |||| model_types: ['CNN-Based']
+2024-07-30 13:31:25,665 - INFO - Training with series_type=water | look_back=7 | forecast_period=1
+2024-07-30 13:31:25,699 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-07-30 13:31:25,699 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-07-30 13:31:25,700 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-07-30 13:32:23,044 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 13:32:23,045 - INFO - [-----MSE: 0.003817-----]
+
+2024-07-30 13:32:23,045 - INFO - [-----MAE: 0.045661-----]
+
+2024-07-30 13:32:23,045 - INFO - [-----RMSE: 0.061785-----]
+
+2024-07-30 13:32:23,045 - INFO - [-----MAPE: 0.136492-----]
+
+2024-07-30 13:32:23,045 - INFO - Model: CNN-Based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 1,  Period: 1d, MSE: 0.003817, MAE: 0.045661, RMSE: 0.061785, MAPE: 0.136492
+2024-07-30 13:32:23,642 - INFO - Training with series_type=water | look_back=7 | forecast_period=2
+2024-07-30 13:32:23,669 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-07-30 13:32:23,669 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-07-30 13:32:23,669 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-07-30 13:33:27,463 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 13:33:27,464 - INFO - [-----MSE: 0.003175-----]
+
+2024-07-30 13:33:27,464 - INFO - [-----MAE: 0.042678-----]
+
+2024-07-30 13:33:27,464 - INFO - [-----RMSE: 0.056158-----]
+
+2024-07-30 13:33:27,464 - INFO - [-----MAPE: 0.130065-----]
+
+2024-07-30 13:33:27,464 - INFO - Model: CNN-Based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 2,  Period: 1d, MSE: 0.003175, MAE: 0.042678, RMSE: 0.056158, MAPE: 0.130065
+2024-07-30 13:33:27,969 - INFO - Training with series_type=water | look_back=7 | forecast_period=3
+2024-07-30 13:33:27,994 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-07-30 13:33:27,994 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-07-30 13:33:27,995 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-07-30 13:34:35,396 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 13:34:35,397 - INFO - [-----MSE: 0.00334-----]
+
+2024-07-30 13:34:35,397 - INFO - [-----MAE: 0.039647-----]
+
+2024-07-30 13:34:35,398 - INFO - [-----RMSE: 0.057534-----]
+
+2024-07-30 13:34:35,398 - INFO - [-----MAPE: 0.10952-----]
+
+2024-07-30 13:34:35,398 - INFO - Model: CNN-Based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 3,  Period: 1d, MSE: 0.00334, MAE: 0.039647, RMSE: 0.057534, MAPE: 0.10952
+2024-07-30 13:34:35,942 - INFO - Training with series_type=water | look_back=7 | forecast_period=4
+2024-07-30 13:34:35,967 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-07-30 13:34:35,967 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-07-30 13:34:35,968 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-07-30 13:36:11,601 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 13:36:11,602 - INFO - [-----MSE: 0.003745-----]
+
+2024-07-30 13:36:11,602 - INFO - [-----MAE: 0.045496-----]
+
+2024-07-30 13:36:11,602 - INFO - [-----RMSE: 0.060854-----]
+
+2024-07-30 13:36:11,602 - INFO - [-----MAPE: 0.138912-----]
+
+2024-07-30 13:36:11,602 - INFO - Model: CNN-Based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 4,  Period: 1d, MSE: 0.003745, MAE: 0.045496, RMSE: 0.060854, MAPE: 0.138912
+2024-07-30 13:36:12,428 - INFO - Training with series_type=water | look_back=7 | forecast_period=5
+2024-07-30 13:36:12,465 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-07-30 13:36:12,465 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-07-30 13:36:12,467 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-07-30 13:46:50,526 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 13:46:50,529 - INFO - [-----MSE: 0.0039-----]
+
+2024-07-30 13:46:50,530 - INFO - [-----MAE: 0.042323-----]
+
+2024-07-30 13:46:50,530 - INFO - [-----RMSE: 0.062076-----]
+
+2024-07-30 13:46:50,530 - INFO - [-----MAPE: 0.117308-----]
+
+2024-07-30 13:46:50,530 - INFO - Model: CNN-Based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 5,  Period: 1d, MSE: 0.0039, MAE: 0.042323, RMSE: 0.062076, MAPE: 0.117308
+2024-07-30 13:52:03,236 - INFO - Training with series_type=water | look_back=7 | forecast_period=6
+2024-07-30 13:52:03,273 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-07-30 13:52:03,273 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-07-30 13:52:03,274 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-07-30 14:27:34,791 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 14:27:34,793 - INFO - [-----MSE: 0.003974-----]
+
+2024-07-30 14:27:34,793 - INFO - [-----MAE: 0.042997-----]
+
+2024-07-30 14:27:34,793 - INFO - [-----RMSE: 0.062613-----]
+
+2024-07-30 14:27:34,793 - INFO - [-----MAPE: 0.120454-----]
+
+2024-07-30 14:27:34,794 - INFO - Model: CNN-Based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 6,  Period: 1d, MSE: 0.003974, MAE: 0.042997, RMSE: 0.062613, MAPE: 0.120454
+2024-07-30 14:27:35,622 - INFO - Training with series_type=water | look_back=7 | forecast_period=7
+2024-07-30 14:27:35,666 - INFO - 
+**************************************************************
+** CNN-Based
+**************************************************************
+2024-07-30 14:27:35,667 - INFO - LOADING  PATH 📌📌📌  ./output-cpu/electricity/hyperband/CNN-Based/best_params.json  📌📌📌
+2024-07-30 14:27:35,668 - INFO - Best params loaded: {'lr': 0.0001, 'optimizer': 'Adam', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-08, 'patience': 50, 'batch_size': 64, 'filters': 128, 'kernel_size': 2, 'pool_size': 1, 'num_cnn_layers': 1, 'dropout': 0.2, 'activation': 'ReLU', 'processing_time': '47.57 min'}
+2024-07-30 14:29:23,072 - INFO - [-----MODEL METRICS-----]
+
+2024-07-30 14:29:23,073 - INFO - [-----MSE: 0.004087-----]
+
+2024-07-30 14:29:23,073 - INFO - [-----MAE: 0.044361-----]
+
+2024-07-30 14:29:23,073 - INFO - [-----RMSE: 0.063489-----]
+
+2024-07-30 14:29:23,073 - INFO - [-----MAPE: 0.127503-----]
+
+2024-07-30 14:29:23,073 - INFO - Model: CNN-Based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.004087, MAE: 0.044361, RMSE: 0.063489, MAPE: 0.127503

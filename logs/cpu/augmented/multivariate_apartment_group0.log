@@ -1,0 +1,9 @@
+2024-04-18 13:54:55,174 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-18 13:54:55,174 - INFO - Tuning on CPU server
+2024-04-18 13:54:55,175 - INFO - CPU Name: i386
+2024-04-18 13:54:55,175 - INFO - CPU Cores: 8
+2024-04-18 13:54:55,175 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-18 13:54:55,175 - INFO - model_group: 0 |||| model_types: ['CNN-Attention-BiLSTM-based']
+2024-04-18 13:54:55,175 - INFO - Tuning with series_type=apartment | look_back=7 | forecast_period=6
+2024-04-19 14:39:44,447 - INFO - Best trial:
+2024-04-19 14:39:44,449 - INFO - {'lr': 0.001, 'optimizer': 'Adam', 'l1_regularizer': 1e-05, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 50, 'batch_size': 96, 'filters': 128, 'kernel_size': 3, 'pool_size': 1, 'num_cnn_layers': 3, 'num_bilstm_layers': 1, 'bilstm_units': 150, 'dropout': 0.3, 'activation': 'ReLU'}

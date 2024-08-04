@@ -508,3 +508,17 @@
 2024-04-14 03:32:20,433 - INFO - [-----MAPE: 0.29361-----]
 
 2024-04-14 03:32:20,433 - INFO - Model: CNN-Attention-BiGRU-based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.007004, MAE: 0.064879, RMSE: 0.08368, MAPE: 0.29361
+2024-04-15 13:58:21,080 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-15 13:58:21,081 - INFO - Tuning on CPU server
+2024-04-15 13:58:21,081 - INFO - CPU Name: i386
+2024-04-15 13:58:21,081 - INFO - CPU Cores: 8
+2024-04-15 13:58:21,081 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-15 13:58:21,081 - INFO - model_group: 5 |||| model_types: ['CNN-Attention-BiLSTM-based']
+2024-04-15 13:58:21,081 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=1
+2024-04-15 13:59:16,544 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-15 13:59:16,544 - INFO - Tuning on CPU server
+2024-04-15 13:59:16,544 - INFO - CPU Name: i386
+2024-04-15 13:59:16,544 - INFO - CPU Cores: 8
+2024-04-15 13:59:16,544 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-15 13:59:16,545 - INFO - model_group: 5 |||| model_types: ['CNN-Attention-BiLSTM-based']
+2024-04-15 13:59:16,545 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=1

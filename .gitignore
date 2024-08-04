@@ -1,2 +1,5 @@
 input/household_power_consumption.txt
 input/electricity/household_power_consumption.txt
+/.idea/
+/output-cpu/analysis/
+/output-cpu/visual_result/

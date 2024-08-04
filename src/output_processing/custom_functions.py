@@ -50,27 +50,6 @@ def make_predictions(model, testX, testY, scaler):
         testX_tensor = torch.tensor(testX, dtype=torch.float32).to(device)
         tensorPredict = model(testX_tensor).cpu().numpy()
 
-    num_columns_to_pad = testX.shape[-1] - tensorPredict.shape[1]
-
-    # Pad or truncate tensorPredict to match the desired length
-    if num_columns_to_pad > 0:
-        tensorPredict_padded = np.pad(tensorPredict, ((0, 0), (0, num_columns_to_pad)), mode='constant')
-        actual_padded = np.pad(testY, ((0, 0), (0, num_columns_to_pad)), mode='constant')
-    elif num_columns_to_pad < 0:
-        tensorPredict_padded = tensorPredict[:, :testX.shape[-2]]
-        actual_padded = testY[:, :testX.shape[-2]]
-    else:
-        tensorPredict_padded = tensorPredict
-        actual_padded = testY
-
-    # Inverse transform the padded or truncated tensorPredict using the scaler
-    testPredict = scaler.inverse_transform(tensorPredict_padded)
-    actual_padded_y = scaler.inverse_transform(actual_padded)
-
-    # Separate the inverse transformed predictions and the true values from the padded values
-    testPredict_values = testPredict[:, :tensorPredict.shape[1]]
-    actualPaddedValues = actual_padded_y[:, :testY.shape[1]]
-
     return tensorPredict, testY
 
 
@@ -90,10 +69,10 @@ def evaluate_model(testY, testPredict):
 
 def plot_evaluation_metrics(simple_or_augmented, uni_or_multi_variate, mse, mae, rmse, mape, model_type, look_back,
                             forecast_day, period, save_path=None):
-    metrics = ['MSE', 'MAE', 'RMSE', 'MAPE']
-    values = [mse, mae, rmse, mape]
+    metrics = ['MSE', 'MAE', 'RMSE', ]
+    values = [mse, mae, rmse, ]
 
-    plt.bar(metrics, values, color=['limegreen', 'steelblue', 'purple', 'orange'])
+    plt.bar(metrics, values, color=['limegreen', 'steelblue', 'purple', ])
     plt.title(f'{model_type} - {uni_or_multi_variate} Metrics - ({look_back} x {period} lookback)')
     plt.xlabel('Metric')
     plt.ylabel('Value')
@@ -105,7 +84,7 @@ def plot_evaluation_metrics(simple_or_augmented, uni_or_multi_variate, mse, mae,
         plt.savefig(file_path)
 
     # plt.show()
-        plt.clf()
+    plt.clf()
 
 
 def plot_losses(simple_or_augmented, uni_or_multi_variate, history, model_type, look_back, forecast_day, period,
@@ -124,8 +103,7 @@ def plot_losses(simple_or_augmented, uni_or_multi_variate, history, model_type, 
         file_path = os.path.join(file_dir, file_name)
         plt.savefig(file_path)
 
-
-#     plt.show()
+    # plt.show()
     plt.clf()
 
 
@@ -154,8 +132,7 @@ def plot_single_prediction(simple_or_augmented, uni_or_multi_variate, predicted,
         file_path = os.path.join(file_dir, file_name)
         plt.savefig(file_path)
 
-
-#     plt.show()
+    # plt.show()
     plt.clf()
 
 
@@ -166,14 +143,14 @@ def plot_multi_step_predictions(simple_or_augmented, uni_or_multi_variate, predi
     plt.figure(figsize=(10, 8))
 
     # Plot actual values for all forecast days
-    plt.plot(actual[:, 0], label='Actual')
+    plt.plot(actual[-400:, 0], label='Actual')
 
     # Plot predicted values with different colors for each step ahead
     for i in range(predicted.shape[1]):
         if i == 0:
-            plt.plot(predicted[:, i], label=f'{i + 1} step ahead')
+            plt.plot(predicted[-400:, i], label=f'{i + 1} step ahead')
         else:
-            plt.plot(predicted[:, i], label=f'{i + 1} steps ahead')
+            plt.plot(predicted[-400:, i], label=f'{i + 1} steps ahead')
 
     plt.xlabel(f'Timestamp resolution ({period})')
     if series_type == ELECTRICITY:
@@ -194,8 +171,7 @@ def plot_multi_step_predictions(simple_or_augmented, uni_or_multi_variate, predi
         file_path = os.path.join(file_dir, file_name)
         plt.savefig(file_path)
 
-
-#     plt.show()
+    # plt.show()
     plt.clf()
 
 
@@ -208,7 +184,7 @@ def save_predicted_values(simple_or_augmented, uni_or_multi_variate, actual, pre
     os.makedirs(file_dir, exist_ok=True)
     file_path = os.path.join(file_dir, file_name)
 
-    # Load existing data if file exists
+    # # Load existing data if file exists
     if os.path.exists(file_path):
         with open(file_path, 'r') as file:
             loss_data = json.load(file)

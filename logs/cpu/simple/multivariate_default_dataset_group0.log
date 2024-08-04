@@ -1,0 +1,7 @@
+2024-04-20 00:28:55,471 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-20 00:28:55,472 - INFO - Tuning on CPU server
+2024-04-20 00:28:55,472 - INFO - CPU Name: i386
+2024-04-20 00:28:55,472 - INFO - CPU Cores: 8
+2024-04-20 00:28:55,472 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-20 00:28:55,473 - INFO - model_group: 0 |||| model_types: ['CNN-Attention-BiLSTM-based']
+2024-04-20 00:28:55,473 - INFO - Training with series_type=house | look_back=7 | forecast_period=1

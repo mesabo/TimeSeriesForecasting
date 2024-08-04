@@ -508,3 +508,20 @@
 2024-04-14 03:25:28,938 - INFO - [-----MAPE: 0.524897-----]
 
 2024-04-14 03:25:28,938 - INFO - Model: CNN-BiGRU-Attention-based-('augmented', 'multivariate'), Look Back: 7, Forecast Day: 7,  Period: 1d, MSE: 0.012239, MAE: 0.087722, RMSE: 0.110632, MAPE: 0.524897
+2024-04-15 13:58:18,034 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-15 13:58:18,034 - INFO - Tuning on CPU server
+2024-04-15 13:58:18,034 - INFO - CPU Name: i386
+2024-04-15 13:58:18,035 - INFO - CPU Cores: 8
+2024-04-15 13:58:18,035 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-15 13:58:18,035 - INFO - model_group: 4 |||| model_types: ['CNN-Attention-GRU-based']
+2024-04-15 13:58:18,035 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=1
+2024-04-15 13:59:00,881 - INFO - Running on host: Francks-MacBook-Pro.local
+2024-04-15 13:59:00,882 - INFO - Tuning on CPU server
+2024-04-15 13:59:00,882 - INFO - CPU Name: i386
+2024-04-15 13:59:00,882 - INFO - CPU Cores: 8
+2024-04-15 13:59:00,882 - INFO - CURRENT PATH IS: /Users/messou/PycharmProjects/TimeSeriesForecasting/src
+2024-04-15 13:59:00,882 - INFO - model_group: 4 |||| model_types: ['CNN-Attention-GRU-based']
+2024-04-15 13:59:00,882 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=1
+2024-04-15 17:01:07,411 - INFO - Best trial:
+2024-04-15 17:01:07,413 - INFO - {'lr': 0.001, 'optimizer': 'RMSprop', 'l1_regularizer': 0.0001, 'l2_regularizer': 0.0001, 'min_delta': 1e-07, 'patience': 45, 'batch_size': 96, 'filters': 128, 'kernel_size': 1, 'pool_size': 1, 'num_cnn_layers': 1, 'num_gru_layers': 2, 'gru_units': 100, 'dropout': 0.2, 'activation': 'ReLU'}
+2024-04-15 17:01:07,415 - INFO - Tuning with series_type=electricity | look_back=7 | forecast_period=2

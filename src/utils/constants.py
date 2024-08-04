@@ -78,6 +78,13 @@ ELECTRICITY_DATASET_PATH = f"input/electricity/household_power_consumption.txt"
 HOUSE_DATASET_PATH = f"input/house/WHE.csv"
 APARTMENT_DATASET_PATH = f"input/apartment/MidriseApartment_SAN_FRANCISCO.csv"
 ENERGY_DATASET_PATH = f"input/energy/energy.csv"
+WATER_DATASET_PATH = f"input/water/water.csv"
+
+PREPROCESSED_ELECTRICITY_DATASET_PATH = f"input/electricity/household_power_consumption"
+PREPROCESSED_HOUSE_DATASET_PATH = f"input/house/WHE"
+PREPROCESSED_APARTMENT_DATASET_PATH = f"input/apartment/MidriseApartment_SAN_FRANCISCO"
+PREPROCESSED_ENERGY_DATASET_PATH = f"input/energy/energy"
+PREPROCESSED_WATER_DATASET_PATH = f"input/water/water"
 
 OUTPUT_PATH = f"output-cpu/"
 BASE_PATH = f'./'
@@ -90,8 +97,8 @@ SIMPLE_OR_AUGMENTED = 'augmented'
 # Define model names as variables
 SEEDER = 2024
 
-EPOCHS = 100
-N_TRIAL = 20
+EPOCHS = 200
+N_TRIAL = 50
 LOOK_BACKS = [7]
 FORECAST_PERIODS = [1, 2, 3, 4, 5, 6, 7]
 PERIOD = ['1d']
@@ -99,6 +106,7 @@ ELECTRICITY = 'electricity'
 HOUSE = 'house'
 APARTMENT = 'apartment'
 ENERGY = 'energy'
+WATER = 'water'
 
 
 def is_running_on_server():
@@ -110,9 +118,9 @@ logger = logging.getLogger(__name__)
 if is_running_on_server():
     logger.info("The code is running on a server.")
     EPOCHS = 200
-    N_TRIAL = 200
-    LOOK_BACKS = [7, 14]
-    FORECAST_PERIODS = [1, 2, 3, 4, 5, 6, 7]
+    N_TRIAL = 50
+    LOOK_BACKS = [7]
+    FORECAST_PERIODS = [1, 2, 3, 4, 5, 6]
 
     BASE_PATH = '/home/23r9802_chen/messou/TimeSeriesForecasting/'
     DATASET_FEATURES_PATH = "/home/23r9802_chen/messou/TimeSeriesForecasting/input/data_features.json"
@@ -120,6 +128,13 @@ if is_running_on_server():
     HOUSE_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/house/WHE.csv"
     APARTMENT_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/apartment/MidriseApartment_SAN_FRANCISCO.csv"
     ENERGY_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/energy/energy.csv"
+    WATER_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/water/water.csv"
+
+    PREPROCESSED_ELECTRICITY_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/electricity/household_power_consumption"
+    PREPROCESSED_HOUSE_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/house/WHE"
+    PREPROCESSED_APARTMENT_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/apartment/MidriseApartment_SAN_FRANCISCO"
+    PREPROCESSED_ENERGY_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/energy/energy"
+    PREPROCESSED_WATER_DATASET_PATH = f"/home/23r9802_chen/messou/TimeSeriesForecasting/input/water/water"
 
     OUTPUT_PATH = "/output-gpu/"
     LOG_FILE = f"./logs/gpu/"

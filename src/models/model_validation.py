@@ -14,12 +14,11 @@ Lab: Prof YU Keping's Lab
 """
 
 import logging
-import time
 
 import torch
 
 from hyperparameter_tuning.build_best_model import train_model
-from input_processing.data_processing import default_preprocess_and_split_dataset
+from input_processing.data_processing import validation_split_dataset, default_preprocess_and_split_dataset
 from models.model_selection import ModelSelection
 from output_processing.custom_functions import (evaluate_model, plot_evaluation_metrics, save_evaluation_metrics,
                                                 plot_losses, save_losses, make_predictions, plot_multi_step_predictions,
@@ -53,9 +52,14 @@ class ComprehensiveModelValidator:
                     for period in PERIOD:
                         logger.info(
                             f"Training with series_type={serie_type} | look_back={look_back_day} | forecast_period={forecast_day}")
-                        x_train, x_test, y_train, y_test, scaler = default_preprocess_and_split_dataset(serie_type,
-                                                                                                        period,
+                        if SIMPLE_OR_AUGMENTED == "simple":
+                            x_train, x_test, y_train, y_test, scaler = default_preprocess_and_split_dataset(serie_type,
+                                                                                                            'D',
                                                                                                         look_back_day,
+                                                                                                            forecast_day)
+                        else:
+                            x_train, x_test, y_train, y_test, scaler = validation_split_dataset(serie_type,
+                                                                                                look_back_day,
                                                                                                         forecast_day)
                         self.process_model_type(model_type, serie_type, look_back_day, forecast_day, period, x_train,
                                                 x_test,

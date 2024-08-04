@@ -25,16 +25,28 @@ import numpy as np
 import psutil
 import torch
 
+from models.model_training import ComprehensiveModelTrainer
 from models.model_validation import ComprehensiveModelValidator
 from utils.constants import (
-    ELECTRICITY, LOOK_BACKS, FORECAST_PERIODS, SEEDER, LOG_FILE,
-    LSTM_MODEL, GRU_MODEL, CNN_MODEL, CNN_LSTM_MODEL, CNN_GRU_MODEL, CNN_LSTM_ATTENTION_MODEL, CNN_GRU_ATTENTION_MODEL,
-    CNN_ATTENTION_LSTM_MODEL, CNN_ATTENTION_GRU_MODEL,
-    CNN_ATTENTION_BiLSTM_MODEL, CNN_ATTENTION_BiGRU_MODEL, APARTMENT, HOUSE, ENERGY, SIMPLE_OR_AUGMENTED,
-    UNI_OR_MULTI_VARIATE, CNN_BiGRU_ATTENTION_MODEL, CNN_BiLSTM_ATTENTION_MODEL, )
+    ELECTRICITY,
+    LOOK_BACKS,
+    FORECAST_PERIODS,
+    SEEDER,
+    LOG_FILE,
+    CNN_MODEL,
+    CNN_LSTM_MODEL,
+    CNN_GRU_MODEL,
+    CNN_ATTENTION_BiLSTM_MODEL,
+    APARTMENT,
+    HOUSE,
+    ENERGY,
+    SIMPLE_OR_AUGMENTED,
+    UNI_OR_MULTI_VARIATE,
+    WATER,
+)
 
 # Set seed for reproducibility
-os.environ['CUBLAS_WORKSPACE_CONFIG'] = ":4096:8"
+os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
 torch.manual_seed(SEEDER)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
@@ -43,38 +55,38 @@ random.seed(SEEDER)
 
 np.random.seed(SEEDER)
 
-'''----------------------------------------------------------------------------------------------'''
+"""----------------------------------------------------------------------------------------------"""
 
 
 def main(model_group, dataset):
-    if dataset == 'electricity':
+    if dataset == "electricity":
         series = ELECTRICITY
-    elif dataset == 'house':
+    elif dataset == "house":
         series = HOUSE
-    elif dataset == 'apartment':
+    elif dataset == "apartment":
         series = APARTMENT
-    elif dataset == 'energy':
+    elif dataset == "energy":
         series = ENERGY
+    elif dataset == "water":
+        series = WATER
     else:
-        series = ELECTRICITY
+        series = HOUSE
 
-    model_group1 = [CNN_MODEL, LSTM_MODEL, GRU_MODEL]
+    model_group1 = [
+        CNN_MODEL,
+    ]
 
-    model_group2 = [CNN_LSTM_MODEL, CNN_GRU_MODEL]
+    model_group2 = [
+        CNN_GRU_MODEL,
+    ]
 
-    model_group4 = [
-                    CNN_LSTM_ATTENTION_MODEL,
-                    CNN_GRU_ATTENTION_MODEL,
-                    CNN_BiLSTM_ATTENTION_MODEL,
-                    CNN_BiGRU_ATTENTION_MODEL,
-                    ]
+    model_group4 = [CNN_LSTM_MODEL]
     model_group5 = [
-                    CNN_ATTENTION_LSTM_MODEL,
-                    CNN_ATTENTION_GRU_MODEL,
-                    CNN_ATTENTION_BiLSTM_MODEL,
-                    CNN_ATTENTION_BiGRU_MODEL
-                    ]
-    model_group0 = [CNN_ATTENTION_GRU_MODEL]
+        CNN_ATTENTION_BiLSTM_MODEL,
+    ]
+    model_group0 = [
+        CNN_MODEL,
+    ]
 
     look_backs = LOOK_BACKS  # [7]
     forecast_periods = FORECAST_PERIODS  # [3]
@@ -94,20 +106,18 @@ def main(model_group, dataset):
     logger.info(f"model_group: {model_group} |||| model_types: {model_types}")
 
     # Create ModelTuner instance and Optuna study
-    # if model_group != 0:
     # model_tuner_and_study(look_backs, forecast_periods, model_types, series)
 
     # Build best model
-    # trainer = ComprehensiveModelTrainer(look_backs=look_backs, forecast_periods=forecast_periods,
-    #                                     model_types=model_types, series_types=series)
-    # trainer.build_and_train_models()
+    #trainer = ComprehensiveModelTrainer(look_backs=look_backs,forecast_periods=forecast_periods,model_types=model_types,series_types=series)
+    #trainer.build_and_train_models()
 
     trainer = ComprehensiveModelValidator(look_backs=look_backs, forecast_periods=forecast_periods,
-                                          model_types=model_types, series_types=series)
+                                           model_types=model_types, series_types=series)
     trainer.build_and_train_models()
 
 
-'''----------------------------------------------------------------------------------------------'''
+"""----------------------------------------------------------------------------------------------"""
 
 logger = logging.getLogger(__name__)
 
@@ -137,26 +147,41 @@ def some_function():
         logger.info(f"CPU Cores: {cpu_count}")
 
 
-'''----------------------------------------------------------------------------------------------'''
+"""----------------------------------------------------------------------------------------------"""
 
 if __name__ == "__main__":
     # Parse the command-line arguments
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model_group", type=int, help="Model group parameter: group of models to process")
-    parser.add_argument("--dataset", type=str, default="default_dataset", help="Dataset parameter: dataset to use")
+    parser.add_argument(
+        "--model_group",
+        type=int,
+        help="Model group parameter: group of models to process",
+    )
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        default="default_dataset",
+        help="Dataset parameter: dataset to use",
+    )
     args = parser.parse_args()
-    log_filename = (LOG_FILE + SIMPLE_OR_AUGMENTED +
-                    '/' + str(UNI_OR_MULTI_VARIATE) +  # Convert UNI_OR_MULTI_VARIATE to a string
-                    '_' + str(args.dataset or ELECTRICITY) +
-                    '_group' + str(args.model_group or 0) +
-                    '.log')
+    log_filename = (
+            LOG_FILE
+            + SIMPLE_OR_AUGMENTED
+            + "/"
+            + str(UNI_OR_MULTI_VARIATE)  # Convert UNI_OR_MULTI_VARIATE to a string
+            + "_"
+            + str(args.dataset or ELECTRICITY)
+            + "_group"
+            + str(args.model_group or 0)
+            + ".log"
+    )
 
     # Logging settings config
     logging.basicConfig(
         level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s',
+        format="%(asctime)s - %(levelname)s - %(message)s",
         filename=log_filename,
-        filemode='a'
+        filemode="a",
     )
 
     # Call the function to trigger logging
